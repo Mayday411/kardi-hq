@@ -84,6 +84,10 @@ Kardi's brand work has its own lane. A Monster Energy can sits on the hero pile 
 
 Kardi's official script logo lives at `assets/logo-white.png` (used in the footer) and `assets/logo-black.png` (for light backgrounds, unused on the site). The hummingbird from the logo is cut out as `assets/bird.png`; it is the header mark and makes the favicon and touch icon.
 
+## The channel and the podcast
+
+On The Screen ends with the YouTube card (KardinalOffishall416, 300K+ subscribers) showing the three latest uploads, and the 2 Bad Man podcast card marked as in the works until there is an episode. `data/youtube.json` holds the channel id, subscriber line and recent uploads; refresh it with `python3 tools/youtube-latest.py` (no API key, it reads the channel's public feed). The podcast copy and status live in `data/links.json` under `podcast`. Release moments in the feed carry a `cover`, so their cards show the artwork (singles in `assets/covers/singles/`).
+
 ## In His Own Name and The Reel
 
 `data/goods.json` holds Kardi's own brands: 4ever16 (clothing, a play on the 416) and his eyewear collection. Each card links out when `url` is set and says "link coming" until then. Two stickers on the hero pile point at them, including one on the frames he is wearing in the portrait. The sizzle reel for promoters, agencies and brands lives in The Reel: `assets/sizzle-2026.mp4` (1080p H.264, 66 s, with audio, transcoded from the HEVC master) with a poster frame, a play button that hands off to native controls, a download link and the booking shortlist. The reel entry in `data/links.json` sets the file and length.

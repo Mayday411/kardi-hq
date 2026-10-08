@@ -1,5 +1,5 @@
 {
-  "_note": "One entry per thing that happened. Newest first. hat is one of: artist, ar, tv, live, community. 'display' overrides the formatted date when the exact day is not known.",
+  "_note": "One entry per thing that happened. Newest first. hat is one of: artist, ar, tv, live, community. 'display' overrides the formatted date when the exact day is not known. 'cover' on an artist moment shows the artwork on its card.",
   "moments": [
     {
       "date": "2027-04-01",
@@ -12,12 +12,23 @@
       "link_label": "Read the Exclaim! interview"
     },
     {
+      "date": "2026-10-01",
+      "display": "In the works",
+      "hat": "tv",
+      "status": "Coming",
+      "title": "2 Bad Man, the podcast",
+      "body": "Kardi's podcast is in production. Name's locked. First episode details land here and on the channel.",
+      "url": "https://www.youtube.com/kardinaloffishall416",
+      "link_label": "Subscribe on YouTube"
+    },
+    {
       "date": "2026-09-25",
       "hat": "artist",
       "title": "Firestarter Vol. 2: Everyday, Sometimes…",
       "body": "Ten tracks on Black Stone Colleagues, 25 years after Vol. 1. T-Pain, Black Thought, Idris Elba, Buju Banton, Melanie Fiona, Glenn Lewis. Mostly produced by Kardi himself.",
       "url": "https://foundation-media.ffm.to/firestartervol2",
-      "link_label": "Listen everywhere"
+      "link_label": "Listen everywhere",
+      "cover": "assets/firestarter-vol2.jpg"
     },
     {
       "date": "2026-09-01",
@@ -26,7 +37,8 @@
       "title": "Kiss Me When I, with Glenn Lewis",
       "body": "The last single before the album. Two Toronto voices, one slow burn.",
       "url": "https://foundation-media.ffm.to/kissmewhen",
-      "link_label": "Listen"
+      "link_label": "Listen",
+      "cover": "assets/covers/singles/kiss-me-when-i.jpg"
     },
     {
       "date": "2026-08-01",
@@ -52,7 +64,8 @@
       "title": "My Brother's Keeper, Parts 1 and 2",
       "body": "Two singles, one message. Part 2 brings in NESTA.",
       "url": "https://foundation-media.ffm.to/brotherskeeper",
-      "link_label": "Listen"
+      "link_label": "Listen",
+      "cover": "assets/covers/singles/my-brothers-keeper.jpg"
     },
     {
       "date": "2026-03-29",
@@ -76,7 +89,8 @@
       "title": "SOAK, with Rotimi and Ocean Banks",
       "body": "Summer record. DJ pack went out to the selectors the same week.",
       "url": "https://foundation-media.ffm.to/soak",
-      "link_label": "Listen"
+      "link_label": "Listen",
+      "cover": "assets/covers/singles/soak.jpg"
     },
     {
       "date": "2025-05-29",
@@ -84,7 +98,8 @@
       "title": "LET EM OUT",
       "body": "First single of the Vol. 2 run.",
       "url": "https://foundation-media.ffm.to/letemout",
-      "link_label": "Listen"
+      "link_label": "Listen",
+      "cover": "assets/covers/singles/let-em-out.jpg"
     },
     {
       "date": "2025-03-18",

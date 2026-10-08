@@ -364,6 +364,41 @@ button { font: inherit; cursor: pointer; }
 .card .card-link:hover { color: var(--flame-deep); border-color: var(--flame-deep); }
 .card .status { position: absolute; right: -8px; bottom: -10px; background: var(--flame); color: var(--bg); font-family: var(--display); font-weight: 800; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 9px; border-radius: 3px; transform: rotate(-5deg); box-shadow: 0 6px 12px rgba(0,0,0,0.35); }
 
+/* Artwork on release cards: a small sleeve pinned to the corner */
+.card-cover { position: absolute; right: -12px; top: -14px; width: 86px; aspect-ratio: 1; border-radius: 3px; overflow: hidden; transform: rotate(6deg); box-shadow: 0 10px 20px rgba(0,0,0,0.45), 0 0 0 3px var(--cream); z-index: 2; }
+.card-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card.has-cover .card-head { padding-right: 70px; }
+.card.has-cover h3 { padding-right: 60px; }
+.card.has-cover::before { display: none; }   /* the sleeve replaces the vinyl ornament */
+.row-cover { float: right; width: 72px; height: 72px; object-fit: cover; border-radius: 4px; margin: 0 0 8px 16px; box-shadow: 0 6px 14px rgba(0,0,0,0.4); }
+@media (max-width: 720px) { .card-cover { width: 64px; right: -8px; top: -10px; } .card.has-cover .card-head { padding-right: 52px; } .card.has-cover h3 { padding-right: 44px; } }
+
+/* ---------- on the screen: channel + podcast ---------- */
+.screen-extra { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; margin-top: clamp(40px, 5vw, 64px); }
+.yt-card, .pod-card { position: relative; border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); padding: clamp(20px, 2.6vw, 30px); display: grid; gap: 18px; align-content: start; }
+.yt-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+.yt-name { font-size: clamp(24px, 2.6vw, 34px); letter-spacing: -0.02em; margin-top: 6px; }
+.yt-subs { color: var(--flame); font-family: var(--display); font-weight: 700; font-size: 15px; margin-top: 6px; }
+.yt-videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.yt-video { position: relative; display: grid; gap: 8px; text-decoration: none; color: inherit; }
+.yt-video img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; display: block; background: #000; }
+.yt-play { position: absolute; left: 10px; top: 10px; width: 34px; height: 34px; border-radius: 50%; background: var(--cream); color: var(--bg); display: grid; place-items: center; box-shadow: 0 6px 14px rgba(0,0,0,0.45); }
+.yt-play svg { width: 18px; height: 18px; }
+.yt-title { font-size: 13.5px; line-height: 1.3; color: var(--cream); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.yt-date { font-size: 12px; color: var(--mute-2); }
+.yt-video:hover .yt-title { text-decoration: underline; text-underline-offset: 3px; }
+.yt-fine { color: var(--mute); font-size: 14px; }
+.yt-fine a { color: var(--cream); }
+.pod-card { border-style: dashed; border-color: var(--mute-2); }
+.pod-tag { position: absolute; right: 16px; top: 16px; font-family: var(--display); font-weight: 800; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bg); background: var(--ember); padding: 6px 9px; border-radius: 3px; transform: rotate(3deg); }
+.pod-art { width: 88px; }
+.pod-art svg { width: 100%; height: auto; display: block; }
+.pod-name { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; line-height: 0.95; }
+.pod-body { color: var(--mute); font-size: 15px; }
+.pod-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (max-width: 820px) { .screen-extra { grid-template-columns: 1fr; } .yt-videos { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .yt-videos { grid-template-columns: 1fr; } }
+
 /* Artist: a release label with a record peeking out from behind */
 .card-artist .card-body { padding-right: 20px; }
 .card-artist::before { content: ""; position: absolute; right: -26px; top: 50%; width: 92px; height: 92px; margin-top: -46px; border-radius: 50%; z-index: 0;

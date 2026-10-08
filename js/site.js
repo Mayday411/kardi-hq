@@ -226,6 +226,32 @@
       </article>`).join("");
   }
 
+  /* ---------- on the screen: youtube + podcast ---------- */
+  function screen(yt, links) {
+    const grid = $("#yt-videos");
+    if (grid && yt && yt.videos) {
+      $("#yt-subs").textContent = `${yt.subscribers} subscribers`;
+      $("#yt-handle").textContent = yt.handle;
+      $$(".js-yt").forEach((a) => { a.href = yt.url; });
+      // Skip near-duplicate uploads (clean edits) so three different videos show.
+      const seen = new Set(), picks = [];
+      yt.videos.forEach((v) => { const k = v.title.replace(/\[.*?\]|\(.*?\)|clean/gi, "").replace(/\s+/g, " ").trim().toLowerCase(); if (!seen.has(k) && picks.length < 3) { seen.add(k); picks.push(v); } });
+      grid.innerHTML = picks.map((v) => `
+        <a class="yt-video" ${ext(v.url)}>
+          <img src="${esc(v.thumb)}" alt="" width="480" height="360" loading="lazy">
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          <span class="yt-title">${esc(v.title)}</span>
+          <time class="yt-date" datetime="${esc(v.published)}">${esc(fmtDate(v.published))}</time>
+        </a>`).join("");
+    }
+    const pod = links && links.podcast;
+    if (pod) {
+      $("#pod-name").textContent = pod.name;
+      $("#pod-status").textContent = pod.status;
+      $("#pod-body").textContent = pod.body;
+    }
+  }
+
   /* ---------- the reel ---------- */
   function reel(data) {
     const player = $("#player"), v = $("#reel-video"), btn = $("#reel-play");
@@ -370,9 +396,10 @@
     const cardHTML = (m) => {
       const t = tilt(m);
       return `
-        <article class="card card-${esc(m.hat)}" data-key="${esc(key(m))}" data-r="${t.r}" data-ty="${t.ty}" style="--r:${t.r}deg;--ty:${t.ty}px">
+        <article class="card card-${esc(m.hat)}${m.cover ? " has-cover" : ""}" data-key="${esc(key(m))}" data-r="${t.r}" data-ty="${t.ty}" style="--r:${t.r}deg;--ty:${t.ty}px">
           <div class="card-body">
             <span class="pin" aria-hidden="true"></span>
+            ${m.cover ? `<span class="card-cover"><img src="${esc(m.cover)}" alt="${esc(m.title)} artwork" width="480" height="480" loading="lazy"></span>` : ""}
             <div class="card-head"><span>${HATS[m.hat] || esc(m.hat)}</span><time datetime="${esc(m.date)}">${esc(fmtDate(m.date, m.display))}</time></div>
             <h3>${esc(m.title)}</h3>
             <p>${esc(m.body)}</p>
@@ -382,9 +409,10 @@
         </article>`;
     };
     const rowHTML = (m) => `
-        <article class="moment" data-key="${esc(key(m))}">
+        <article class="moment${m.cover ? " has-cover" : ""}" data-key="${esc(key(m))}">
           <time class="d" datetime="${esc(m.date)}">${esc(fmtDate(m.date, m.display))}</time>
           <div>
+            ${m.cover ? `<img class="row-cover" src="${esc(m.cover)}" alt="" width="480" height="480" loading="lazy">` : ""}
             <h3>${esc(m.title)}</h3>
             <p>${esc(m.body)}</p>
             ${m.url ? `<a class="more" ${ext(m.url)}>${esc(m.link_label || "More")}</a>` : ""}
@@ -575,8 +603,8 @@
   join();
   $("#year").textContent = new Date().getFullYear();
 
-  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods")])
-    .then(([l, r, m, s, g]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); reveal(); })
+  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null)])
+    .then(([l, r, m, s, g, y]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); reveal(); })
     .catch((err) => {
       console.error(err);
       $("#feed").innerHTML = `<p class="empty">The feed could not load. If you opened this file directly, serve it over http (see README).</p>`;

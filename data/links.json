@@ -30,8 +30,16 @@
     "length": "1:06",
     "edited_by": "Unchartered Creative"
   },
+  "podcast": {
+    "name": "2 Bad Man",
+    "status": "In the works",
+    "body": "Kardi's podcast is in production. Name's locked, the rest is coming. First episode details land in the feed and on the channel.",
+    "url": null
+  },
   "ticker": [
     { "label": "Partner", "name": "Monster Energy", "url": "#partners" },
+    { "label": "YouTube", "name": "300K+ subscribers", "url": "https://www.youtube.com/kardinaloffishall416" },
+    { "label": "Podcast", "name": "2 Bad Man, coming", "url": "#on-the-screen" },
     { "label": "Clothing", "name": "4ever16", "url": "#goods" },
     { "label": "Eyewear", "name": "His frames", "url": "#goods" },
     { "label": "Global A&R", "name": "Def Jam", "url": "#in-the-building" },
