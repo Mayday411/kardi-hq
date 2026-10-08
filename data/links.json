@@ -1,0 +1,32 @@
+{
+  "_note": "Source: Kardi's own Linktree (linktr.ee/Celebrityface) and verified profile URLs, checked 7 Oct 2026. Confirm the Instagram handle with Kardi before launch.",
+  "cta": {
+    "label": "Listen · Firestarter Vol. 2",
+    "short": "Listen",
+    "url": "https://foundation-media.ffm.to/firestartervol2"
+  },
+  "latest": {
+    "sticker": "Latest · Vol. 2 out now",
+    "url": "https://foundation-media.ffm.to/firestartervol2"
+  },
+  "streaming": [
+    { "name": "Spotify", "url": "https://open.spotify.com/album/0rszwh4GagQKMoWRr5e1kX" },
+    { "name": "Apple Music", "url": "https://music.apple.com/us/album/firestarter-vol-2-everyday-sometimes/6811965482" },
+    { "name": "All platforms", "url": "https://foundation-media.ffm.to/firestartervol2" }
+  ],
+  "social": [
+    { "name": "Instagram", "handle": "@kardinalo", "url": "https://instagram.com/kardinalo" },
+    { "name": "TikTok", "handle": "@mrkardinal", "url": "https://www.tiktok.com/@mrkardinal" },
+    { "name": "X", "handle": "@KardinalO", "url": "https://x.com/kardinalo" },
+    { "name": "YouTube", "handle": "KardinalOffishall416", "url": "https://www.youtube.com/kardinaloffishall416" },
+    { "name": "Facebook", "handle": "kardinaloffishall", "url": "https://www.facebook.com/kardinaloffishall/" },
+    { "name": "Spotify", "handle": "Artist page", "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA" },
+    { "name": "Apple Music", "handle": "Artist page", "url": "https://music.apple.com/ca/artist/kardinal-offishall/66490" }
+  ],
+  "business": {
+    "booking_email": "teamkardi@hof-artists.com",
+    "speaking": { "name": "Speakers Canada", "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/" },
+    "cameo": { "name": "Cameo", "url": "https://v.cameo.com/b2rJppUaqjb" },
+    "label": "Black Stone Colleagues"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "_note": "One entry per thing that happened. Newest first. hat is one of: artist, ar, tv, live, community. 'display' overrides the formatted date when the exact day is not known.",
+  "moments": [
+    {
+      "date": "2027-04-01",
+      "display": "Spring 2027",
+      "hat": "artist",
+      "status": "Announced",
+      "title": "A full album with Idris Elba",
+      "body": "Kardi and Idris have been trading records for two years. Vol. 2 carried two of them. The whole project lands in spring.",
+      "url": "https://exclaim.ca/music/article/kardinal-offishall-interview-firestarter-vol-2-everyday-sometimes-exclaim-questionnaire",
+      "link_label": "Read the Exclaim! interview"
+    },
+    {
+      "date": "2026-09-25",
+      "hat": "artist",
+      "title": "Firestarter Vol. 2: Everyday, Sometimes…",
+      "body": "Ten tracks on Black Stone Colleagues, 25 years after Vol. 1. T-Pain, Black Thought, Idris Elba, Buju Banton, Melanie Fiona, Glenn Lewis. Mostly produced by Kardi himself.",
+      "url": "https://foundation-media.ffm.to/firestartervol2",
+      "link_label": "Listen everywhere"
+    },
+    {
+      "date": "2026-09-01",
+      "display": "Sep 2026",
+      "hat": "artist",
+      "title": "Kiss Me When I, with Glenn Lewis",
+      "body": "The last single before the album. Two Toronto voices, one slow burn.",
+      "url": "https://foundation-media.ffm.to/kissmewhen",
+      "link_label": "Listen"
+    },
+    {
+      "date": "2026-08-01",
+      "display": "Aug 2026",
+      "hat": "live",
+      "title": "I Still Call It Caribana 2026",
+      "body": "Kardi's own Caribana weekend event in Toronto. The name is the point.",
+      "url": "https://www.ticketgateway.com/bana2026",
+      "link_label": "Event page"
+    },
+    {
+      "date": "2026-07-01",
+      "hat": "live",
+      "title": "Canada Day, Prince's Island Park, Calgary",
+      "body": "A city singing Dangerous back at him on the country's birthday.",
+      "url": "https://www.setlist.fm/setlist/kardinal-offishall/2026/princes-island-park-calgary-ab-canada-1b725dfc.html",
+      "link_label": "Setlist"
+    },
+    {
+      "date": "2026-05-01",
+      "display": "2026",
+      "hat": "artist",
+      "title": "My Brother's Keeper, Parts 1 and 2",
+      "body": "Two singles, one message. Part 2 brings in NESTA.",
+      "url": "https://foundation-media.ffm.to/brotherskeeper",
+      "link_label": "Listen"
+    },
+    {
+      "date": "2026-03-29",
+      "hat": "tv",
+      "title": "JUNO Awards, Hamilton",
+      "body": "Red carpet at TD Coliseum with the next generation of Canadian hip-hop.",
+      "url": "https://www.gettyimages.com/photos/kardinal-offishall",
+      "link_label": "Photos"
+    },
+    {
+      "date": "2025-12-15",
+      "display": "Dec 2025",
+      "hat": "community",
+      "title": "KARDI Christmas Party, year 25",
+      "body": "The charity party he has thrown every December since 2000. Toys, food and a packed room for the city that made him.",
+      "url": null
+    },
+    {
+      "date": "2025-07-17",
+      "hat": "artist",
+      "title": "SOAK, with Rotimi and Ocean Banks",
+      "body": "Summer record. DJ pack went out to the selectors the same week.",
+      "url": "https://foundation-media.ffm.to/soak",
+      "link_label": "Listen"
+    },
+    {
+      "date": "2025-05-29",
+      "hat": "artist",
+      "title": "LET EM OUT",
+      "body": "First single of the Vol. 2 run.",
+      "url": "https://foundation-media.ffm.to/letemout",
+      "link_label": "Listen"
+    },
+    {
+      "date": "2025-03-18",
+      "hat": "tv",
+      "title": "Canada's Got Talent, season 5",
+      "body": "Fourth season at the judges' desk, alongside Howie Mandel, Shania Twain and Katherine Ryan.",
+      "url": "https://en.wikipedia.org/wiki/Canada%27s_Got_Talent_season_5",
+      "link_label": "About the season"
+    },
+    {
+      "date": "2024-09-29",
+      "hat": "community",
+      "title": "Icon Award, The Legacy Awards",
+      "body": "Presented by Jully Black at the Black Academy's Legacy Awards, live on CBC.",
+      "url": "https://ca.billboard.com/music/awards/legacy-awards-partynextdoor-kardinal-offishall",
+      "link_label": "Billboard Canada"
+    },
+    {
+      "date": "2023-01-20",
+      "display": "Jan 2023",
+      "hat": "ar",
+      "title": "Joins Def Jam as Global A&R",
+      "body": "Signing and developing artists worldwide alongside Tunji Balogun and LaTrice Burnette, after nine years leading A&R at Universal Music Canada.",
+      "url": "https://exclaim.ca/music/article/kardinal_offishall_appointed_global_a_and_r_at_def_jam",
+      "link_label": "Exclaim!"
+    },
+    {
+      "date": "2022-03-22",
+      "display": "Mar 2022",
+      "hat": "tv",
+      "title": "First season on Canada's Got Talent",
+      "body": "Joins the judging panel for the show's return on Citytv.",
+      "url": "https://en.wikipedia.org/wiki/Canada%27s_Got_Talent",
+      "link_label": "About the show"
+    }
+  ]
+}

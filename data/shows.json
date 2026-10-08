@@ -1,0 +1,7 @@
+{
+  "_note": "Dates. Upcoming shows render in On The Road; past ones fall into Recent. Replace with a Bandsintown feed when he is ready.",
+  "shows": [
+    { "date": "2026-08-01", "display": "Caribana weekend 2026", "title": "I Still Call It Caribana", "venue": "Toronto, ON", "type": "Event", "url": "https://www.ticketgateway.com/bana2026" },
+    { "date": "2026-07-01", "title": "Canada Day", "venue": "Prince's Island Park, Calgary, AB", "type": "Festival", "url": "https://www.setlist.fm/setlist/kardinal-offishall/2026/princes-island-park-calgary-ab-canada-1b725dfc.html" }
+  ]
+}
