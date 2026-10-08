@@ -16,7 +16,7 @@ Then open http://localhost:4173.
 
 ## Deploy
 
-Source: https://github.com/Mayday411/kardi-hq (private). Live at https://kardi-hq.vercel.app (Vercel project `kardi-hq`, static, no framework). To ship changes:
+Source: https://github.com/Mayday411/kardi-hq. Live at https://kardi-hq.vercel.app (Vercel project `kardi-hq`, static, no framework). To ship changes:
 
 ```bash
 vercel deploy --prod
