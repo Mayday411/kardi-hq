@@ -177,6 +177,16 @@
     $("#stream").innerHTML = data.streaming.map((s, i) =>
       `<a class="btn ${i === 0 ? "primary" : ""}" ${ext(s.url)}>${esc(s.name)}</a>`).join("");
 
+    // Partner ticker: rendered twice so the loop is seamless.
+    const tick = $("#ticker");
+    if (tick && data.ticker) {
+      const items = data.ticker.map((t) => {
+        const isExt = /^https?:/.test(t.url);
+        return `<a class="${t.open ? "open" : ""}" href="${esc(t.url)}"${isExt ? ' target="_blank" rel="noopener"' : ""}><span class="lab">${esc(t.label)}</span><span class="name">${esc(t.name)}</span></a>`;
+      }).join("");
+      tick.innerHTML = items + items;
+    }
+
     $("#foot-social").innerHTML = data.social.map((s) =>
       `<li><a ${ext(s.url)}>${esc(s.name)}</a><span class="handle">${esc(s.handle)}</span></li>`).join("");
 
@@ -479,7 +489,7 @@
   function spine() {
     const stops = [
       ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "25 Years"],
-      ["#on-the-screen", "On The Screen"], ["#in-the-building", "In The Building"],
+      ["#on-the-screen", "On The Screen"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
       ["#on-the-road", "On The Road"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 

@@ -90,9 +90,17 @@
             <a class="stk stk-flag" href="#give-back" aria-label="Jamaican roots, give back" style="--r:11deg;--depth:0.4">
               <svg viewBox="0 0 120 60" aria-hidden="true"><rect width="120" height="60" fill="#009B3A"/><path d="M0 0l120 60M120 0L0 60" stroke="#FED100" stroke-width="12"/><path d="M0 0l60 30L0 60zM120 0L60 30l60 30z" fill="#000"/></svg>
             </a>
+            <a class="stk stk-can" href="#partners" aria-label="Partner: Monster Energy" style="--r:9deg;--depth:0.75">
+              <span class="can-top"></span><span class="can-body"><b>Monster</b><i>Energy</i><em>Partner</em></span>
+            </a>
+            <a class="stk stk-slot" href="#partners" style="--r:-6deg;--depth:0.5">Your logo here</a>
             <a class="bubble" href="#wha-gwaan" id="bubble" style="--r:-3deg;--depth:1.1"><span id="bubble-text">Wha gwaan?</span></a>
           </div>
         </div>
+      </div>
+      <!-- Partner ticker: who he works with, and the open slot. Items come from data/links.json. -->
+      <div class="ticker" aria-label="Partners">
+        <div class="ticker-track" id="ticker"></div>
       </div>
     </section>
 
@@ -255,6 +263,48 @@
             <code id="booking-email">teamkardi@hof-artists.com</code>
             <button class="copy-btn" id="copy-email">Copy</button>
           </div>
+        </div>
+      </div>
+
+      <!-- Brand partnerships: one case, one open door -->
+      <div class="wrap partners" id="partners">
+        <div class="section-head reveal" style="margin-top:clamp(48px,6vw,80px)">
+          <div>
+            <p class="eyebrow">In Good Company</p>
+            <h2 id="partners-head">Brands he works with</h2>
+          </div>
+          <p class="right">Partnerships that live in his world: the studio, the road, the city. Not ads dropped on top of it.</p>
+        </div>
+        <div class="partner-grid reveal">
+          <article class="partner-card partner-monster">
+            <div class="partner-top">
+              <span class="partner-tag">Current partner</span>
+              <span class="partner-name">Monster Energy</span>
+            </div>
+            <dl class="brief">
+              <div><dt>The brief</dt><dd>Put Monster where Kardi already is, without it reading as an ad.</dd></div>
+              <div><dt>The play</dt><dd>Product placement across his own social channels, in the studio, on set and on the road, shot in his voice.</dd></div>
+              <div><dt>The result</dt><dd>Reach and engagement figures to come from the campaign reports.</dd></div>
+            </dl>
+          </article>
+          <article class="partner-card partner-open">
+            <div class="partner-top">
+              <span class="partner-tag">Open slot</span>
+              <span class="partner-name">Your brand</span>
+            </div>
+            <p>Kardi takes on a small number of partners a year. What a deal can include:</p>
+            <ul class="offer">
+              <li>Content on his channels, in his voice</li>
+              <li>Live: shows, festivals, the Christmas party</li>
+              <li>Hosting, appearances and keynotes</li>
+              <li>Music: original tracks, sync, soundtracks</li>
+              <li>Canada's Got Talent and broadcast moments</li>
+            </ul>
+            <div class="partner-cta">
+              <a class="btn flame" href="#booking-email">Start a conversation</a>
+              <span class="partner-mail">teamkardi@hof-artists.com</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>

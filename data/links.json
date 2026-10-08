@@ -23,6 +23,14 @@
     { "name": "Spotify", "handle": "Artist page", "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA" },
     { "name": "Apple Music", "handle": "Artist page", "url": "https://music.apple.com/ca/artist/kardinal-offishall/66490" }
   ],
+  "ticker": [
+    { "label": "Partner", "name": "Monster Energy", "url": "#partners" },
+    { "label": "Global A&R", "name": "Def Jam", "url": "#in-the-building" },
+    { "label": "Judge", "name": "Canada's Got Talent", "url": "#on-the-screen" },
+    { "label": "Keynotes", "name": "Speakers Canada", "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/" },
+    { "label": "Label", "name": "Black Stone Colleagues", "url": "#on-the-mic" },
+    { "label": "Next", "name": "Your brand here →", "url": "#partners", "open": true }
+  ],
   "business": {
     "booking_email": "teamkardi@hof-artists.com",
     "speaking": { "name": "Speakers Canada", "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/" },

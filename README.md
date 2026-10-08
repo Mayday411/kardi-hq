@@ -76,6 +76,10 @@ A matchstick runs down the right edge of every page view and burns as you scroll
 
 Sections are stacked sheets rather than blocks divided by rules. Script gives every section after the hero (and the footer) a `.sheet` layer in its paper tone, tilted a fraction of a degree with a shadow cast up onto the sheet above, plus one or two pieces of tape. Tilts, pivots and tape positions rotate through four presets in `js/site.js`; very tall sections (the pinned timeline, the footer) stay flat. Alternating sections carry the `paper` class for the slightly lighter stock.
 
+## Partners
+
+Kardi's brand work has its own lane. A Monster Energy can sits on the hero pile next to a dashed "Your logo here" sticker; a partner ticker runs under the hero (items in `data/links.json` under `ticker`, the last one flagged `open`); and In The Building ends with "In Good Company": a brief / play / result card for Monster and an open-slot card listing what a deal can include, with the booking email. The can is typographic in Monster's green on purpose: the claw logo is their trademark, so swap in official artwork only once Kardi and Monster have cleared it. The Monster result line is a placeholder until campaign numbers exist.
+
 ## Before it goes live
 
 - The hero cutout was made from a 603px phone-screenshot crop. Re-run the background removal on the original photo for a sharper sticker (`assets/kardi-cutout.png`, roughly 4:5, transparent PNG).
