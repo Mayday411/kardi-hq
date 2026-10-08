@@ -23,8 +23,17 @@
     { "name": "Spotify", "handle": "Artist page", "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA" },
     { "name": "Apple Music", "handle": "Artist page", "url": "https://music.apple.com/ca/artist/kardinal-offishall/66490" }
   ],
+  "reel": {
+    "title": "Kardi Sizzle Reel 2026",
+    "mp4": "assets/sizzle-2026.mp4",
+    "poster": "assets/sizzle-2026.jpg",
+    "length": "1:06",
+    "edited_by": "Unchartered Creative"
+  },
   "ticker": [
     { "label": "Partner", "name": "Monster Energy", "url": "#partners" },
+    { "label": "Clothing", "name": "4ever16", "url": "#goods" },
+    { "label": "Eyewear", "name": "His frames", "url": "#goods" },
     { "label": "Global A&R", "name": "Def Jam", "url": "#in-the-building" },
     { "label": "Judge", "name": "Canada's Got Talent", "url": "#on-the-screen" },
     { "label": "Keynotes", "name": "Speakers Canada", "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/" },

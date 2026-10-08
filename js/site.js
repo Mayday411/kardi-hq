@@ -207,6 +207,39 @@
     });
   }
 
+  /* ---------- in his own name ---------- */
+  function goods(data) {
+    const el = $("#goods-grid");
+    if (!el) return;
+    const frames = `<span class="frames-art" aria-hidden="true"><svg viewBox="0 0 160 60"><g fill="none" stroke="#C8E230" stroke-width="5" stroke-linejoin="round"><path d="M6 14h58l6 10v20a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V22z"/><path d="M96 14h58l-6 8v22a6 6 0 0 1-6 6H98a6 6 0 0 1-6-6V22z"/><path d="M70 26c5-4 15-4 20 0"/></g><path d="M14 22h48v20a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4z M100 22h44v20a4 4 0 0 1-4 4h-36a4 4 0 0 1-4-4z" fill="#1a1a1a" opacity=".85"/></svg></span>`;
+    el.innerHTML = data.goods.map((g) => `
+      <article class="good good-${esc(g.id)}" style="--accent:${esc(g.accent)}">
+        ${g.id === "4ever16" ? `<span class="code" aria-hidden="true">416</span>` : frames}
+        <div>
+          <div class="good-kind">${esc(g.kind)}</div>
+          <div class="good-name">${g.id === "4ever16" ? `4ever<span class="num">16</span>` : esc(g.name)}</div>
+        </div>
+        <div><p class="good-tag">${esc(g.tagline)}</p><p style="margin-top:10px">${esc(g.body)}</p></div>
+        <div class="good-cta">
+          ${g.url ? `<a class="btn primary" ${ext(g.url)}>${esc(g.cta)}</a>` : `<span class="soon">${esc(g.cta)} · link coming</span>`}
+        </div>
+      </article>`).join("");
+  }
+
+  /* ---------- the reel ---------- */
+  function reel(data) {
+    const player = $("#player"), v = $("#reel-video"), btn = $("#reel-play");
+    if (!player || !v) return;
+    if (data.reel) {
+      $("#reel-len").textContent = data.reel.length;
+      const dl = $("#reel-download"); if (dl) dl.href = data.reel.mp4;
+    }
+    const start = () => { v.controls = true; player.classList.add("playing"); v.play().catch(() => {}); };
+    btn.addEventListener("click", start);
+    v.addEventListener("play", () => player.classList.add("playing"));
+    v.addEventListener("ended", () => { player.classList.remove("playing"); v.controls = false; v.currentTime = 0; });
+  }
+
   /* ---------- now playing + timeline ---------- */
   function releases(data) {
     const np = data.now_playing;
@@ -488,8 +521,8 @@
   /* ---------- match spine ---------- */
   function spine() {
     const stops = [
-      ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "25 Years"],
-      ["#on-the-screen", "On The Screen"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
+      ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "25 Years"], ["#goods", "In His Own Name"],
+      ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
       ["#on-the-road", "On The Road"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 
@@ -542,8 +575,8 @@
   join();
   $("#year").textContent = new Date().getFullYear();
 
-  Promise.all([load("links"), load("releases"), load("moments"), load("shows")])
-    .then(([l, r, m, s]) => { links(l); releases(r); feed(m); shows(s); reveal(); })
+  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods")])
+    .then(([l, r, m, s, g]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); reveal(); })
     .catch((err) => {
       console.error(err);
       $("#feed").innerHTML = `<p class="empty">The feed could not load. If you opened this file directly, serve it over http (see README).</p>`;

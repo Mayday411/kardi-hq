@@ -1,0 +1,25 @@
+{
+  "_note": "Kardi's own brands. url null means the shop link is still to come; the card then says so instead of linking.",
+  "goods": [
+    {
+      "id": "4ever16",
+      "name": "4ever16",
+      "kind": "Clothing",
+      "tagline": "A play on the 416. Toronto, for life.",
+      "body": "Kardi's clothing line, built on the area code he has repped on every record since 1997. Streetwear with the city sewn in.",
+      "url": null,
+      "cta": "Shop 4ever16",
+      "accent": "#FF5A1F"
+    },
+    {
+      "id": "eyewear",
+      "name": "The frames",
+      "kind": "Eyewear",
+      "tagline": "The glasses in the photo up top? His.",
+      "body": "Kardi's eyewear collection. Bold, square, built to be seen in. The pair he is wearing on this page is from it.",
+      "url": null,
+      "cta": "See the collection",
+      "accent": "#C8E230"
+    }
+  ]
+}

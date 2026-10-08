@@ -179,6 +179,42 @@ button { font: inherit; cursor: pointer; }
 }
 @media (prefers-reduced-motion: reduce) { .ticker { overflow-x: auto; } }
 
+/* ---------- in his own name: 4ever16 + eyewear ---------- */
+.stk-416 { left: 58%; top: 70%; background: var(--flame); color: var(--bg); font-size: clamp(14px, 1.7vw, 20px); letter-spacing: -0.02em; padding: 0.4em 0.7em; }
+.stk-416 b { font-weight: 800; color: var(--bg); opacity: 0.75; margin-right: 0.08em; }
+.stk-frames { left: 2%; top: 22%; background: #C8E230; color: var(--bg); z-index: 6; }
+.goods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.good { position: relative; display: grid; grid-template-rows: auto 1fr auto; gap: 16px; padding: clamp(22px, 3vw, 34px); border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); overflow: hidden; min-height: 300px; }
+.good::before { content: ""; position: absolute; inset: auto -40px -60px auto; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 28%, transparent), transparent 70%); pointer-events: none; }
+.good-kind { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+.good-name { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 5vw, 64px); letter-spacing: -0.03em; line-height: 0.95; margin-top: 6px; }
+.good-name .num { color: var(--accent); }
+.good-tag { font-family: var(--display); font-weight: 700; font-size: clamp(17px, 1.6vw, 20px); color: var(--cream); }
+.good p { color: var(--mute); font-size: 15px; max-width: 46ch; }
+.good-cta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.good-cta .soon { font-size: 13px; color: var(--mute-2); border: 1px dashed var(--line); border-radius: 999px; padding: 8px 14px; }
+.good-eyewear .frames-art { position: absolute; right: 22px; top: 22px; width: 150px; opacity: 0.95; }
+.good-eyewear .frames-art svg { width: 100%; height: auto; display: block; }
+.good-416 .code { position: absolute; right: 18px; top: 10px; font-family: var(--display); font-weight: 800; font-size: 120px; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px color-mix(in srgb, var(--accent) 55%, transparent); line-height: 1; pointer-events: none; user-select: none; }
+@media (max-width: 820px) { .goods-grid { grid-template-columns: 1fr; } .good { min-height: 0; } .good-416 .code { font-size: 84px; } .good-eyewear .frames-art { width: 110px; } }
+@media (max-width: 860px) { .stk-416 { top: 72%; left: 56%; } .stk-frames { top: 24%; left: 0; font-size: 11px; } }
+
+/* ---------- the reel ---------- */
+.reel { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(20px, 3vw, 40px); align-items: start; }
+.player { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 0 1px var(--line); }
+.player video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.player .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 12px; border: none; border-radius: 999px; padding: 14px 22px 14px 16px; background: var(--cream); color: var(--bg); font-family: var(--display); font-weight: 800; font-size: 16px; box-shadow: 0 16px 36px rgba(0,0,0,0.55); cursor: pointer; }
+.player .play svg { width: 28px; height: 28px; }
+.player .play:hover { background: var(--flame); }
+.player.playing .play, .player.playing .reel-len { display: none; }
+.reel-len { position: absolute; right: 14px; bottom: 12px; font-family: var(--display); font-weight: 700; font-size: 13px; color: var(--cream); background: rgba(21,17,16,0.7); padding: 4px 8px; border-radius: 4px; }
+.reel-side { display: grid; gap: 16px; align-content: start; padding-top: 6px; }
+.reel-side h3 { font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; }
+.reel-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.reel-fine { color: var(--mute-2); font-size: 13px; }
+@media (max-width: 820px) { .reel { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { .player .play { transition: background 0.2s, transform 0.2s; } .player .play:hover { transform: translate(-50%, -50%) scale(1.04); } }
+
 /* ---------- partners ---------- */
 .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .partner-card { position: relative; border-radius: var(--radius); padding: clamp(22px, 3vw, 34px); display: grid; gap: 18px; align-content: start; background: var(--bg-2); border: 1px solid var(--line); }

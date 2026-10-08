@@ -84,6 +84,10 @@ Kardi's brand work has its own lane. A Monster Energy can sits on the hero pile 
 
 Kardi's official script logo lives at `assets/logo-white.png` (used in the footer) and `assets/logo-black.png` (for light backgrounds, unused on the site). The hummingbird from the logo is cut out as `assets/bird.png`; it is the header mark and makes the favicon and touch icon.
 
+## In His Own Name and The Reel
+
+`data/goods.json` holds Kardi's own brands: 4ever16 (clothing, a play on the 416) and his eyewear collection. Each card links out when `url` is set and says "link coming" until then. Two stickers on the hero pile point at them, including one on the frames he is wearing in the portrait. The sizzle reel for promoters, agencies and brands lives in The Reel: `assets/sizzle-2026.mp4` (1080p H.264, 66 s, with audio, transcoded from the HEVC master) with a poster frame, a play button that hands off to native controls, a download link and the booking shortlist. The reel entry in `data/links.json` sets the file and length.
+
 ## Before it goes live
 
 - The hero cutout was made from a 603px phone-screenshot crop. Re-run the background removal on the original photo for a sharper sticker (`assets/kardi-cutout.png`, roughly 4:5, transparent PNG).
