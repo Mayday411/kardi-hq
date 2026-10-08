@@ -247,7 +247,8 @@ button { font: inherit; cursor: pointer; }
 /* Every section after the hero is a sheet of paper laid over the one before: a slight tilt, a cast shadow
    up onto the previous sheet, and a couple of pieces of tape. Script prepends the .sheet and .tape elements. */
 .has-sheet { background: transparent; }
-.has-sheet > :not(.sheet):not(.tape) { position: relative; z-index: 1; }
+.has-sheet > :not(.sheet):not(.tape):not(.years-stage) { position: relative; z-index: 1; }
+.has-sheet > .years-stage { z-index: 1; } /* stays sticky; the sheet sits behind it */
 .sheet { position: absolute; left: -4%; right: -4%; top: -22px; bottom: 0; z-index: 0; background: var(--paper, var(--bg));
   transform: rotate(var(--tilt, -0.7deg)); transform-origin: var(--pivot, 30%) 0;
   box-shadow: 0 -18px 44px rgba(0,0,0,0.7), 0 -2px 0 rgba(255,255,255,0.04); pointer-events: none; }
@@ -435,9 +436,19 @@ button { font: inherit; cursor: pointer; }
   background: radial-gradient(circle, var(--label, #D9441A) 0 24%, #15100F 25% 27%, #221C19 28% 29%, #15100F 30% 44%, #221C19 45% 46%, #15100F 47% 64%, #221C19 65% 66%, #15100F 67% 84%, #221C19 85% 86%, #15100F 87% 100%);
   box-shadow: 0 22px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05) inset; display: grid; place-items: center; }
 .disc::after { content: ""; width: 6%; aspect-ratio: 1; border-radius: 50%; background: var(--bg); }
-.disc.sleeve { border-radius: 6px; background: #F4F2EF; overflow: hidden; }
+/* A sleeve with the record peeking out to the right; the sleeve slides over it on hover */
+.disc.sleeve { border-radius: 4px; background: #F4F2EF; overflow: visible; box-shadow: none; }
+.disc.sleeve::before { content: ""; position: absolute; inset: 4% auto 4% 30%; aspect-ratio: 1; border-radius: 50%; z-index: -1;
+  background: radial-gradient(circle, var(--label, #D9441A) 0 24%, #15100F 25% 27%, #221C19 28% 29%, #15100F 30% 44%, #221C19 45% 46%, #15100F 47% 64%, #221C19 65% 66%, #15100F 67% 84%, #221C19 85% 86%, #15100F 87% 100%);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.5); transform: translateX(var(--peek, 22%)); }
 .disc.sleeve::after { content: none; }
-.disc.sleeve img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.disc.sleeve img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; box-shadow: 0 22px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06); }
+@media (prefers-reduced-motion: no-preference) {
+  .disc.sleeve::before { transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
+  .year-slide:hover .disc.sleeve::before, .year-slide:focus-visible .disc.sleeve::before { transform: translateX(42%) rotate(25deg); }
+  .year-slide:hover .disc.sleeve, .year-slide:focus-visible .disc.sleeve { transform: rotate(-4deg) scale(1.03); }
+}
+.year-slide { padding-right: 8%; }
 .disc.blank { background: repeating-linear-gradient(135deg, #221C19 0 8px, #1A1412 8px 16px); border: 2px dashed var(--line); box-shadow: none; }
 .disc.blank::after { content: "?"; width: auto; background: none; font-family: var(--display); font-weight: 800; font-size: 44px; color: var(--mute-2); }
 .year-meta { position: relative; z-index: 1; display: grid; gap: 6px; }

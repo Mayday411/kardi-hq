@@ -1,13 +1,56 @@
 {
-  "_note": "Studio albums, oldest first. The timeline reads this. 'hot' marks the current record.",
+  "_note": "Studio albums, oldest first. The timeline reads this. 'hot' marks the current record; 'cover' is the sleeve image (official artwork, sourced from the catalogues).",
   "releases": [
-    { "year": "1997", "title": "Eye & I", "note": "Debut. Soul, dancehall, reggae, hip-hop in one record.", "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA" },
-    { "year": "2001", "title": "Quest for Fire: Firestarter Vol. 1", "note": "Major-label debut. BaKardi Slang. Ol' Time Killin'.", "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA" },
-    { "year": "2005", "title": "Fire and Glory", "note": "Everyday (Rudebwoy). Juno-nominated.", "url": "https://open.spotify.com/album/6q35kzIkEaEpJhH419dDe1" },
-    { "year": "2008", "title": "Not 4 Sale", "note": "Dangerous goes top five on the Hot 100, first for a Canadian rapper. 4x platinum.", "url": "https://open.spotify.com/album/4mvT7q9PuuBWZcVyUnZP8e" },
-    { "year": "2015", "title": "Kardi Gras, Vol. 1: The Clash", "note": "Independent, on Black Stone Colleagues.", "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA" },
-    { "year": "2026", "title": "Firestarter Vol. 2: Everyday, Sometimes…", "note": "The sequel, 25 years on. Out now.", "url": "https://foundation-media.ffm.to/firestartervol2", "hot": true },
-    { "year": "2027", "title": "Untitled, with Idris Elba", "note": "Announced for spring.", "url": null, "future": true }
+    {
+      "year": "1997",
+      "title": "Eye & I",
+      "note": "Debut. Soul, dancehall, reggae, hip-hop in one record.",
+      "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA",
+      "cover": "assets/covers/eye-and-i.jpg"
+    },
+    {
+      "year": "2001",
+      "title": "Quest for Fire: Firestarter Vol. 1",
+      "note": "Major-label debut. BaKardi Slang. Ol' Time Killin'.",
+      "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA",
+      "cover": "assets/covers/firestarter-1.jpg"
+    },
+    {
+      "year": "2005",
+      "title": "Fire and Glory",
+      "note": "Everyday (Rudebwoy). Juno-nominated.",
+      "url": "https://open.spotify.com/album/6q35kzIkEaEpJhH419dDe1",
+      "cover": "assets/covers/fire-and-glory.jpg"
+    },
+    {
+      "year": "2008",
+      "title": "Not 4 Sale",
+      "note": "Dangerous goes top five on the Hot 100, first for a Canadian rapper. 4x platinum.",
+      "url": "https://open.spotify.com/album/4mvT7q9PuuBWZcVyUnZP8e",
+      "cover": "assets/covers/not-4-sale.jpg"
+    },
+    {
+      "year": "2015",
+      "title": "Kardi Gras, Vol. 1: The Clash",
+      "note": "Independent, on Black Stone Colleagues.",
+      "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA",
+      "cover": "assets/covers/kardi-gras-1.jpg"
+    },
+    {
+      "year": "2026",
+      "title": "Firestarter Vol. 2: Everyday, Sometimes…",
+      "note": "The sequel, 25 years on. Out now.",
+      "url": "https://foundation-media.ffm.to/firestartervol2",
+      "hot": true,
+      "cover": "assets/firestarter-vol2.jpg"
+    },
+    {
+      "year": "2027",
+      "title": "Untitled, with Idris Elba",
+      "note": "Announced for spring.",
+      "url": null,
+      "future": true
+    }
   ],
   "now_playing": {
     "title": "Firestarter Vol. 2: Everyday, Sometimes…",
@@ -15,16 +58,53 @@
     "label": "Black Stone Colleagues",
     "length": "10 tracks · 35 min",
     "tracks": [
-      { "n": 1, "title": "Heavy Is The Head" },
-      { "n": 2, "title": "40 Acres And A Ferrari", "feat": "Stove God Cooks, Black Thought" },
-      { "n": 3, "title": "All Nighter", "feat": "T-Pain, Konshens" },
-      { "n": 4, "title": "Kiss Me When I", "feat": "Glenn Lewis" },
-      { "n": 5, "title": "When You're In Love", "feat": "Melanie Fiona" },
-      { "n": 6, "title": "Top 3", "feat": "Buju Banton, Idris Elba" },
-      { "n": 7, "title": "My Brother's Keeper (Part 2)", "feat": "NESTA" },
-      { "n": 8, "title": "Bombay Sunsets", "feat": "Idris Elba" },
-      { "n": 9, "title": "Where There's Smoke" },
-      { "n": 10, "title": "Everyday, Sometimes" }
+      {
+        "n": 1,
+        "title": "Heavy Is The Head"
+      },
+      {
+        "n": 2,
+        "title": "40 Acres And A Ferrari",
+        "feat": "Stove God Cooks, Black Thought"
+      },
+      {
+        "n": 3,
+        "title": "All Nighter",
+        "feat": "T-Pain, Konshens"
+      },
+      {
+        "n": 4,
+        "title": "Kiss Me When I",
+        "feat": "Glenn Lewis"
+      },
+      {
+        "n": 5,
+        "title": "When You're In Love",
+        "feat": "Melanie Fiona"
+      },
+      {
+        "n": 6,
+        "title": "Top 3",
+        "feat": "Buju Banton, Idris Elba"
+      },
+      {
+        "n": 7,
+        "title": "My Brother's Keeper (Part 2)",
+        "feat": "NESTA"
+      },
+      {
+        "n": 8,
+        "title": "Bombay Sunsets",
+        "feat": "Idris Elba"
+      },
+      {
+        "n": 9,
+        "title": "Where There's Smoke"
+      },
+      {
+        "n": 10,
+        "title": "Everyday, Sometimes"
+      }
     ]
   }
 }

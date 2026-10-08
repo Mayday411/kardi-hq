@@ -260,8 +260,8 @@
 
     track.innerHTML = releases.map((r, i) => {
       const cls = ["year-slide", r.hot ? "hot" : "", r.future ? "future" : ""].join(" ").trim();
-      const disc = r.hot
-        ? `<span class="disc sleeve"><img src="assets/firestarter-vol2.jpg" alt="" width="1080" height="1080" loading="lazy"></span>`
+      const disc = r.cover
+        ? `<span class="disc sleeve" style="--label:${labels[i % labels.length]}"><img src="${esc(r.cover)}" alt="${esc(r.title)} album cover" width="700" height="700" loading="lazy"></span>`
         : r.future ? `<span class="disc blank"></span>` : `<span class="disc" style="--label:${labels[i % labels.length]}"></span>`;
       const inner = `<span class="year-big" aria-hidden="true">${esc(r.year)}</span>${disc}
         <span class="year-meta"><span class="yr">${esc(r.year)}</span><b>${esc(r.title)}</b><span class="note">${esc(r.note)}</span><span class="go">${r.hot ? "Listen now" : "Listen"}</span></span>`;

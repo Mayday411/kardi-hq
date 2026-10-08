@@ -68,7 +68,7 @@ Moments render as pinned cards by default, with a List toggle beside the hat fil
 
 ## 25 Years of Fire
 
-On screens 860px and wider the catalogue is pinned: the section is made tall by script, the stage sticks to the viewport, and vertical scroll drives the track sideways. Each record sits in front of its year set in giant type. A match along the bottom burns down as you go, with the year ticks lighting up behind the ember. Below 860px the track is a native swipe with scroll snapping and the same fuse. Records read from `data/releases.json`; the current record (`"hot": true`) shows the real sleeve, a future one (`"future": true`) shows a blank disc.
+On screens 860px and wider the catalogue is pinned: the section is made tall by script, the stage sticks to the viewport, and vertical scroll drives the track sideways. Each record sits in front of its year set in giant type. A match along the bottom burns down as you go, with the year ticks lighting up behind the ember. Below 860px the track is a native swipe with scroll snapping and the same fuse. Records read from `data/releases.json`. Each has a `cover` (official artwork in `assets/covers/`, pulled from the iTunes, Deezer and Cover Art Archive catalogues) shown as a sleeve with the record peeking out; a future one (`"future": true`) shows a blank disc. Eye & I only exists online at 320px, so a better scan from Kardi would help.
 
 ## Match spine and stacked sheets
 
