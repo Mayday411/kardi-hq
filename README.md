@@ -82,7 +82,7 @@ Kardi's brand work has its own lane. A Monster Energy can sits on the hero pile 
 
 ## Logo
 
-Kardi's official script logo lives at `assets/logo-white.png` (used in the header and footer) and `assets/logo-black.png` (for light backgrounds, unused on the site). The hummingbird from the logo is cut out as `assets/bird.png` and makes the favicon and touch icon.
+Kardi's official script logo lives at `assets/logo-white.png` (used in the footer) and `assets/logo-black.png` (for light backgrounds, unused on the site). The hummingbird from the logo is cut out as `assets/bird.png`; it is the header mark and makes the favicon and touch icon.
 
 ## Before it goes live
 

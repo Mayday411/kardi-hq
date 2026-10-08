@@ -63,10 +63,13 @@ button { font: inherit; cursor: pointer; }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 16px; }
 .wordmark { font-family: var(--display); font-weight: 800; font-size: 17px; letter-spacing: 0.02em; color: var(--flame); text-decoration: none; display: inline-flex; align-items: center; }
 .wordmark span { color: var(--cream); }
-.wordmark .logo { height: 64px; width: auto; display: block; }
+.wordmark .logo { height: 44px; width: auto; display: block; }
+.wordmark .bird { transition: transform 0.25s cubic-bezier(.2,.8,.2,1); }
+.wordmark:hover .bird { transform: translate(2px, -3px) rotate(-6deg); }
 .foot-logo img { height: auto; width: min(260px, 60%); display: block; }
-.header-row { padding-block: 10px; }
-@media (max-width: 980px) { .wordmark .logo { height: 52px; } .header-row { padding-block: 10px; } }
+.header-row { padding-block: 14px; }
+@media (max-width: 980px) { .wordmark .logo { height: 38px; } .header-row { padding-block: 12px; } }
+@media (prefers-reduced-motion: reduce) { .wordmark .bird { transition: none; } .wordmark:hover .bird { transform: none; } }
 .nav { display: flex; gap: 22px; }
 .nav a { color: var(--mute); text-decoration: none; font-size: 15px; }
 .nav a:hover { color: var(--cream); }
