@@ -61,8 +61,12 @@ button { font: inherit; cursor: pointer; }
 .site-header { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color 0.2s; }
 .site-header.scrolled { border-bottom-color: var(--line); }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 16px; }
-.wordmark { font-family: var(--display); font-weight: 800; font-size: 17px; letter-spacing: 0.02em; color: var(--flame); text-decoration: none; }
+.wordmark { font-family: var(--display); font-weight: 800; font-size: 17px; letter-spacing: 0.02em; color: var(--flame); text-decoration: none; display: inline-flex; align-items: center; }
 .wordmark span { color: var(--cream); }
+.wordmark .logo { height: 64px; width: auto; display: block; }
+.foot-logo img { height: auto; width: min(260px, 60%); display: block; }
+.header-row { padding-block: 10px; }
+@media (max-width: 980px) { .wordmark .logo { height: 52px; } .header-row { padding-block: 10px; } }
 .nav { display: flex; gap: 22px; }
 .nav a { color: var(--mute); text-decoration: none; font-size: 15px; }
 .nav a:hover { color: var(--cream); }
