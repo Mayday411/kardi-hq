@@ -24,15 +24,34 @@ vercel deploy --prod
 
 The unique per-deployment URLs are behind Vercel's team login; share the production alias above. `vercel.json` turns on clean URLs and sets cache headers; `.vercelignore` keeps the README and editor config out of the upload.
 
+## Content from Compass
+
+The lists in `data/*.json` (moments, releases, shows, store products, awards, speaking and DJ dates, the ticker, the party) are edited in Compass, Unchartered Creative's editor, on the "Kardinal Offishall" site. Publishing there calls this project's Vercel deploy hook; the build runs `tools/pull-content.mjs`, which fetches
+
+```
+$COMPASS_CONTENT_URL   → https://<compass>/api/public/sites/kardinal-offishall/content
+```
+
+and rewrites only the list parts of each data file. Everything hand-written in those files (notes, intros, formats, the goods cards, Now Playing) stays. Without the variable the script does nothing and the committed JSON ships as is, so a clone still builds offline. To preview what a pull would change:
+
+```bash
+COMPASS_CONTENT_URL=https://<compass>/api/public/sites/kardinal-offishall/content node tools/pull-content.mjs --dry-run
+```
+
+Drop the flag to write the files and commit them when you want the repo to match what is published. `vercel.json` sets the build command and serves the project root as the output, so the deploy is still plain static files. The partners collection in Compass is not wired yet: the In Good Company cards are still in `index.html`.
+
+Wiring it up once: in Vercel, project Settings → Environment Variables → `COMPASS_CONTENT_URL` (Production and Preview), then Settings → Git → Deploy Hooks → create one for `main` and paste its URL into Compass under the site's Settings → Website builds.
+
 ## What lives where
 
 | File | What it holds | Who edits it |
 | --- | --- | --- |
-| `data/links.json` | Header call to action, Latest sticker, streaming links, socials, booking email, speaking and Cameo links | Kardi or whoever runs his Linktree |
-| `data/moments.json` | The Wha Gwaan feed. One entry per thing that happened, newest first, tagged with a hat | Same |
-| `data/releases.json` | The 25 Years timeline and the Now Playing tracklist | Same |
-| `data/shows.json` | Dates. Future dates show as Tickets, past ones as Recap | Same, or swap in a Bandsintown feed |
+| `data/links.json` | Header call to action, Latest sticker, streaming links, socials, booking email, speaking and Cameo links; the ticker comes from Compass | Kardi or whoever runs his Linktree |
+| `data/moments.json` | The Wha Gwaan feed. One entry per thing that happened, newest first, tagged with a hat | Compass (Moments) |
+| `data/releases.json` | The 25 Years timeline (Compass: Releases) and the Now Playing tracklist | Compass / developer |
+| `data/shows.json` | Dates. Future dates show as Tickets, past ones as Recap | Compass (Shows) |
 | `index.html` | Page structure and the written copy for On The Screen, In The Building, Give Back | Developer |
+| `tools/pull-content.mjs` | Build-time pull of the Compass content into the data files | Developer |
 | `css/site.css` | The visual system | Developer |
 | `js/site.js` | Rendering, filters, embers, menu, the hero peel and sticker parallax | Developer |
 

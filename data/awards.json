@@ -2,24 +2,117 @@
   "_note": "The Wall. 'tally' are the big numbers up top. 'awards' render newest first; 'kind' can be doctorate (highlighted) and 'future' true draws a dashed placeholder for an announced-but-not-yet-public honour. Sources: York University YFile (June 2024), Canada's Walk of Fame via Billboard Canada (Dec 2023), CBC and Billboard Canada for the Legacy Awards (Sept 2024), Ron Fanfair for the UWI gala (April 2025), The Canadian Encyclopedia for the Juno, MMVA and SOCAN counts.",
   "intro": "Nobody hands these out for a hot year. They come from showing up for three decades, for the music and for the city. The wall keeps getting longer.",
   "tally": [
-    { "count": "3", "label": "Juno Awards" },
-    { "count": "4", "label": "MuchMusic Video Awards" },
-    { "count": "3", "label": "SOCAN Awards" },
-    { "count": "Dr.", "label": "Honorary doctorate, York University" }
+    {
+      "count": "3",
+      "label": "Juno Awards"
+    },
+    {
+      "count": "4",
+      "label": "MuchMusic Video Awards"
+    },
+    {
+      "count": "3",
+      "label": "SOCAN Awards"
+    },
+    {
+      "count": "Dr.",
+      "label": "Honorary doctorate, York University"
+    }
   ],
   "awards": [
-    { "year": "2027", "title": "The next one", "from": "To be announced", "body": "Another honour is confirmed for 2027. Details when they are public.", "future": true },
-    { "year": "2025", "title": "UWI Luminary Award", "from": "The University of the West Indies, 15th Toronto Benefit Gala", "body": "For his place as a cultural and musical ambassador.", "url": "https://www.ronfanfair.com/home/2025/4/1/9edfb4uws2redhdyfhpi5aazu96fd4", "link_label": "Ron Fanfair's report" },
-    { "year": "2024", "title": "Icon Award", "from": "The Black Academy, The Legacy Awards on CBC", "body": "Presented by Jully Black for a career that carried Canadian hip-hop to the world.", "url": "https://ca.billboard.com/music/awards/legacy-awards-partynextdoor-kardinal-offishall", "link_label": "Billboard Canada" },
-    { "year": "2024", "title": "Honorary doctorate", "from": "York University, Faculty of Liberal Arts & Professional Studies / School of the Arts, Media, Performance & Design", "body": "Conferred June 20, 2024, for contributions to media, music and social activism. Doctor of words.", "kind": "doctorate", "url": "https://www.yorku.ca/yfile/2024/05/31/york-u-to-confer-eight-honorary-degrees-during-spring-convocation/", "link_label": "York University" },
-    { "year": "2023", "title": "Allan Slaight Music Impact Honour", "from": "Canada's Walk of Fame, 25th anniversary celebration", "body": "For using his voice and his platform to move the music industry forward. December 2, 2023.", "url": "https://ca.billboard.com/fyi/kardi-named-year%E2%80%99s-walk-fame-allan-slaight-impact-honouree", "link_label": "Billboard Canada" },
-    { "year": "2017", "title": "Ambassador, Canada 150", "from": "Government of Canada", "body": "Official ambassador for the country's 150th anniversary." },
-    { "year": "2014", "title": "Juno Award, R&B/Soul Recording of the Year", "from": "CARAS", "body": "For his part in JRDN's \"Can't Choose\"." },
-    { "year": "2010", "title": "Olympic torchbearer", "from": "Vancouver 2010", "body": "Carried the flame on its way across the country." },
-    { "year": "2009", "title": "Juno Award, Single of the Year", "from": "CARAS", "body": "\"Dangerous\", featuring Akon. The first Canadian rap single in the Hot 100's top five." },
-    { "year": "2009", "title": "Juno Award, Rap Recording of the Year", "from": "CARAS", "body": "Not 4 Sale." },
-    { "year": "2006", "title": "Three MuchMusic Video Awards", "from": "MuchMusic", "body": "For \"Everyday (Rudebwoy)\", in one night." },
-    { "year": "1999", "title": "Juno Award, Best Rap Recording", "from": "CARAS", "body": "\"Northern Touch\", with Rascalz, Checkmate, Thrust and Choclair. The record that put Toronto rap on the national stage." }
+    {
+      "year": "2027",
+      "title": "The next one",
+      "from": "To be announced",
+      "body": "Another honour is confirmed for 2027. Details when they are public.",
+      "future": true
+    },
+    {
+      "year": "2025",
+      "title": "UWI Luminary Award",
+      "from": "The University of the West Indies, 15th Toronto Benefit Gala",
+      "body": "For his place as a cultural and musical ambassador.",
+      "future": false,
+      "url": "https://www.ronfanfair.com/home/2025/4/1/9edfb4uws2redhdyfhpi5aazu96fd4",
+      "link_label": "Ron Fanfair's report"
+    },
+    {
+      "year": "2024",
+      "title": "Icon Award",
+      "from": "The Black Academy, The Legacy Awards on CBC",
+      "body": "Presented by Jully Black for a career that carried Canadian hip-hop to the world.",
+      "future": false,
+      "url": "https://ca.billboard.com/music/awards/legacy-awards-partynextdoor-kardinal-offishall",
+      "link_label": "Billboard Canada"
+    },
+    {
+      "year": "2024",
+      "title": "Honorary doctorate",
+      "from": "York University, Faculty of Liberal Arts & Professional Studies / School of the Arts, Media, Performance & Design",
+      "body": "Conferred June 20, 2024, for contributions to media, music and social activism. Doctor of words.",
+      "kind": "doctorate",
+      "future": false,
+      "url": "https://www.yorku.ca/yfile/2024/05/31/york-u-to-confer-eight-honorary-degrees-during-spring-convocation/",
+      "link_label": "York University"
+    },
+    {
+      "year": "2023",
+      "title": "Allan Slaight Music Impact Honour",
+      "from": "Canada's Walk of Fame, 25th anniversary celebration",
+      "body": "For using his voice and his platform to move the music industry forward. December 2, 2023.",
+      "future": false,
+      "url": "https://ca.billboard.com/fyi/kardi-named-year%E2%80%99s-walk-fame-allan-slaight-impact-honouree",
+      "link_label": "Billboard Canada"
+    },
+    {
+      "year": "2017",
+      "title": "Ambassador, Canada 150",
+      "from": "Government of Canada",
+      "body": "Official ambassador for the country's 150th anniversary.",
+      "future": false
+    },
+    {
+      "year": "2014",
+      "title": "Juno Award, R&B/Soul Recording of the Year",
+      "from": "CARAS",
+      "body": "For his part in JRDN's \"Can't Choose\".",
+      "future": false
+    },
+    {
+      "year": "2010",
+      "title": "Olympic torchbearer",
+      "from": "Vancouver 2010",
+      "body": "Carried the flame on its way across the country.",
+      "future": false
+    },
+    {
+      "year": "2009",
+      "title": "Juno Award, Single of the Year",
+      "from": "CARAS",
+      "body": "\"Dangerous\", featuring Akon. The first Canadian rap single in the Hot 100's top five.",
+      "future": false
+    },
+    {
+      "year": "2009",
+      "title": "Juno Award, Rap Recording of the Year",
+      "from": "CARAS",
+      "body": "Not 4 Sale.",
+      "future": false
+    },
+    {
+      "year": "2006",
+      "title": "Three MuchMusic Video Awards",
+      "from": "MuchMusic",
+      "body": "For \"Everyday (Rudebwoy)\", in one night.",
+      "future": false
+    },
+    {
+      "year": "1999",
+      "title": "Juno Award, Best Rap Recording",
+      "from": "CARAS",
+      "body": "\"Northern Touch\", with Rascalz, Checkmate, Thrust and Choclair. The record that put Toronto rap on the national stage.",
+      "future": false
+    }
   ],
   "fine": "Listed from the public record. Kardi's team is adding the rest."
 }

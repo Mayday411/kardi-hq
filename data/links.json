@@ -77,57 +77,68 @@
     {
       "label": "Partner",
       "name": "Monster Energy",
-      "url": "#partners"
+      "url": "#partners",
+      "open": false
     },
     {
       "label": "Honours",
       "name": "Dr. Kardinal Offishall",
-      "url": "#awards"
+      "url": "#awards",
+      "open": false
     },
     {
       "label": "YouTube",
       "name": "300K+ subscribers",
-      "url": "https://www.youtube.com/kardinaloffishall416"
+      "url": "https://www.youtube.com/kardinaloffishall416",
+      "open": false
     },
     {
       "label": "Podcast",
       "name": "2 Bad Man, coming",
-      "url": "#on-the-screen"
+      "url": "#on-the-screen",
+      "open": false
     },
     {
       "label": "DJ",
       "name": "Sets and bookings",
-      "url": "#on-the-decks"
+      "url": "#on-the-decks",
+      "open": false
     },
     {
       "label": "Clothing",
       "name": "4ever16",
-      "url": "#goods"
+      "url": "#goods",
+      "open": false
     },
     {
       "label": "Eyewear",
       "name": "His frames",
-      "url": "#goods"
+      "url": "#goods",
+      "open": false
     },
     {
       "label": "Global A&R",
       "name": "Def Jam",
-      "url": "#in-the-building"
+      "url": "#in-the-building",
+      "open": false
     },
     {
       "label": "Judge",
       "name": "Canada's Got Talent",
-      "url": "#on-the-screen"
+      "url": "#on-the-screen",
+      "open": false
     },
     {
       "label": "Keynotes",
       "name": "Speakers Canada",
-      "url": "#speaking"
+      "url": "#speaking",
+      "open": false
     },
     {
       "label": "Label",
       "name": "Black Stone Colleagues",
-      "url": "#on-the-mic"
+      "url": "#on-the-mic",
+      "open": false
     },
     {
       "label": "Next",
