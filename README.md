@@ -88,6 +88,10 @@ Kardi's official script logo lives at `assets/logo-white.png` (used in the foote
 
 On The Screen ends with the YouTube card (KardinalOffishall416, 300K+ subscribers) showing the three latest uploads, and the 2 Bad Man podcast card marked as in the works until there is an episode. `data/youtube.json` holds the channel id, subscriber line and recent uploads; refresh it with `python3 tools/youtube-latest.py` (no API key, it reads the channel's public feed). The podcast copy and status live in `data/links.json` under `podcast`. Release moments in the feed carry a `cover`, so their cards show the artwork (singles in `assets/covers/singles/`).
 
+## KARDI Christmas Party
+
+Give Back is now the party section, driven by `data/party.json`. `this_year` holds the edition, date, venue, beneficiary (with its official page) and a `donate_url` that must point at the charity's own donation page; anything null shows as "to be announced" and the button becomes "Tell me when it's announced". The site never collects money itself. `ways` are the three ways to give, `bring` is the door list, and `past` is the public record of beneficiaries (SickKids' Caribbean Paediatric Cancer and Blood Program in 2012, Free the Children in 2013 and 2014). By that count the first party was 1999, so the copy says "since 1999".
+
 ## The Store
 
 `data/store.json` drives The Store: products for 4ever16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with illustrated art (`art`: tee, hoodie, cap, frames, coloured by `color` and `accent`) and a Notify me button that goes to the list. Add `image` with a photo path to replace the illustration, set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. The six items there now are sample shapes, not confirmed products.

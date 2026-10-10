@@ -1,0 +1,26 @@
+{
+  "_note": "The KARDI Christmas Party. Fill 'this_year' as details are confirmed; anything null shows as 'to be announced'. donate_url must be the beneficiary charity's own official donation page. The site never takes money itself.",
+  "since": 1999,
+  "this_year": {
+    "edition": 28,
+    "year": 2026,
+    "date": null,
+    "venue": null,
+    "city": "Toronto",
+    "beneficiary": null,
+    "beneficiary_url": null,
+    "donate_url": null,
+    "tickets_url": null,
+    "bring": ["A new, unwrapped toy", "Non-perishable food", "Warm clothing in good condition"]
+  },
+  "ways": [
+    { "title": "Give at the door", "body": "Bring something for someone who needs it. The list of what to bring is below and is updated once the beneficiary confirms what they need most." },
+    { "title": "Give online", "body": "Donate directly to this year's charity through their own secure page. Every dollar goes to them, not through this site." },
+    { "title": "Sponsor the night", "body": "Brands and companies underwrite the venue, the toys and the production so the money raised goes further. Packages come with the Partners lane and the booking team." }
+  ],
+  "past": [
+    { "year": 2014, "edition": 16, "beneficiary": "Free the Children", "note": "At Cube, December 18." },
+    { "year": 2013, "edition": 15, "beneficiary": "Free the Children", "note": "\"Free the City\", co-hosted with Nelly Furtado at Muzik. Proceeds sent inner-city youth to volunteer with Me to We." },
+    { "year": 2012, "edition": 14, "beneficiary": "SickKids, Caribbean Paediatric Cancer and Blood Program", "note": "Raised more than $35,000." }
+  ]
+}

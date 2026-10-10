@@ -27,7 +27,8 @@
     return d.toLocaleDateString("en-CA", { day: "2-digit", month: "short", year: "numeric" }).replace(/\./g, "");
   };
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const ext = (url) => url ? `href="${esc(url)}" target="_blank" rel="noopener"` : "";
+  // In-page anchors stay in the tab; everything else opens in a new one.
+  const ext = (url) => !url ? "" : url.startsWith("#") ? `href="${esc(url)}"` : `href="${esc(url)}" target="_blank" rel="noopener"`;
 
   async function load(name) {
     const res = await fetch(`data/${name}.json`, { cache: "no-cache" });
@@ -225,6 +226,34 @@
         </div>
       </article>`).join("");
   }
+
+  /* ---------- the christmas party ---------- */
+  function party(data) {
+    if (!data || !$("#party-ways")) return;
+    const t = data.this_year || {};
+    const tba = (v, fallback) => v ? esc(v) : fallback;
+    $("#party-edition").textContent = `${t.edition ? ordinal(t.edition) + " edition · " : ""}${t.year || ""}`;
+    $("#party-date").textContent = t.date || "To be announced";
+    $("#party-venue").innerHTML = t.venue ? `${esc(t.venue)}, ${esc(t.city || "Toronto")}` : `${esc(t.city || "Toronto")}, venue to be announced`;
+    $("#party-beneficiary").innerHTML = t.beneficiary
+      ? (t.beneficiary_url ? `<a ${ext(t.beneficiary_url)}>${esc(t.beneficiary)}</a>` : esc(t.beneficiary))
+      : "Beneficiary to be announced";
+    const ctas = [];
+    if (t.donate_url) ctas.push(`<a class="btn flame" ${ext(t.donate_url)}>Donate to ${esc(t.beneficiary || "this year's charity")}</a>`);
+    if (t.tickets_url) ctas.push(`<a class="btn primary" ${ext(t.tickets_url)}>Tickets</a>`);
+    if (!ctas.length) ctas.push(`<a class="btn primary" href="#join">Tell me when it's announced</a>`);
+    ctas.push(`<a class="btn" href="#partners">Sponsor the party</a>`);
+    $("#party-cta").innerHTML = ctas.join("");
+
+    $("#party-ways").innerHTML = (data.ways || []).map((w) => `<li><div><b>${esc(w.title)}</b><span>${esc(w.body)}</span></div></li>`).join("");
+    const bring = t.bring || [];
+    $("#party-bring").innerHTML = bring.length
+      ? `<p class="bring-head">What to bring</p><ul class="bring-list">${bring.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>`
+      : "";
+    $("#party-past").innerHTML = (data.past || []).map((p) => `
+      <li><span class="py">${esc(String(p.year))}</span><span class="pe">${ordinal(p.edition)}</span><span class="pb"><b>${esc(p.beneficiary)}</b>${p.note ? `<span class="pn">${esc(p.note)}</span>` : ""}</span></li>`).join("");
+  }
+  const ordinal = (n) => { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
 
   /* ---------- the store ---------- */
   function store(data) {
@@ -645,8 +674,8 @@
   join();
   $("#year").textContent = new Date().getFullYear();
 
-  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null)])
-    .then(([l, r, m, s, g, y, st]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); reveal(); })
+  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null)])
+    .then(([l, r, m, s, g, y, st, pa]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); reveal(); })
     .catch((err) => {
       console.error(err);
       $("#feed").innerHTML = `<p class="empty">The feed could not load. If you opened this file directly, serve it over http (see README).</p>`;
