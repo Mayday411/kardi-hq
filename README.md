@@ -88,6 +88,10 @@ Kardi's official script logo lives at `assets/logo-white.png` (used in the foote
 
 On The Screen ends with the YouTube card (KardinalOffishall416, 300K+ subscribers) showing the three latest uploads, and the 2 Bad Man podcast card marked as in the works until there is an episode. `data/youtube.json` holds the channel id, subscriber line and recent uploads; refresh it with `python3 tools/youtube-latest.py` (no API key, it reads the channel's public feed). The podcast copy and status live in `data/links.json` under `podcast`. Release moments in the feed carry a `cover`, so their cards show the artwork (singles in `assets/covers/singles/`).
 
+## The Store
+
+`data/store.json` drives The Store: products for 4ever16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with illustrated art (`art`: tee, hoodie, cap, frames, coloured by `color` and `accent`) and a Notify me button that goes to the list. Add `image` with a photo path to replace the illustration, set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. The six items there now are sample shapes, not confirmed products.
+
 ## In His Own Name and The Reel
 
 `data/goods.json` holds Kardi's own brands: 4ever16 (clothing, a play on the 416) and his eyewear collection. Each card links out when `url` is set and says "link coming" until then. Two stickers on the hero pile point at them, including one on the frames he is wearing in the portrait. The sizzle reel for promoters, agencies and brands lives in The Reel: `assets/sizzle-2026.mp4` (1080p H.264, 66 s, with audio, transcoded from the HEVC master) with a poster frame, a play button that hands off to native controls, a download link and the booking shortlist. The reel entry in `data/links.json` sets the file and length.

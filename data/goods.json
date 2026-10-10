@@ -7,7 +7,7 @@
       "kind": "Clothing",
       "tagline": "A play on the 416. Toronto, for life.",
       "body": "Kardi's clothing line, built on the area code he has repped on every record since 1997. Streetwear with the city sewn in.",
-      "url": null,
+      "url": "#store",
       "cta": "Shop 4ever16",
       "accent": "#FF5A1F"
     },
@@ -17,8 +17,8 @@
       "kind": "Eyewear",
       "tagline": "The glasses in the photo up top? His.",
       "body": "Kardi's eyewear collection. Bold, square, built to be seen in. The pair he is wearing on this page is from it.",
-      "url": null,
-      "cta": "See the collection",
+      "url": "#store",
+      "cta": "See the frames",
       "accent": "#C8E230"
     }
   ]

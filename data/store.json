@@ -1,0 +1,13 @@
+{
+  "_note": "Products shown in The Store. 'brand' is 4ever16 or eyewear. Until a product has a 'url' and 'price' it shows as a preview with a Notify me button. 'art' picks the illustration (tee, hoodie, cap, frames) with 'color' and 'accent'; add 'image' with a photo path to use a real photo instead. Set 'open' to true once checkout is live.",
+  "open": false,
+  "notice": "Opening soon. These are the shapes of what's coming. Names, prices and photos land with the launch, and the list hears first.",
+  "products": [
+    { "id": "tee-416", "brand": "4ever16", "name": "Area Code Tee", "detail": "Heavyweight cotton, flame print", "art": "tee", "color": "#151110", "accent": "#FF5A1F", "price": null, "url": null },
+    { "id": "hoodie-416", "brand": "4ever16", "name": "Forever Hoodie", "detail": "Fleece, embroidered chest", "art": "hoodie", "color": "#F6EEE2", "accent": "#151110", "price": null, "url": null },
+    { "id": "cap-416", "brand": "4ever16", "name": "T-Dot Snapback", "detail": "Wool blend, flat brim", "art": "cap", "color": "#1E1715", "accent": "#F2B33D", "price": null, "url": null },
+    { "id": "frames-hero", "brand": "eyewear", "name": "The Hero", "detail": "Bold square, the pair on this page", "art": "frames", "color": "#1a1a1a", "accent": "#C8E230", "price": null, "url": null },
+    { "id": "frames-blackout", "brand": "eyewear", "name": "Blackout", "detail": "Square, matte black on black", "art": "frames", "color": "#111111", "accent": "#2a2a2a", "price": null, "url": null },
+    { "id": "frames-ember", "brand": "eyewear", "name": "Ember", "detail": "Square, tortoise with amber lens", "art": "frames", "color": "#5A2E14", "accent": "#F2B33D", "price": null, "url": null }
+  ]
+}
