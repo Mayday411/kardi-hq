@@ -266,6 +266,37 @@
     }));
   }
 
+  /* ---------- at the podium: speaking ---------- */
+  function speaking(data) {
+    if (!data || !$("#sp-talks")) return;
+    $("#sp-intro").textContent = data.intro || "";
+    $("#sp-talks").innerHTML = (data.talks || []).map((t, i) => `
+      <article class="talk">
+        <span class="talk-n">${String(i + 1).padStart(2, "0")}</span>
+        <h3>${esc(t.title)}</h3>
+        <p>${esc(t.body)}</p>
+      </article>`).join("");
+    const chips = (id, arr) => { $(id).innerHTML = (arr || []).map((x) => `<li>${esc(x)}</li>`).join(""); };
+    chips("#sp-formats", data.formats); chips("#sp-audiences", data.audiences); chips("#sp-themes", data.themes);
+    $("#sp-stages").innerHTML = (data.stages || []).map((s) => `
+      <li>${s.url ? `<a ${ext(s.url)}><b>${esc(s.title)}</b></a>` : `<b>${esc(s.title)}</b>`}<span>${esc(s.detail || "")}</span></li>`).join("");
+    if (data.bureau && data.bureau.url) { const b = $("#sp-bureau"); b.href = data.bureau.url; b.textContent = `Book through ${data.bureau.name}`; }
+
+    const today = new Date().toISOString().slice(0, 10);
+    const dates = (data.dates || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+    const up = dates.filter((d) => d.date >= today).reverse(), past = dates.filter((d) => d.date < today);
+    const row = (d, label) => `
+      <div class="show">
+        <time class="d" datetime="${esc(d.date)}">${esc(fmtDate(d.date, d.display))}</time>
+        <div><div class="t">${esc(d.title)}</div><div class="v">${esc(d.venue || "")}${d.format ? ` · ${esc(d.format)}` : ""}</div></div>
+        ${d.url ? `<a class="btn" ${ext(d.url)}>${label}</a>` : `<span class="state">${label}</span>`}
+      </div>`;
+    $("#sp-dates-up").innerHTML = up.length ? up.map((d) => row(d, "Details")).join("")
+      : `<p class="empty">Upcoming talks land here. Programming a conference? The bureau link above is the fastest route.</p>`;
+    $("#sp-dates-past").innerHTML = past.map((d) => row(d, "Recap")).join("");
+    $("#sp-dates-past-wrap").hidden = !past.length;
+  }
+
   /* ---------- the christmas party ---------- */
   function party(data) {
     if (!data || !$("#party-ways")) return;
@@ -686,7 +717,7 @@
     const stops = [
       ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "25 Years"], ["#goods", "In His Own Name"],
       ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
-      ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#give-back", "Give Back"], ["#join", "Join"]
+      ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#speaking", "At The Podium"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 
     const nav = document.createElement("nav");
@@ -738,8 +769,8 @@
   join();
   $("#year").textContent = new Date().getFullYear();
 
-  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null), load("dj").catch(() => null)])
-    .then(([l, r, m, s, g, y, st, pa, dj]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); decks(dj, l); reveal(); })
+  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null), load("dj").catch(() => null), load("speaking").catch(() => null)])
+    .then(([l, r, m, s, g, y, st, pa, dj, sp]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); decks(dj, l); speaking(sp); reveal(); })
     .catch((err) => {
       console.error(err);
       $("#feed").innerHTML = `<p class="empty">The feed could not load. If you opened this file directly, serve it over http (see README).</p>`;

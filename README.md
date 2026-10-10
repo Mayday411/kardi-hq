@@ -92,6 +92,10 @@ On The Screen ends with the YouTube card (KardinalOffishall416, 300K+ subscriber
 
 DJ sets and bookings, from `data/dj.json`: the intro line, `formats` (DJ set, Kardi Live, Host + DJ, private and corporate), `plays` chips, `brief` (what a booking email should include), `sets` (dated DJ gigs, future under Next up with Tickets or Confirmed, past under Recent), `mixes` (links to recorded sets; empty shows a coming note) and `dj_pack` (the SOAK pack from Kardi's Linktree, for DJs who play his records). The booking button is a mailto to the HOF Artists address with a prefilled subject; there is no form.
 
+## At The Podium
+
+Speaking, from `data/speaking.json`: the five talks (titles from his Speakers Canada profile, blurbs written for the site), `formats`, `audiences` and `themes` chips, `stages` (the Red Bull Music Academy lecture, Olympic torch, Canada 150), `dates` for upcoming and past engagements, and the `bureau` link that the booking button uses. Not in the top menu (nine items is the limit); reachable from the footer, the match spine, the ticker and In The Building.
+
 ## KARDI Christmas Party
 
 Give Back is now the party section, driven by `data/party.json`. `this_year` holds the edition, date, venue, beneficiary (with its official page) and a `donate_url` that must point at the charity's own donation page; anything null shows as "to be announced" and the button becomes "Tell me when it's announced". The site never collects money itself. `lineup` (headliner, confirmed `acts` with optional roles, `past_guests`) fills the poster card and `tickets` (`on_sale`, `url`, `tiers` with prices, `doors`, `age`, `note`) fills the tickets card; until tickets are on sale the button asks to be told when they drop. `ways` are the three ways to give, `bring` is the door list, and `past` is the public record of beneficiaries (SickKids' Caribbean Paediatric Cancer and Blood Program in 2012, Free the Children in 2013 and 2014). By that count the first party was 1999, so the copy says "since 1999".

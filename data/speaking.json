@@ -1,0 +1,21 @@
+{
+  "_note": "At The Podium. Talks and topics are from Kardi's Speakers Canada profile; edit freely. 'dates' are speaking engagements (future under Upcoming, past under Recent). 'stages' are notable past stages with links where public.",
+  "intro": "Twenty-five years of making records, signing artists and building culture, told from the inside. He speaks the way he raps: direct, funny, and about something.",
+  "talks": [
+    { "title": "The Art of Staying Original", "body": "How to keep a voice of your own through trends, labels and algorithms. From Eye & I to Vol. 2." },
+    { "title": "Building Culture Through Collaboration", "body": "Akon, Idris Elba, T-Pain, a city of kids with demos. What real collaboration costs and returns." },
+    { "title": "Representation, Power and Purpose", "body": "Being the first Canadian rapper in the Hot 100's top five, and what you do with the door once it opens." },
+    { "title": "Developing the Next Generation of Creators", "body": "Lessons from the A&R desk at Universal and Def Jam on finding, backing and not breaking young talent." },
+    { "title": "Reinvention and Longevity in the Creative Era", "body": "Rapper, producer, executive, judge, host. Staying useful for three decades without becoming a cover band of yourself." }
+  ],
+  "formats": ["Keynote", "Fireside chat", "Panel", "Workshop", "Campus talk", "Host or MC"],
+  "audiences": ["Corporate and leadership", "Conferences and summits", "Music and media industry", "Universities and colleges", "Youth and community programs"],
+  "themes": ["Business growth", "Brand strategy and storytelling", "Innovation and creativity", "Alliances and partnerships", "Entrepreneurship", "Adaptability", "Influence and negotiation", "Peak performance"],
+  "stages": [
+    { "title": "Red Bull Music Academy lecture", "detail": "A long-form conversation on the making of a Canadian hip-hop career.", "url": "https://www.redbullmusicacademy.com/lectures/kardinal-offishall-lecture/" },
+    { "title": "Olympic torchbearer", "detail": "Carried the flame for Vancouver 2010.", "url": null },
+    { "title": "Ambassador, Canada 150", "detail": "Official ambassador for the country's 150th.", "url": null }
+  ],
+  "dates": [],
+  "bureau": { "name": "Speakers Canada", "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/" }
+}
