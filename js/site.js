@@ -250,6 +250,31 @@
     $("#party-bring").innerHTML = bring.length
       ? `<p class="bring-head">What to bring</p><ul class="bring-list">${bring.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>`
       : "";
+    // Lineup
+    const lu = data.lineup || {};
+    if ($("#lineup-acts")) {
+      $("#lineup-headliner").textContent = lu.headliner || "Kardinal Offishall";
+      const acts = lu.acts || [];
+      $("#lineup-acts").innerHTML = acts.map((a) => `<li><b>${esc(a.name)}</b>${a.role ? `<span>${esc(a.role)}</span>` : ""}</li>`).join("");
+      $("#lineup-more").textContent = acts.length ? "Plus more to be announced" : "Full lineup announced closer to the night";
+      const past = lu.past_guests || [];
+      $("#lineup-past").textContent = past.length ? `Past guests include ${past.join(", ")}.` : "";
+    }
+    // Tickets
+    const tk = data.tickets || {};
+    if ($("#tickets-tiers")) {
+      const live = !!(tk.on_sale && tk.url);
+      const st = $("#tickets-state"); st.textContent = live ? "On sale now" : "Not on sale yet"; st.classList.toggle("live", live);
+      $("#tickets-tiers").innerHTML = (tk.tiers || []).map((t) => `
+        <li><div><b>${esc(t.name)}</b>${t.note ? `<span>${esc(t.note)}</span>` : ""}</div><span class="tier-price${t.price ? "" : " tbd"}">${t.price ? esc(t.price) : "Price to come"}</span></li>`).join("");
+      $("#tickets-doors").textContent = tk.doors || "To be announced";
+      $("#tickets-age").textContent = tk.age || "To be announced";
+      $("#tickets-cta").innerHTML = live
+        ? `<a class="btn flame" ${ext(tk.url)}>Get tickets</a>`
+        : `<a class="btn primary" href="#join">Tell me when tickets drop</a>`;
+      $("#tickets-note").textContent = tk.note || "";
+    }
+
     $("#party-past").innerHTML = (data.past || []).map((p) => `
       <li><span class="py">${esc(String(p.year))}</span><span class="pe">${ordinal(p.edition)}</span><span class="pb"><b>${esc(p.beneficiary)}</b>${p.note ? `<span class="pn">${esc(p.note)}</span>` : ""}</span></li>`).join("");
   }

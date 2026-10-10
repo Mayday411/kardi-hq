@@ -90,7 +90,7 @@ On The Screen ends with the YouTube card (KardinalOffishall416, 300K+ subscriber
 
 ## KARDI Christmas Party
 
-Give Back is now the party section, driven by `data/party.json`. `this_year` holds the edition, date, venue, beneficiary (with its official page) and a `donate_url` that must point at the charity's own donation page; anything null shows as "to be announced" and the button becomes "Tell me when it's announced". The site never collects money itself. `ways` are the three ways to give, `bring` is the door list, and `past` is the public record of beneficiaries (SickKids' Caribbean Paediatric Cancer and Blood Program in 2012, Free the Children in 2013 and 2014). By that count the first party was 1999, so the copy says "since 1999".
+Give Back is now the party section, driven by `data/party.json`. `this_year` holds the edition, date, venue, beneficiary (with its official page) and a `donate_url` that must point at the charity's own donation page; anything null shows as "to be announced" and the button becomes "Tell me when it's announced". The site never collects money itself. `lineup` (headliner, confirmed `acts` with optional roles, `past_guests`) fills the poster card and `tickets` (`on_sale`, `url`, `tiers` with prices, `doors`, `age`, `note`) fills the tickets card; until tickets are on sale the button asks to be told when they drop. `ways` are the three ways to give, `bring` is the door list, and `past` is the public record of beneficiaries (SickKids' Caribbean Paediatric Cancer and Blood Program in 2012, Free the Children in 2013 and 2014). By that count the first party was 1999, so the copy says "since 1999".
 
 ## The Store
 
