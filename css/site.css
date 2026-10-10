@@ -247,6 +247,33 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 820px) { .talks { grid-template-columns: 1fr 1fr; } .sp-grid { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .talks { grid-template-columns: 1fr; } }
 
+/* ---------- the wall: awards ---------- */
+.tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 22px; }
+.tally .tile { min-height: 0; padding: 18px 20px; gap: 4px; display: grid; align-content: start; }
+.tally b { font-family: var(--display); font-weight: 800; font-size: clamp(34px, 4vw, 52px); letter-spacing: -0.03em; line-height: 1; color: var(--ember); }
+.tally span { color: var(--mute); font-size: 14px; }
+.wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.plaque { position: relative; display: grid; gap: 8px; align-content: start; padding: 26px 22px 22px; border-radius: 6px;
+  background: linear-gradient(160deg, #2A201C, #1B1513 60%); border: 1px solid var(--line); box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 16px 30px rgba(0,0,0,0.4); }
+.plaque::before { content: ""; position: absolute; left: 14px; right: 14px; top: 10px; height: 2px; background: linear-gradient(90deg, transparent, var(--ember), transparent); opacity: 0.7; }
+.plaque::after { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; top: 14px; right: 14px; background: radial-gradient(circle at 35% 35%, #FFE7A8, #B9801E 70%); box-shadow: 0 1px 2px rgba(0,0,0,0.6); }
+.plaque-year { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; color: var(--ember); }
+.plaque h3 { font-size: clamp(19px, 1.8vw, 23px); letter-spacing: -0.015em; line-height: 1.1; }
+.plaque-from { color: var(--cream); font-size: 14px; }
+.plaque-body { color: var(--mute); font-size: 14px; }
+.plaque-link { justify-self: start; margin-top: 4px; font-size: 13px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+.plaque-doctorate { background: linear-gradient(160deg, #3B1A0E, #1B1513 65%); border-color: rgba(255,90,31,0.35); }
+.plaque-doctorate .plaque-year { color: var(--flame); }
+.plaque-future { background: transparent; border-style: dashed; border-color: var(--mute-2); box-shadow: none; }
+.plaque-future::before, .plaque-future::after { display: none; }
+.plaque-future .plaque-year { color: var(--mute-2); }
+@media (prefers-reduced-motion: no-preference) {
+  .plaque { transition: transform 0.3s cubic-bezier(.2,.8,.2,1), box-shadow 0.3s; }
+  .plaque:hover { transform: translateY(-4px); box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 26px 40px rgba(0,0,0,0.5); }
+}
+@media (max-width: 900px) { .wall { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .wall { grid-template-columns: 1fr; } }
+
 /* ---------- the christmas party ---------- */
 .party-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 18px; }
 .party-card { position: relative; border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); padding: clamp(22px, 3vw, 34px); display: grid; gap: 18px; align-content: start; }

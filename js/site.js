@@ -297,6 +297,23 @@
     $("#sp-dates-past-wrap").hidden = !past.length;
   }
 
+  /* ---------- the wall: awards ---------- */
+  function awards(data) {
+    if (!data || !$("#aw-wall")) return;
+    $("#aw-intro").textContent = data.intro || "";
+    $("#aw-tally").innerHTML = (data.tally || []).map((t) => `<div class="tile"><b>${esc(t.count)}</b><span>${esc(t.label)}</span></div>`).join("");
+    const items = (data.awards || []).slice().sort((a, b) => (String(b.year) > String(a.year) ? 1 : -1));
+    $("#aw-wall").innerHTML = items.map((a) => `
+      <article class="plaque ${a.kind ? `plaque-${esc(a.kind)}` : ""}${a.future ? " plaque-future" : ""}">
+        <span class="plaque-year">${esc(String(a.year))}</span>
+        <h3>${esc(a.title)}</h3>
+        <p class="plaque-from">${esc(a.from || "")}</p>
+        ${a.body ? `<p class="plaque-body">${esc(a.body)}</p>` : ""}
+        ${a.url ? `<a class="plaque-link" ${ext(a.url)}>${esc(a.link_label || "Read more")}</a>` : ""}
+      </article>`).join("");
+    $("#aw-fine").textContent = data.fine || "";
+  }
+
   /* ---------- the christmas party ---------- */
   function party(data) {
     if (!data || !$("#party-ways")) return;
@@ -717,7 +734,7 @@
     const stops = [
       ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "25 Years"], ["#goods", "In His Own Name"],
       ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
-      ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#speaking", "At The Podium"], ["#give-back", "Give Back"], ["#join", "Join"]
+      ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#speaking", "At The Podium"], ["#awards", "The Wall"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 
     const nav = document.createElement("nav");
@@ -769,8 +786,8 @@
   join();
   $("#year").textContent = new Date().getFullYear();
 
-  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null), load("dj").catch(() => null), load("speaking").catch(() => null)])
-    .then(([l, r, m, s, g, y, st, pa, dj, sp]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); decks(dj, l); speaking(sp); reveal(); })
+  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null), load("dj").catch(() => null), load("speaking").catch(() => null), load("awards").catch(() => null)])
+    .then(([l, r, m, s, g, y, st, pa, dj, sp, aw]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); decks(dj, l); speaking(sp); awards(aw); reveal(); })
     .catch((err) => {
       console.error(err);
       $("#feed").innerHTML = `<p class="empty">The feed could not load. If you opened this file directly, serve it over http (see README).</p>`;
