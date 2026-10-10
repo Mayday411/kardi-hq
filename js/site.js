@@ -227,6 +227,45 @@
       </article>`).join("");
   }
 
+  /* ---------- on the decks ---------- */
+  function decks(data, links) {
+    if (!data || !$("#dj-formats")) return;
+    $("#dj-intro").textContent = data.intro || "";
+    $("#dj-formats").innerHTML = (data.formats || []).map((f) => `<li><b>${esc(f.name)}</b><span>${esc(f.detail)}</span></li>`).join("");
+    $("#dj-plays").innerHTML = (data.plays || []).map((p) => `<li>${esc(p)}</li>`).join("");
+    $("#dj-brief").innerHTML = (data.brief || []).map((b) => `<li>${esc(b)}</li>`).join("");
+
+    const today = new Date().toISOString().slice(0, 10);
+    const sets = (data.sets || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+    const up = sets.filter((s) => s.date >= today).reverse(), past = sets.filter((s) => s.date < today);
+    const row = (s, label) => `
+      <div class="show">
+        <time class="d" datetime="${esc(s.date)}">${esc(fmtDate(s.date, s.display))}</time>
+        <div><div class="t">${esc(s.title)}</div><div class="v">${esc(s.venue || "")}${s.format ? ` · ${esc(s.format)}` : ""}</div></div>
+        ${s.url ? `<a class="btn ${label === "Tickets" ? "primary" : ""}" ${ext(s.url)}>${label}</a>` : `<span class="state">${label}</span>`}
+      </div>`;
+    $("#dj-sets-up").innerHTML = up.length ? up.map((s) => row(s, s.url ? "Tickets" : "Confirmed")).join("")
+      : `<p class="empty">Next set dates land here. Want him on your bill? The booking brief is on the left.</p>`;
+    $("#dj-sets-past").innerHTML = past.map((s) => row(s, "Played")).join("");
+    $("#dj-sets-past-wrap").hidden = !past.length;
+
+    const mixes = data.mixes || [];
+    $("#dj-mixes").innerHTML = mixes.length
+      ? `<ul class="mixes">${mixes.map((m) => `<li><a ${ext(m.url)}><b>${esc(m.title)}</b>${m.where ? `<span>${esc(m.where)}</span>` : ""}</a></li>`).join("")}</ul>`
+      : `<p class="empty">Recorded sets are coming. Until then, the reel is the best 66 seconds of what a Kardi night sounds like.</p>`;
+    const pk = data.dj_pack;
+    $("#dj-pack").innerHTML = pk ? `<p class="eyebrow" style="margin-top:18px">For DJs</p><a class="pack" ${ext(pk.url)}><b>${esc(pk.name)}</b><span>${esc(pk.detail)}</span><span class="pack-go">Download →</span></a>` : "";
+
+    // Second copy button for the booking email
+    const email = links && links.business ? links.business.booking_email : "teamkardi@hof-artists.com";
+    $$(".js-booking-email").forEach((c) => { c.textContent = email; });
+    const mail = $("#dj-mail"); if (mail) mail.href = `mailto:${email}?subject=${encodeURIComponent("DJ booking inquiry for Kardinal Offishall")}`;
+    $$(".js-copy-email").forEach((btn) => btn.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(email); btn.textContent = "Copied"; } catch (e) { btn.textContent = "Select and copy"; }
+      setTimeout(() => { btn.textContent = "Copy"; }, 1800);
+    }));
+  }
+
   /* ---------- the christmas party ---------- */
   function party(data) {
     if (!data || !$("#party-ways")) return;
@@ -647,7 +686,7 @@
     const stops = [
       ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "25 Years"], ["#goods", "In His Own Name"],
       ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
-      ["#on-the-road", "On The Road"], ["#give-back", "Give Back"], ["#join", "Join"]
+      ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 
     const nav = document.createElement("nav");
@@ -699,8 +738,8 @@
   join();
   $("#year").textContent = new Date().getFullYear();
 
-  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null)])
-    .then(([l, r, m, s, g, y, st, pa]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); reveal(); })
+  Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null), load("dj").catch(() => null)])
+    .then(([l, r, m, s, g, y, st, pa, dj]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); decks(dj, l); reveal(); })
     .catch((err) => {
       console.error(err);
       $("#feed").innerHTML = `<p class="empty">The feed could not load. If you opened this file directly, serve it over http (see README).</p>`;

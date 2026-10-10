@@ -10,18 +10,55 @@
     "url": "https://foundation-media.ffm.to/firestartervol2"
   },
   "streaming": [
-    { "name": "Spotify", "url": "https://open.spotify.com/album/0rszwh4GagQKMoWRr5e1kX" },
-    { "name": "Apple Music", "url": "https://music.apple.com/us/album/firestarter-vol-2-everyday-sometimes/6811965482" },
-    { "name": "All platforms", "url": "https://foundation-media.ffm.to/firestartervol2" }
+    {
+      "name": "Spotify",
+      "url": "https://open.spotify.com/album/0rszwh4GagQKMoWRr5e1kX"
+    },
+    {
+      "name": "Apple Music",
+      "url": "https://music.apple.com/us/album/firestarter-vol-2-everyday-sometimes/6811965482"
+    },
+    {
+      "name": "All platforms",
+      "url": "https://foundation-media.ffm.to/firestartervol2"
+    }
   ],
   "social": [
-    { "name": "Instagram", "handle": "@kardinalo", "url": "https://instagram.com/kardinalo" },
-    { "name": "TikTok", "handle": "@mrkardinal", "url": "https://www.tiktok.com/@mrkardinal" },
-    { "name": "X", "handle": "@KardinalO", "url": "https://x.com/kardinalo" },
-    { "name": "YouTube", "handle": "KardinalOffishall416", "url": "https://www.youtube.com/kardinaloffishall416" },
-    { "name": "Facebook", "handle": "kardinaloffishall", "url": "https://www.facebook.com/kardinaloffishall/" },
-    { "name": "Spotify", "handle": "Artist page", "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA" },
-    { "name": "Apple Music", "handle": "Artist page", "url": "https://music.apple.com/ca/artist/kardinal-offishall/66490" }
+    {
+      "name": "Instagram",
+      "handle": "@kardinalo",
+      "url": "https://instagram.com/kardinalo"
+    },
+    {
+      "name": "TikTok",
+      "handle": "@mrkardinal",
+      "url": "https://www.tiktok.com/@mrkardinal"
+    },
+    {
+      "name": "X",
+      "handle": "@KardinalO",
+      "url": "https://x.com/kardinalo"
+    },
+    {
+      "name": "YouTube",
+      "handle": "KardinalOffishall416",
+      "url": "https://www.youtube.com/kardinaloffishall416"
+    },
+    {
+      "name": "Facebook",
+      "handle": "kardinaloffishall",
+      "url": "https://www.facebook.com/kardinaloffishall/"
+    },
+    {
+      "name": "Spotify",
+      "handle": "Artist page",
+      "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA"
+    },
+    {
+      "name": "Apple Music",
+      "handle": "Artist page",
+      "url": "https://music.apple.com/ca/artist/kardinal-offishall/66490"
+    }
   ],
   "reel": {
     "title": "Kardi Sizzle Reel 2026",
@@ -37,21 +74,73 @@
     "url": null
   },
   "ticker": [
-    { "label": "Partner", "name": "Monster Energy", "url": "#partners" },
-    { "label": "YouTube", "name": "300K+ subscribers", "url": "https://www.youtube.com/kardinaloffishall416" },
-    { "label": "Podcast", "name": "2 Bad Man, coming", "url": "#on-the-screen" },
-    { "label": "Clothing", "name": "4ever16", "url": "#goods" },
-    { "label": "Eyewear", "name": "His frames", "url": "#goods" },
-    { "label": "Global A&R", "name": "Def Jam", "url": "#in-the-building" },
-    { "label": "Judge", "name": "Canada's Got Talent", "url": "#on-the-screen" },
-    { "label": "Keynotes", "name": "Speakers Canada", "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/" },
-    { "label": "Label", "name": "Black Stone Colleagues", "url": "#on-the-mic" },
-    { "label": "Next", "name": "Your brand here →", "url": "#partners", "open": true }
+    {
+      "label": "Partner",
+      "name": "Monster Energy",
+      "url": "#partners"
+    },
+    {
+      "label": "YouTube",
+      "name": "300K+ subscribers",
+      "url": "https://www.youtube.com/kardinaloffishall416"
+    },
+    {
+      "label": "Podcast",
+      "name": "2 Bad Man, coming",
+      "url": "#on-the-screen"
+    },
+    {
+      "label": "DJ",
+      "name": "Sets and bookings",
+      "url": "#on-the-decks"
+    },
+    {
+      "label": "Clothing",
+      "name": "4ever16",
+      "url": "#goods"
+    },
+    {
+      "label": "Eyewear",
+      "name": "His frames",
+      "url": "#goods"
+    },
+    {
+      "label": "Global A&R",
+      "name": "Def Jam",
+      "url": "#in-the-building"
+    },
+    {
+      "label": "Judge",
+      "name": "Canada's Got Talent",
+      "url": "#on-the-screen"
+    },
+    {
+      "label": "Keynotes",
+      "name": "Speakers Canada",
+      "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/"
+    },
+    {
+      "label": "Label",
+      "name": "Black Stone Colleagues",
+      "url": "#on-the-mic"
+    },
+    {
+      "label": "Next",
+      "name": "Your brand here →",
+      "url": "#partners",
+      "open": true
+    }
   ],
   "business": {
     "booking_email": "teamkardi@hof-artists.com",
-    "speaking": { "name": "Speakers Canada", "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/" },
-    "cameo": { "name": "Cameo", "url": "https://v.cameo.com/b2rJppUaqjb" },
+    "speaking": {
+      "name": "Speakers Canada",
+      "url": "https://speakerscanada.com/keynote-speaker/kardinal-offishall/"
+    },
+    "cameo": {
+      "name": "Cameo",
+      "url": "https://v.cameo.com/b2rJppUaqjb"
+    },
     "label": "Black Stone Colleagues"
   }
 }

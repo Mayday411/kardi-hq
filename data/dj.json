@@ -1,0 +1,15 @@
+{
+  "_note": "On The Decks. 'sets' are DJ dates (future ones show under Next up, past under Recent). 'mixes' are links to recorded sets (SoundCloud, Mixcloud, YouTube); empty means the card says mixes are coming. 'dj_pack' is the pack for DJs who play his records.",
+  "intro": "Rapper first, but he has been behind the decks as long as he has been on the mic. Hip-hop, dancehall, soca, afrobeats and the records he made himself, read live off the room.",
+  "formats": [
+    { "name": "DJ set", "detail": "60 to 120 minutes. Open format, built for the room." },
+    { "name": "Kardi Live", "detail": "A DJ set with the hits performed live over it. The festival version." },
+    { "name": "Host + DJ", "detail": "He holds the mic and the decks. Brand launches, galas, award nights." },
+    { "name": "Private + corporate", "detail": "Closed-door events, holiday parties, conferences. Quietly, professionally." }
+  ],
+  "plays": ["Festivals", "Clubs", "Brand activations", "Corporate events", "Private parties", "Caribana weekend"],
+  "sets": [],
+  "mixes": [],
+  "dj_pack": { "name": "SOAK DJ pack", "detail": "Clean, dirty, acapella and instrumental at 100 BPM, for DJs who play it out.", "url": "https://www.dropbox.com/scl/fi/jhttaczm2ukio0vd7j2kv/Kardinal-Offishall-Ft.-Rotimi-Oc3an-Banks-Soak-DJ-PACK-100BPM.zip" },
+  "brief": ["Date and city", "Venue and capacity", "Set length and format", "Budget range", "Who else is on the bill"]
+}
