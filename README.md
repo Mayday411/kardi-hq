@@ -105,7 +105,7 @@ Kardi's official script logo lives at `assets/logo-white.png` (used in the foote
 
 ## The channel and the podcast
 
-On The Screen ends with the YouTube card (KardinalOffishall416, 300K+ subscribers) showing the three latest uploads, and the 2 Bad Man podcast card marked as in the works until there is an episode. `data/youtube.json` holds the channel id, subscriber line and recent uploads; refresh it with `python3 tools/youtube-latest.py` (no API key, it reads the channel's public feed). The podcast copy and status live in `data/links.json` under `podcast`. Release moments in the feed carry a `cover`, so their cards show the artwork (singles in `assets/covers/singles/`).
+On The Screen ends with the YouTube card (KardinalOffishall416, 360K+ subscribers) showing the three latest uploads, and the 2 Bad Man podcast card marked as in the works until there is an episode. `data/youtube.json` holds the channel id, subscriber line and recent uploads; refresh it with `python3 tools/youtube-latest.py` (no API key, it reads the channel's public feed). The podcast copy and status live in `data/links.json` under `podcast`. Release moments in the feed carry a `cover`, so their cards show the artwork (singles in `assets/covers/singles/`).
 
 ## On The Decks
 
