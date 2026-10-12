@@ -183,7 +183,7 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- in his own name: 4ever16 + eyewear ---------- */
 /* The 4ever16 wordmark is the brand's own logo: white on the red sticker. */
-.stk-416 { left: 50%; bottom: 7%; width: 26%; background: var(--flame); border-radius: 4px; padding: 5% 3.5%; box-sizing: border-box; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.45)); }
+.stk-416 { left: 50%; bottom: 7%; width: 27%; background: var(--flame); border-radius: 4px; padding: 4% 3.5%; box-sizing: border-box; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.45)); }
 .stk-416 img { display: block; width: 100%; height: auto; }
 .stk-frames { left: -10%; top: 25%; background: #C8E230; color: var(--bg); z-index: 6; }
 .goods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
