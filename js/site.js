@@ -465,7 +465,7 @@
     const section = $("#years"), stage = $(".years-stage", section), track = $("#years-track");
     const burnt = $("#fuse-burnt"), ember = $("#ember"), ticks = $("#fuse-ticks");
     if (!section || !track) return;
-    const labels = ["#D9441A", "#F2B33D", "#B9801E", "#2E6B8A", "#7A3E9D", "#FF5A1F", "#8C7D70"];
+    const labels = ["#E3242B", "#F5C518", "#B9801E", "#2E6B8A", "#7A3E9D", "#A6141A", "#8C7D70"];
 
     track.innerHTML = releases.map((r, i) => {
       const cls = ["year-slide", r.hot ? "hot" : "", r.future ? "future" : ""].join(" ").trim();
