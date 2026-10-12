@@ -6,49 +6,60 @@
       "title": "Eye & I",
       "note": "Debut. Soul, dancehall, reggae, hip-hop in one record.",
       "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA",
-      "cover": "assets/covers/eye-and-i.jpg"
+      "cover": "assets/covers/eye-and-i.jpg",
+      "hot": false,
+      "future": false
     },
     {
       "year": "2001",
       "title": "Quest for Fire: Firestarter Vol. 1",
       "note": "Major-label debut. BaKardi Slang. Ol' Time Killin'.",
       "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA",
-      "cover": "assets/covers/firestarter-1.jpg"
+      "cover": "assets/covers/firestarter-1.jpg",
+      "hot": false,
+      "future": false
     },
     {
       "year": "2005",
       "title": "Fire and Glory",
       "note": "Everyday (Rudebwoy). Juno-nominated.",
       "url": "https://open.spotify.com/album/6q35kzIkEaEpJhH419dDe1",
-      "cover": "assets/covers/fire-and-glory.jpg"
+      "cover": "assets/covers/fire-and-glory.jpg",
+      "hot": false,
+      "future": false
     },
     {
       "year": "2008",
       "title": "Not 4 Sale",
       "note": "Dangerous goes top five on the Hot 100, first for a Canadian rapper. 4x platinum.",
       "url": "https://open.spotify.com/album/4mvT7q9PuuBWZcVyUnZP8e",
-      "cover": "assets/covers/not-4-sale.jpg"
+      "cover": "assets/covers/not-4-sale.jpg",
+      "hot": false,
+      "future": false
     },
     {
       "year": "2015",
       "title": "Kardi Gras, Vol. 1: The Clash",
       "note": "Independent, on Black Stone Colleagues.",
       "url": "https://open.spotify.com/artist/5P2rwRBgIN450RaJxdjYdA",
-      "cover": "assets/covers/kardi-gras-1.jpg"
+      "cover": "assets/covers/kardi-gras-1.jpg",
+      "hot": false,
+      "future": false
     },
     {
       "year": "2026",
       "title": "Firestarter Vol. 2: Everyday, Sometimes…",
       "note": "The sequel, 25 years on. Out now.",
       "url": "https://foundation-media.ffm.to/firestartervol2",
+      "cover": "assets/firestarter-vol2.jpg",
       "hot": true,
-      "cover": "assets/firestarter-vol2.jpg"
+      "future": false
     },
     {
       "year": "2027",
       "title": "Untitled, with Idris Elba",
       "note": "Announced for spring.",
-      "url": null,
+      "hot": false,
       "future": true
     }
   ],
