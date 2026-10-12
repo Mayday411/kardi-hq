@@ -97,7 +97,7 @@ Sections are stacked sheets rather than blocks divided by rules. Script gives ev
 
 ## Partners
 
-Kardi's brand work has its own lane. A Monster Energy can sits on the hero pile next to a dashed "Your logo here" sticker; a partner ticker runs under the hero (items in `data/links.json` under `ticker`, the last one flagged `open`); and In The Building ends with "In Good Company": a brief / play / result card for Monster and an open-slot card listing what a deal can include, with the booking email. The can is typographic in Monster's green on purpose: the claw logo is their trademark, so swap in official artwork only once Kardi and Monster have cleared it. The Monster result line is a placeholder until campaign numbers exist.
+Kardi's brand work has its own lane. Monster's official claw-and-wordmark sits on the hero pile as a die-cut sticker next to a dashed "Your logo here" sticker; a partner ticker runs under the hero (items in `data/links.json` under `ticker`, the last one flagged `open`); and In The Building ends with "In Good Company": a brief / play / result card for Monster and an open-slot card listing what a deal can include, with the booking email. The Monster card also carries the logo and their 9:16 bumper (`assets/monster-bumper.mp4`, muted, looping, 720p with the audio stripped), both supplied by Kardi's side. The Monster result line is a placeholder until campaign numbers exist.
 
 ## Logo
 
@@ -125,11 +125,11 @@ Give Back is now the party section, driven by `data/party.json`. `this_year` hol
 
 ## The Store
 
-`data/store.json` drives The Store: products for 4EVR16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with illustrated art (`art`: tee, hoodie, cap, frames, coloured by `color` and `accent`) and a Notify me button that goes to the list. Add `image` with a photo path to replace the illustration, set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. The six items there now are sample shapes, not confirmed products.
+`data/store.json` drives The Store: products for 4EVR16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with a Notify me button that goes to the list. Every product now has an `image` (the Area Code Tee on Idris, the Forever Hoodie and Varsity Jacket worn, the Look Again × Kardinal Offishall frames on their blueprint); drop `image` and a card falls back to illustrated art (`art`: tee, hoodie, jacket, frames, coloured by `color` and `accent`). Set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. Prices and shop links are still to come from Kardi; the two product photos that show other people (Idris on the tee, the varsity jacket) need his okay before the store opens.
 
 ## In His Own Name and The Reel
 
-`data/goods.json` holds Kardi's own brands: 4EVR16 (clothing, a play on the 416; the brand key in the data stays `4ever16`) and his eyewear collection. Each card links out when `url` is set and says "link coming" until then. Two stickers on the hero pile point at them, including one on the frames he is wearing in the portrait. The sizzle reel for promoters, agencies and brands lives in The Reel: `assets/sizzle-2026.mp4` (1080p H.264, 66 s, with audio, transcoded from the HEVC master) with a poster frame, a play button that hands off to native controls, a download link and the booking shortlist. The reel entry in `data/links.json` sets the file and length.
+`data/goods.json` holds Kardi's own brands: 4EVR16 (clothing, a play on the 416; the brand key in the data stays `4ever16`) and his eyewear, Look Again × Kardinal Offishall model 002, with the blueprint photo behind the card. Each card links out when `url` is set and says "link coming" until then. Two stickers on the hero pile point at them, including one on the frames he is wearing in the portrait. The sizzle reel for promoters, agencies and brands lives in The Reel: `assets/sizzle-2026.mp4` (1080p H.264, 66 s, with audio, transcoded from the HEVC master) with a poster frame, a play button that hands off to native controls, a download link and the booking shortlist. The reel entry in `data/links.json` sets the file and length.
 
 ## Before it goes live
 
