@@ -179,9 +179,9 @@
     $$(".js-cta").forEach((a) => { a.href = data.cta.url; });
     $("#cta-long").textContent = data.cta.label;
     $("#cta-short").textContent = data.cta.short;
+    // The Latest sticker is gone from the hero: the header button already says what is out.
     const st = $("#sticker");
-    st.textContent = data.latest.sticker;
-    st.href = data.latest.url;
+    if (st) { st.textContent = data.latest.sticker; st.href = data.latest.url; }
 
     $("#stream").innerHTML = data.streaming.map((s, i) =>
       `<a class="btn ${i === 0 ? "primary" : ""}" ${ext(s.url)}>${esc(s.name)}</a>`).join("");
