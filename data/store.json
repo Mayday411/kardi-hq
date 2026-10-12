@@ -55,7 +55,8 @@
       "detail": "Square, tortoise with amber lens. Next in the series",
       "art": "frames",
       "color": "#5A2E14",
-      "accent": "#F2B33D"
+      "accent": "#F2B33D",
+      "image": "assets/frames-blueprint.jpg"
     }
   ]
 }
