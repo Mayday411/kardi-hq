@@ -23,11 +23,13 @@
     },
     {
       "brand": "4ever16",
-      "name": "T-Dot Snapback",
-      "detail": "Wool blend, flat brim",
-      "art": "cap",
+      "name": "Varsity Jacket",
+      "detail": "Navy wool body, cream sleeves, chest print",
+      "art": "jacket",
       "color": "#1E1715",
-      "accent": "#F2B33D"
+      "accent": "#F2B33D",
+      "id": "jacket-416",
+      "image": "assets/jacket-varsity.jpg"
     },
     {
       "brand": "eyewear",
