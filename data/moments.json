@@ -136,6 +136,17 @@
       "body": "Joins the judging panel for the show's return on Citytv.",
       "url": "https://en.wikipedia.org/wiki/Canada%27s_Got_Talent",
       "link_label": "About the show"
+    },
+    {
+      "date": "1997-06-01",
+      "display": "1997",
+      "hat": "artist",
+      "status": "From the vault",
+      "title": "Jeevin' (Life), the video",
+      "body": "The Eye & I era, on tape. The video for Jeevin' (Life), pulled from the archive and kept here so it has a home.",
+      "url": "assets/video/jeevin-life-1997.mp4",
+      "link_label": "Watch the video",
+      "cover": "assets/covers/eye-and-i.jpg"
     }
   ]
 }
