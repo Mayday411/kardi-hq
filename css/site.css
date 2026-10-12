@@ -374,9 +374,9 @@ button { font: inherit; cursor: pointer; }
 .partner-monster::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; border-radius: var(--radius) 0 0 var(--radius); background: #95D600; }
 .partner-open { border-style: dashed; border-color: var(--mute-2); }
 .partner-top { display: grid; gap: 6px; }
-.partner-media { display: flex; align-items: center; gap: 18px; }
+.partner-media { display: flex; align-items: flex-start; gap: 22px; flex-wrap: wrap; }
 .partner-logo { width: min(100%, 300px); height: auto; }
-.partner-bumper { width: 84px; aspect-ratio: 9 / 16; border-radius: 10px; object-fit: cover; background: #000; border: 2px solid #1F2A14; box-shadow: 0 12px 24px rgba(0,0,0,0.45); flex: none; }
+.partner-bumper { width: min(100%, 300px); aspect-ratio: 9 / 16; border-radius: 10px; object-fit: cover; background: #000; border: 2px solid #1F2A14; box-shadow: 0 12px 24px rgba(0,0,0,0.45); flex: none; }
 .partner-tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--ember); }
 .partner-monster .partner-tag { color: #95D600; }
 .partner-name { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 3vw, 38px); letter-spacing: -0.02em; line-height: 1; }
