@@ -439,7 +439,17 @@
     if (pod) {
       // The title is the lettering when the markup carries it; the data name only fills a text title.
       const podName = $("#pod-name");
-      if (!podName.querySelector("img")) podName.textContent = pod.name;
+      if (!podName.querySelector("img, video")) podName.textContent = pod.name;
+      // Play the reveal once when the card scrolls into view; under reduced motion hold the final frame.
+      const reveal = $(".pod-reveal");
+      if (reveal) {
+        reveal.autoplay = false; reveal.pause(); reveal.currentTime = 0;
+        if (reduceMotion) { reveal.removeAttribute("autoplay"); reveal.currentTime = reveal.duration || 5; }
+        else if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { reveal.play().catch(() => {}); io.disconnect(); } }); }, { threshold: 0.5 });
+          io.observe(reveal);
+        } else reveal.play().catch(() => {});
+      }
       $("#pod-status").textContent = pod.status;
       $("#pod-body").textContent = pod.body;
     }
