@@ -1,5 +1,5 @@
 {
-  "_note": "Products shown in The Store. 'brand' is 4ever16 or eyewear. Until a product has a 'url' and 'price' it shows as a preview with a Notify me button. 'art' picks the illustration (tee, hoodie, cap, frames) with 'color' and 'accent'; add 'image' with a photo path to use a real photo instead. Set 'open' to true once checkout is live.",
+  "_note": "Products shown in The Store. 'brand' is 4ever16 (shown as 4EVR16) or eyewear. Until a product has a 'url' and 'price' it shows as a preview with a Notify me button. 'art' picks the illustration (tee, hoodie, cap, frames) with 'color' and 'accent'; add 'image' with a photo path to use a real photo instead. Set 'open' to true once checkout is live.",
   "open": false,
   "notice": "Opening soon. These are the shapes of what's coming. Names, prices and photos land with the launch, and the list hears first.",
   "products": [

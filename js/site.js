@@ -218,7 +218,7 @@
         ${g.image ? `<img class="good-photo" src="${esc(g.image)}" alt="" loading="lazy">` : g.id === "4ever16" ? `<span class="code" aria-hidden="true">416</span>` : frames}
         <div>
           <div class="good-kind">${esc(g.kind)}</div>
-          <div class="good-name">${g.id === "4ever16" ? `<img class="good-logo" src="assets/4ever16-logo.png" alt="4ever16" width="900" height="287" loading="lazy">` : esc(g.name)}</div>
+          <div class="good-name">${g.id === "4ever16" ? `<img class="good-logo" src="assets/4ever16-logo.png" alt="4EVR16" width="900" height="287" loading="lazy">` : esc(g.name)}</div>
         </div>
         <div><p class="good-tag">${esc(g.tagline)}</p><p style="margin-top:10px">${esc(g.body)}</p></div>
         <div class="good-cta">
@@ -378,8 +378,8 @@
     const art = (p) => {
       const c = esc(p.color), a = esc(p.accent);
       switch (p.art) {
-        case "tee": return `<svg viewBox="0 0 160 160" aria-hidden="true"><path d="M52 28l-30 16 10 26 14-6v62h68V64l14 6 10-26-30-16a22 22 0 0 1-56 0z" fill="${c}" stroke="rgba(255,255,255,0.12)" stroke-width="2"/><text x="80" y="96" text-anchor="middle" font-family="Bricolage Grotesque, Impact, sans-serif" font-weight="800" font-size="22" fill="${a}">4ever16</text></svg>`;
-        case "hoodie": return `<svg viewBox="0 0 160 160" aria-hidden="true"><path d="M50 36l-28 14 10 28 12-5v55h72V73l12 5 10-28-28-14c-4 12-14 18-30 18s-26-6-30-18z" fill="${c}" stroke="rgba(0,0,0,0.15)" stroke-width="2"/><path d="M56 36c6-14 42-14 48 0" fill="none" stroke="${a}" stroke-width="4" stroke-linecap="round"/><rect x="58" y="96" width="44" height="26" rx="4" fill="none" stroke="${a}" stroke-width="3"/><text x="80" y="76" text-anchor="middle" font-family="Bricolage Grotesque, Impact, sans-serif" font-weight="800" font-size="13" fill="${a}">4ever16</text></svg>`;
+        case "tee": return `<svg viewBox="0 0 160 160" aria-hidden="true"><path d="M52 28l-30 16 10 26 14-6v62h68V64l14 6 10-26-30-16a22 22 0 0 1-56 0z" fill="${c}" stroke="rgba(255,255,255,0.12)" stroke-width="2"/><text x="80" y="96" text-anchor="middle" font-family="Bricolage Grotesque, Impact, sans-serif" font-weight="800" font-size="22" fill="${a}">4EVR16</text></svg>`;
+        case "hoodie": return `<svg viewBox="0 0 160 160" aria-hidden="true"><path d="M50 36l-28 14 10 28 12-5v55h72V73l12 5 10-28-28-14c-4 12-14 18-30 18s-26-6-30-18z" fill="${c}" stroke="rgba(0,0,0,0.15)" stroke-width="2"/><path d="M56 36c6-14 42-14 48 0" fill="none" stroke="${a}" stroke-width="4" stroke-linecap="round"/><rect x="58" y="96" width="44" height="26" rx="4" fill="none" stroke="${a}" stroke-width="3"/><text x="80" y="76" text-anchor="middle" font-family="Bricolage Grotesque, Impact, sans-serif" font-weight="800" font-size="13" fill="${a}">4EVR16</text></svg>`;
         case "cap": return `<svg viewBox="0 0 160 160" aria-hidden="true"><path d="M36 92c0-30 20-48 44-48s44 18 44 48z" fill="${c}" stroke="rgba(255,255,255,0.12)" stroke-width="2"/><path d="M28 92h104c10 0 16 4 16 10s-8 8-18 8H40c-10 0-18-2-18-8s2-10 6-10z" fill="${c}" stroke="rgba(255,255,255,0.12)" stroke-width="2"/><path d="M80 44v48" stroke="rgba(255,255,255,0.1)" stroke-width="2"/><text x="80" y="80" text-anchor="middle" font-family="Bricolage Grotesque, Impact, sans-serif" font-weight="800" font-size="16" fill="${a}">416</text></svg>`;
         default: return `<svg viewBox="0 0 160 160" aria-hidden="true"><g fill="none" stroke="${a}" stroke-width="7" stroke-linejoin="round"><path d="M14 66h56l6 10v22a7 7 0 0 1-7 7H28a7 7 0 0 1-7-7V76z"/><path d="M90 66h56l-6 8v24a7 7 0 0 1-7 7H97a7 7 0 0 1-7-7V76z"/><path d="M70 78c4-5 16-5 20 0"/></g><path d="M24 76h44v22a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z M94 76h42v22a4 4 0 0 1-4 4H98a4 4 0 0 1-4-4z" fill="${c}" opacity=".92"/></svg>`;
       }
@@ -395,7 +395,7 @@
         <article class="product product-${esc(p.brand)}">
           <div class="product-art">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : art(p)}</div>
           <div class="product-meta">
-            <span class="product-brand">${p.brand === "4ever16" ? "4ever16" : "Look Again × Kardinal Offishall"}</span>
+            <span class="product-brand">${p.brand === "4ever16" ? "4EVR16" : "Look Again × Kardinal Offishall"}</span>
             <h3>${esc(p.name)}</h3>
             <p>${esc(p.detail)}</p>
           </div>

@@ -125,11 +125,11 @@ Give Back is now the party section, driven by `data/party.json`. `this_year` hol
 
 ## The Store
 
-`data/store.json` drives The Store: products for 4ever16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with illustrated art (`art`: tee, hoodie, cap, frames, coloured by `color` and `accent`) and a Notify me button that goes to the list. Add `image` with a photo path to replace the illustration, set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. The six items there now are sample shapes, not confirmed products.
+`data/store.json` drives The Store: products for 4EVR16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with illustrated art (`art`: tee, hoodie, cap, frames, coloured by `color` and `accent`) and a Notify me button that goes to the list. Add `image` with a photo path to replace the illustration, set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. The six items there now are sample shapes, not confirmed products.
 
 ## In His Own Name and The Reel
 
-`data/goods.json` holds Kardi's own brands: 4ever16 (clothing, a play on the 416) and his eyewear collection. Each card links out when `url` is set and says "link coming" until then. Two stickers on the hero pile point at them, including one on the frames he is wearing in the portrait. The sizzle reel for promoters, agencies and brands lives in The Reel: `assets/sizzle-2026.mp4` (1080p H.264, 66 s, with audio, transcoded from the HEVC master) with a poster frame, a play button that hands off to native controls, a download link and the booking shortlist. The reel entry in `data/links.json` sets the file and length.
+`data/goods.json` holds Kardi's own brands: 4EVR16 (clothing, a play on the 416; the brand key in the data stays `4ever16`) and his eyewear collection. Each card links out when `url` is set and says "link coming" until then. Two stickers on the hero pile point at them, including one on the frames he is wearing in the portrait. The sizzle reel for promoters, agencies and brands lives in The Reel: `assets/sizzle-2026.mp4` (1080p H.264, 66 s, with audio, transcoded from the HEVC master) with a poster frame, a play button that hands off to native controls, a download link and the booking shortlist. The reel entry in `data/links.json` sets the file and length.
 
 ## Before it goes live
 
