@@ -218,7 +218,7 @@
         ${g.id === "4ever16" ? `<span class="code" aria-hidden="true">416</span>` : frames}
         <div>
           <div class="good-kind">${esc(g.kind)}</div>
-          <div class="good-name">${g.id === "4ever16" ? `4ever<span class="num">16</span>` : esc(g.name)}</div>
+          <div class="good-name">${g.id === "4ever16" ? `<img class="good-logo" src="assets/4ever16-logo.png" alt="4ever16" width="900" height="287" loading="lazy">` : esc(g.name)}</div>
         </div>
         <div><p class="good-tag">${esc(g.tagline)}</p><p style="margin-top:10px">${esc(g.body)}</p></div>
         <div class="good-cta">
