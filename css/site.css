@@ -773,3 +773,6 @@ button { font: inherit; cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--blk-gold); color: #000; border-color: var(--blk-gold); }
 .join { background: var(--blk-gold); }
 .join p, .join .eyebrow { color: #1A1200 !important; }
+
+/* Keeps the last two eyebrow items together when the line wraps on a phone */
+.keep { white-space: nowrap; }
