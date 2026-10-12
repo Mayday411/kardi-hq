@@ -15,10 +15,11 @@
     {
       "brand": "4ever16",
       "name": "Forever Hoodie",
-      "detail": "Fleece, embroidered chest",
+      "detail": "Forest green zip hoodie, chest print, matching sweats",
       "art": "hoodie",
       "color": "#F6EEE2",
-      "accent": "#151110"
+      "accent": "#151110",
+      "image": "assets/hoodie-forever.jpg"
     },
     {
       "brand": "4ever16",
