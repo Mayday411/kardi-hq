@@ -81,6 +81,12 @@
       "open": false
     },
     {
+      "label": "Watch",
+      "name": "The Monster spot",
+      "url": "#monster-spot",
+      "open": false
+    },
+    {
       "label": "Honours",
       "name": "Dr. Kardinal Offishall",
       "url": "#awards",
