@@ -480,10 +480,15 @@
       const disc = r.cover
         ? `<span class="disc sleeve" style="--label:${labels[i % labels.length]}"><img src="${esc(r.cover)}" alt="${esc(r.title)} album cover" width="700" height="700" loading="lazy"></span>`
         : r.future ? `<span class="disc blank"></span>` : `<span class="disc" style="--label:${labels[i % labels.length]}"></span>`;
-      const inner = `<span class="year-big" aria-hidden="true">${esc(r.year)}</span>${disc}
-        <span class="year-meta"><span class="yr">${esc(r.year)}</span><b>${esc(r.title)}</b><span class="note">${esc(r.note)}</span><span class="go">${r.hot ? "Listen now" : "Listen"}</span></span>`;
+      const tape = r.kind === "mixtape";
+      const go = tape ? "Play or download" : r.hot ? "Listen now" : "Listen";
+      const inner = `<span class="year-big" aria-hidden="true">${esc(r.year)}</span>${disc}${tape ? `<span class="tape-tag">Mixtape</span>` : ""}
+        <span class="year-meta"><span class="yr">${esc(r.year)}</span><b>${esc(r.title)}</b><span class="note">${esc(r.note)}</span><span class="go">${go}</span></span>`;
+      // A mixtape opens the player; everything else goes out to the streaming link.
+      if (tape) return `<button type="button" class="${cls} mixtape" data-tape="${i}">${inner}</button>`;
       return r.url ? `<a class="${cls}" ${ext(r.url)}>${inner}</a>` : `<div class="${cls}">${inner}</div>`;
     }).join("");
+    $$("button[data-tape]", track).forEach((b) => b.addEventListener("click", () => tapePlayer(releases[+b.dataset.tape])));
     ticks.innerHTML = releases.map((r, i) => `<span style="left:${(i / (releases.length - 1)) * 100}%">${esc(r.year)}</span>`).join("");
     const tickEls = $$("span", ticks);
 
@@ -535,6 +540,69 @@
     window.addEventListener("resize", size);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
     size();
+  }
+
+  /* ---------- mixtape player ----------
+     One dialog, one <audio>. A release with kind "mixtape" lists its tracks
+     ({title, file, length}); each row plays in place or downloads the file.
+     'download' on the release is an optional zip of the whole tape. */
+  let tapeDlg = null, tapeAudio = null, tapeRows = [], tapeIndex = -1;
+  function tapePlayer(r) {
+    if (!tapeDlg) {
+      tapeDlg = document.createElement("dialog"); tapeDlg.className = "tapeplayer"; // not .tape: that is the sticky tape on the section seams tapeDlg.setAttribute("aria-label", "Mixtape player");
+      document.body.appendChild(tapeDlg);
+      tapeAudio = new Audio(); tapeAudio.preload = "none";
+      tapeAudio.addEventListener("ended", () => { if (tapeIndex + 1 < tapeRows.length) playTrack(tapeIndex + 1); else setPlaying(-1); });
+      tapeAudio.addEventListener("pause", () => paintRows());
+      tapeAudio.addEventListener("play", () => paintRows());
+      tapeDlg.addEventListener("close", () => { tapeAudio.pause(); });
+      tapeDlg.addEventListener("click", (e) => { if (e.target === tapeDlg) tapeDlg.close(); });
+    }
+    const tracks = Array.isArray(r.tracks) ? r.tracks : [];
+    tapeDlg.innerHTML = `
+      <div class="tape-head">
+        ${r.cover ? `<img class="tape-cover" src="${esc(r.cover)}" alt="" width="700" height="700">` : `<span class="tape-cover blank"></span>`}
+        <div>
+          <p class="eyebrow">Mixtape · ${esc(r.year)}</p>
+          <h3>${esc(r.title)}</h3>
+          ${r.note ? `<p class="tape-note">${esc(r.note)}</p>` : ""}
+          <div class="tape-actions">
+            ${tracks.length ? `<button type="button" class="btn flame tape-playall">Play all</button>` : ""}
+            ${r.download ? `<a class="btn" href="${esc(r.download)}" download>Download the tape</a>` : ""}
+            ${r.url ? `<a class="btn" ${ext(r.url)}>Stream</a>` : ""}
+          </div>
+        </div>
+        <button type="button" class="tape-close" aria-label="Close">×</button>
+      </div>
+      ${tracks.length ? `<ol class="tape-list">${tracks.map((t, i) => `
+        <li>
+          <button type="button" class="tape-play" data-i="${i}" aria-label="Play ${esc(t.title)}"><span class="ic"></span></button>
+          <span class="n">${String(i + 1).padStart(2, "0")}</span>
+          <span class="t">${esc(t.title)}${t.feat ? ` <em>ft. ${esc(t.feat)}</em>` : ""}</span>
+          <span class="len">${esc(t.length ?? "")}</span>
+          <a class="dl" href="${esc(t.file)}" download aria-label="Download ${esc(t.title)}">↓</a>
+        </li>`).join("")}</ol>` : `<p class="tape-empty">Tracks are on their way. ${r.url ? "Stream it meanwhile." : ""}</p>`}
+      <p class="tape-fine">Tap a number to play. The arrow saves the file to your device.</p>`;
+    tapeRows = $$(".tape-list li", tapeDlg);
+    tapeRows.forEach((li, i) => $(".tape-play", li).addEventListener("click", () => (tapeIndex === i && !tapeAudio.paused) ? tapeAudio.pause() : playTrack(i)));
+    const all = $(".tape-playall", tapeDlg); if (all) all.addEventListener("click", () => playTrack(0));
+    $(".tape-close", tapeDlg).addEventListener("click", () => tapeDlg.close());
+    tapeDlg._tracks = tracks; tapeIndex = -1; setPlaying(-1);
+    if (typeof tapeDlg.showModal === "function") tapeDlg.showModal(); else tapeDlg.setAttribute("open", "");
+  }
+  function playTrack(i) {
+    const t = tapeDlg._tracks[i]; if (!t) return;
+    if (tapeIndex !== i) { tapeAudio.src = t.file; tapeIndex = i; }
+    tapeAudio.play().catch(() => {});
+    setPlaying(i);
+  }
+  function setPlaying(i) { tapeIndex = i; paintRows(); }
+  function paintRows() {
+    tapeRows.forEach((li, k) => {
+      const on = k === tapeIndex, playing = on && !tapeAudio.paused;
+      li.classList.toggle("on", on); li.classList.toggle("playing", playing);
+      $(".tape-play", li).setAttribute("aria-label", `${playing ? "Pause" : "Play"} ${$(".t", li).textContent}`);
+    });
   }
 
   /* ---------- feed: pinboard + list ---------- */

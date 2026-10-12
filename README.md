@@ -125,6 +125,27 @@ Give Back is now the party section, driven by `data/party.json`. `this_year` hol
 
 ## The Store
 
+### Mixtapes on the timeline
+
+A release with `"kind": "mixtape"` sits on the 25 Years timeline like an album, wears a Mixtape tag on its sleeve, and opens a player instead of a streaming link when tapped. Give it `tracks`, one object per song, and optionally a `download` zip of the whole tape:
+
+```json
+{
+  "year": "2004",
+  "title": "Kill Bloodclaat, Vol. 1",
+  "note": "The mixtape years. Freestyles over everybody's beats.",
+  "kind": "mixtape",
+  "cover": "assets/covers/kill-bloodclaat-1.jpg",
+  "download": "assets/mixtapes/kill-bloodclaat-1/kill-bloodclaat-1.zip",
+  "tracks": [
+    { "title": "Intro", "file": "assets/mixtapes/kill-bloodclaat-1/01-intro.mp3", "length": "1:12" },
+    { "title": "Bakardi Slang (freestyle)", "feat": "Choclair", "file": "assets/mixtapes/kill-bloodclaat-1/02-bakardi-slang.mp3", "length": "3:41" }
+  ]
+}
+```
+
+Each row plays in place (one track at a time, auto-advancing) and the arrow downloads the file. `file` can be a path in `assets/mixtapes/` or a full URL; for anything beyond a few hundred megabytes, host the audio elsewhere and point at it, since every file in the repo ships with every deploy. Keep MP3s at 128 to 192 kbps. A mixtape with no `tracks` yet still opens and says the tracks are on their way. `url` is optional and adds a Stream button.
+
 `data/store.json` drives The Store: products for 4EVR16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with a Notify me button that goes to the list. Every product now has an `image` (the East Side Flannel, Forever Hoodie and Varsity Jacket worn, cut out and framed alike, the Look Again × Kardinal Offishall frames on their blueprint); drop `image` and a card falls back to illustrated art (`art`: tee, hoodie, jacket, frames, coloured by `color` and `accent`). Set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. Prices and shop links are still to come from Kardi; the varsity jacket photo shows someone else and needs his okay before the store opens.
 
 ## In His Own Name and The Reel

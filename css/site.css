@@ -776,3 +776,32 @@ button { font: inherit; cursor: pointer; }
 
 /* Keeps the last two eyebrow items together when the line wraps on a phone */
 .keep { white-space: nowrap; }
+
+/* ---------- mixtapes on the timeline, and their player ---------- */
+.year-slide.mixtape { appearance: none; border: 0; background: none; font: inherit; color: inherit; text-align: inherit; cursor: pointer; padding: 0; }
+.tape-tag { position: absolute; left: 50%; transform: translateX(-50%) rotate(-4deg); top: 8%; z-index: 3; background: var(--ember); color: var(--bg); font-family: var(--display); font-weight: 800; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 9px; border-radius: 3px; box-shadow: 0 8px 14px rgba(0,0,0,0.45); pointer-events: none; }
+.tapeplayer { border: 0; padding: 0; width: min(94vw, 640px); max-height: 90vh; background: var(--bg-2); color: var(--cream); border-radius: 12px; box-shadow: 0 40px 100px rgba(0,0,0,0.7); overflow: auto; }
+.tapeplayer::backdrop { background: rgba(0,0,0,0.72); backdrop-filter: blur(4px); }
+.tape-head { position: relative; display: grid; grid-template-columns: 140px 1fr; gap: 20px; align-items: start; padding: clamp(18px, 3vw, 28px); border-bottom: 1px solid var(--line); }
+.tape-cover { width: 140px; height: 140px; aspect-ratio: 1; border-radius: 6px; object-fit: cover; display: block; box-shadow: 0 16px 30px rgba(0,0,0,0.5); background: var(--bg-3); }
+.tape-head h3 { font-family: var(--display); font-weight: 800; font-size: clamp(22px, 3vw, 32px); letter-spacing: -0.02em; line-height: 1; margin-top: 4px; }
+.tape-note { color: var(--mute); font-size: 14px; margin-top: 8px; }
+.tape-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.tape-close { position: absolute; right: 12px; top: 10px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--cream); font-size: 22px; line-height: 1; cursor: pointer; }
+.tape-close:hover { background: var(--bg-3); }
+.tape-list { list-style: none; margin: 0; padding: 6px clamp(10px, 2vw, 18px); }
+.tape-list li { display: grid; grid-template-columns: 40px 28px 1fr auto 36px; align-items: center; gap: 10px; padding: 8px 6px; border-radius: 8px; }
+.tape-list li:hover, .tape-list li.on { background: var(--bg-3); }
+.tape-list .n { font-family: var(--display); font-weight: 700; font-size: 12px; color: var(--mute-2); }
+.tape-list .t { font-size: 15px; }
+.tape-list .t em { font-style: normal; color: var(--mute); }
+.tape-list .len { font-size: 12px; color: var(--mute-2); font-variant-numeric: tabular-nums; }
+.tape-play { width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--cream); color: var(--bg); cursor: pointer; display: grid; place-items: center; }
+.tape-play .ic { width: 0; height: 0; border-left: 11px solid var(--bg); border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+.tape-list li.playing .tape-play { background: var(--flame); }
+.tape-list li.playing .tape-play .ic { width: 10px; height: 12px; border: 0; margin: 0; background: linear-gradient(90deg, var(--bg) 0 35%, transparent 35% 65%, var(--bg) 65%); }
+.tape-list .dl { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); color: var(--cream); text-decoration: none; font-weight: 700; }
+.tape-list .dl:hover { background: var(--bg-3); border-color: var(--mute-2); }
+.tape-empty { padding: 20px clamp(18px, 3vw, 28px); color: var(--mute); }
+.tape-fine { padding: 4px clamp(18px, 3vw, 28px) 18px; color: var(--mute-2); font-size: 12px; }
+@media (max-width: 520px) { .tape-head { grid-template-columns: 96px 1fr; } .tape-cover { width: 96px; height: 96px; } .tape-list li { grid-template-columns: 36px 1fr auto 36px; } .tape-list .n { display: none; } }
