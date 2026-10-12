@@ -553,7 +553,7 @@ button { font: inherit; cursor: pointer; }
 /* The set photo leads the podcast card; the lettering sits on it like a badge */
 .pod-still { position: relative; z-index: 0; border-radius: 6px; overflow: hidden; aspect-ratio: 16 / 9; }
 .pod-still > img:first-child { width: 100%; height: 100%; object-fit: cover; display: block; }
-.pod-mark { position: absolute; right: 4%; bottom: 5%; width: 22%; height: auto; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.55)); }
+.pod-mark { position: absolute; right: 4%; bottom: 6%; width: 44%; height: auto; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.55)); }
 .pod-name { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; line-height: 0.95; }
 .pod-body { color: var(--mute); font-size: 15px; }
 .pod-cta { display: flex; gap: 10px; flex-wrap: wrap; }
