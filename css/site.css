@@ -375,7 +375,7 @@ button { font: inherit; cursor: pointer; }
 .partner-open { border-style: dashed; border-color: var(--mute-2); }
 .partner-top { display: grid; gap: 6px; }
 .partner-media { display: flex; align-items: center; gap: 18px; }
-.partner-logo { width: min(100%, 220px); height: auto; }
+.partner-logo { width: min(100%, 300px); height: auto; }
 .partner-bumper { width: 84px; aspect-ratio: 9 / 16; border-radius: 10px; object-fit: cover; background: #000; border: 2px solid #1F2A14; box-shadow: 0 12px 24px rgba(0,0,0,0.45); flex: none; }
 .partner-tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--ember); }
 .partner-monster .partner-tag { color: #95D600; }
