@@ -2,16 +2,18 @@
    One visual world: warm charcoal, flame, ember, cream. No light theme by design. */
 
 :root {
-  --bg: #151110;
-  --bg-2: #1E1715;
-  --bg-3: #2A201C;
-  --line: #3A2E29;
+  /* The block-letter logo's palette: its colours on a near-black card. */
+  --bg: #0E0D0D;
+  --bg-2: #171515;
+  --bg-3: #211E1E;
+  --line: #2E2A2A;
+  --blk-red: #F85848; --blk-green: #38C878; --blk-gold: #F8B848; --blk-cyan: #08B8E8; --blk-magenta: #C848B8; --blk-orange: #F86818; --blk-heart: #F80808;
   --cream: #F6EEE2;
   --mute: #B8A89A;
   --mute-2: #8C7D70;
-  --flame: #E3242B;
-  --flame-deep: #A6141A;
-  --ember: #F2B33D;
+  --flame: var(--blk-red);
+  --flame-deep: #C93A2E;
+  --ember: var(--blk-gold);
 
   --display: "Bricolage Grotesque", "Archivo Black", Impact, sans-serif;
   --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -512,7 +514,7 @@ button { font: inherit; cursor: pointer; }
   box-shadow: 0 1px 0 rgba(255,255,255,0.35) inset, 0 14px 28px rgba(0,0,0,0.45), 0 2px 4px rgba(0,0,0,0.3); }
 .card:nth-child(3n+2) { margin-top: 22px; }
 .card:nth-child(4n+3) { margin-top: -10px; }
-.card .pin { position: absolute; top: -9px; left: 50%; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A5B, #C21E24 55%, #8C2A0C); box-shadow: 0 6px 8px rgba(0,0,0,0.45), 0 0 0 2px rgba(0,0,0,0.08); z-index: 2; }
+.card .pin { position: absolute; top: -9px; left: 50%; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A5B, #C93A2E 55%, #8C2A0C); box-shadow: 0 6px 8px rgba(0,0,0,0.45), 0 0 0 2px rgba(0,0,0,0.08); z-index: 2; }
 .card .pin::after { content: ""; position: absolute; left: 50%; top: 14px; width: 2px; height: 12px; margin-left: -1px; background: linear-gradient(#5a5a5a, #222); opacity: 0.6; transform: rotate(12deg); transform-origin: top; }
 .card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: rgba(21,17,16,0.62); }
 .card-head time { font-family: var(--display); letter-spacing: 0.02em; text-transform: none; font-size: 13px; color: var(--bg); font-variant-numeric: tabular-nums; }
@@ -626,13 +628,13 @@ button { font: inherit; cursor: pointer; }
 .year-big { position: absolute; left: -0.08em; top: -0.42em; font-family: var(--display); font-weight: 800; font-size: clamp(150px, 22vw, 300px); line-height: 1; letter-spacing: -0.05em; color: #221B18; z-index: 0; pointer-events: none; user-select: none; }
 .year-slide.hot .year-big { color: #3B1A0E; }
 .disc { position: relative; z-index: 1; width: clamp(150px, 15vw, 210px); aspect-ratio: 1; border-radius: 50%; flex: 0 0 auto;
-  background: radial-gradient(circle, var(--label, #C21E24) 0 24%, #15100F 25% 27%, #221C19 28% 29%, #15100F 30% 44%, #221C19 45% 46%, #15100F 47% 64%, #221C19 65% 66%, #15100F 67% 84%, #221C19 85% 86%, #15100F 87% 100%);
+  background: radial-gradient(circle, var(--label, #C93A2E) 0 24%, #15100F 25% 27%, #221C19 28% 29%, #15100F 30% 44%, #221C19 45% 46%, #15100F 47% 64%, #221C19 65% 66%, #15100F 67% 84%, #221C19 85% 86%, #15100F 87% 100%);
   box-shadow: 0 22px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05) inset; display: grid; place-items: center; }
 .disc::after { content: ""; width: 6%; aspect-ratio: 1; border-radius: 50%; background: var(--bg); }
 /* A sleeve with the record peeking out to the right; the sleeve slides over it on hover */
 .disc.sleeve { border-radius: 4px; background: #F4F2EF; overflow: visible; box-shadow: none; }
 .disc.sleeve::before { content: ""; position: absolute; inset: 4% auto 4% 30%; aspect-ratio: 1; border-radius: 50%; z-index: -1;
-  background: radial-gradient(circle, var(--label, #C21E24) 0 24%, #15100F 25% 27%, #221C19 28% 29%, #15100F 30% 44%, #221C19 45% 46%, #15100F 47% 64%, #221C19 65% 66%, #15100F 67% 84%, #221C19 85% 86%, #15100F 87% 100%);
+  background: radial-gradient(circle, var(--label, #C93A2E) 0 24%, #15100F 25% 27%, #221C19 28% 29%, #15100F 30% 44%, #221C19 45% 46%, #15100F 47% 64%, #221C19 65% 66%, #15100F 67% 84%, #221C19 85% 86%, #15100F 87% 100%);
   box-shadow: 0 16px 30px rgba(0,0,0,0.5); transform: translateX(var(--peek, 22%)); }
 .disc.sleeve::after { content: none; }
 .disc.sleeve img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; box-shadow: 0 22px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06); }
@@ -747,3 +749,26 @@ button { font: inherit; cursor: pointer; }
   .reveal { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.pre { opacity: 0; transform: translateY(14px); }
 }
+
+/* ---------- palette: the block-letter logo on the site. Each hero sticker takes one block, black type on colour like the letters. ---------- */
+.eyebrow { color: var(--blk-cyan); }
+.hero h1 em { color: var(--blk-red); }
+.btn.flame { background: var(--blk-red); color: #000; }
+.hero-actions .btn:not(.flame) { border-color: var(--blk-cyan); color: var(--blk-cyan); }
+.hero-actions .btn:not(.flame):hover { background: var(--blk-cyan); color: #000; }
+.sticker { background: var(--blk-orange); color: #000; }
+.stk-text { color: #000; }
+.stk-defjam { background: var(--blk-gold); }
+.stk-xmas { background: var(--blk-green); }
+.stk-tdot { background: var(--blk-cyan); }
+.stk-frames { background: var(--blk-magenta); color: #000; }
+.stk-416 { background: var(--blk-heart); }
+.bubble { background: var(--blk-gold); color: #000; }
+.bubble::after { border-top-color: var(--blk-gold); }
+.stk-slot { border-color: var(--blk-cyan); color: var(--blk-cyan); }
+.ticker-track a .lab { color: var(--blk-gold); }
+.ticker-track a.open .name, .ticker-track a.open .lab { color: var(--blk-red); }
+.site-header .btn.primary { background: var(--blk-green); color: #000; }
+.chip[aria-pressed="true"] { background: var(--blk-gold); color: #000; border-color: var(--blk-gold); }
+.join { background: var(--blk-gold); }
+.join p, .join .eyebrow { color: #1A1200 !important; }
