@@ -30,23 +30,25 @@
     {
       "brand": "eyewear",
       "name": "The Hero",
-      "detail": "Bold square, the pair on this page",
+      "detail": "Look Again \u00d7 Kardinal Offishall 002. Acid yellow brow, the pair on this page",
       "art": "frames",
       "color": "#1a1a1a",
-      "accent": "#C8E230"
+      "accent": "#C8E230",
+      "image": "assets/frames-hero.jpg"
     },
     {
       "brand": "eyewear",
       "name": "Blackout",
-      "detail": "Square, matte black on black",
+      "detail": "Look Again \u00d7 Kardinal Offishall 002. Black, tortoise temples",
       "art": "frames",
       "color": "#111111",
-      "accent": "#2a2a2a"
+      "accent": "#2a2a2a",
+      "image": "assets/frames-blackout.jpg"
     },
     {
       "brand": "eyewear",
       "name": "Ember",
-      "detail": "Square, tortoise with amber lens",
+      "detail": "Square, tortoise with amber lens. Next in the series",
       "art": "frames",
       "color": "#5A2E14",
       "accent": "#F2B33D"

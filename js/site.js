@@ -215,7 +215,7 @@
     const frames = `<span class="frames-art" aria-hidden="true"><svg viewBox="0 0 160 60"><g fill="none" stroke="#C8E230" stroke-width="5" stroke-linejoin="round"><path d="M6 14h58l6 10v20a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V22z"/><path d="M96 14h58l-6 8v22a6 6 0 0 1-6 6H98a6 6 0 0 1-6-6V22z"/><path d="M70 26c5-4 15-4 20 0"/></g><path d="M14 22h48v20a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4z M100 22h44v20a4 4 0 0 1-4 4h-36a4 4 0 0 1-4-4z" fill="#1a1a1a" opacity=".85"/></svg></span>`;
     el.innerHTML = data.goods.map((g) => `
       <article class="good good-${esc(g.id)}" style="--accent:${esc(g.accent)}">
-        ${g.id === "4ever16" ? `<span class="code" aria-hidden="true">416</span>` : frames}
+        ${g.image ? `<img class="good-photo" src="${esc(g.image)}" alt="" loading="lazy">` : g.id === "4ever16" ? `<span class="code" aria-hidden="true">416</span>` : frames}
         <div>
           <div class="good-kind">${esc(g.kind)}</div>
           <div class="good-name">${g.id === "4ever16" ? `<img class="good-logo" src="assets/4ever16-logo.png" alt="4ever16" width="900" height="287" loading="lazy">` : esc(g.name)}</div>
@@ -395,7 +395,7 @@
         <article class="product product-${esc(p.brand)}">
           <div class="product-art">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : art(p)}</div>
           <div class="product-meta">
-            <span class="product-brand">${p.brand === "4ever16" ? "4ever16" : "Eyewear"}</span>
+            <span class="product-brand">${p.brand === "4ever16" ? "4ever16" : "Look Again × Kardinal Offishall"}</span>
             <h3>${esc(p.name)}</h3>
             <p>${esc(p.detail)}</p>
           </div>

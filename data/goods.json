@@ -13,13 +13,14 @@
     },
     {
       "id": "eyewear",
-      "name": "The frames",
+      "name": "Look Again \u00d7 Kardinal Offishall",
       "kind": "Eyewear",
       "tagline": "The glasses in the photo up top? His.",
-      "body": "Kardi's eyewear collection. Bold, square, built to be seen in. The pair he is wearing on this page is from it.",
+      "body": "Kardi's eyewear, made with Look Again. Model 002: a bold square acetate in acid yellow or black with tortoise temples, drawn from his own specs. The pair he is wearing on this page is from it.",
       "url": "#store",
       "cta": "See the frames",
-      "accent": "#C8E230"
+      "accent": "#C8E230",
+      "image": "assets/frames-blueprint.jpg"
     }
   ]
 }
