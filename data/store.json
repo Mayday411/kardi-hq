@@ -10,7 +10,7 @@
       "art": "tee",
       "color": "#151110",
       "accent": "#FF5A1F",
-      "image": "assets/tee-area-code.jpg"
+      "image": "assets/tee-area-code.png"
     },
     {
       "brand": "4ever16",
@@ -19,7 +19,7 @@
       "art": "hoodie",
       "color": "#F6EEE2",
       "accent": "#151110",
-      "image": "assets/hoodie-forever.jpg"
+      "image": "assets/hoodie-forever.png"
     },
     {
       "brand": "4ever16",
@@ -29,7 +29,7 @@
       "color": "#1E1715",
       "accent": "#F2B33D",
       "id": "jacket-416",
-      "image": "assets/jacket-varsity.jpg"
+      "image": "assets/jacket-varsity.png"
     },
     {
       "brand": "eyewear",
