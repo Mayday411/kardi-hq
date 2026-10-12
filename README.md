@@ -125,7 +125,7 @@ Give Back is now the party section, driven by `data/party.json`. `this_year` hol
 
 ## The Store
 
-`data/store.json` drives The Store: products for 4EVR16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with a Notify me button that goes to the list. Every product now has an `image` (the Area Code Tee on Idris, the Forever Hoodie and Varsity Jacket worn, the Look Again × Kardinal Offishall frames on their blueprint); drop `image` and a card falls back to illustrated art (`art`: tee, hoodie, jacket, frames, coloured by `color` and `accent`). Set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. Prices and shop links are still to come from Kardi; the two product photos that show other people (Idris on the tee, the varsity jacket) need his okay before the store opens.
+`data/store.json` drives The Store: products for 4EVR16 and the eyewear with brand filters. Until `open` is true and a product has a `price` and `url`, each card is a preview with a Notify me button that goes to the list. Every product now has an `image` (the East Side Flannel, Forever Hoodie and Varsity Jacket worn, cut out and framed alike, the Look Again × Kardinal Offishall frames on their blueprint); drop `image` and a card falls back to illustrated art (`art`: tee, hoodie, jacket, frames, coloured by `color` and `accent`). Set `price` and `url` per product, flip `open` to true, and the cards become Buy buttons. Prices and shop links are still to come from Kardi; the varsity jacket photo shows someone else and needs his okay before the store opens.
 
 ## In His Own Name and The Reel
 

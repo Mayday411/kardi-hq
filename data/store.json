@@ -5,12 +5,13 @@
   "products": [
     {
       "brand": "4ever16",
-      "name": "Area Code Tee",
-      "detail": "Sky blue, chest print, on Idris",
+      "name": "East Side Flannel",
+      "detail": "Orange and blue plaid, 4EVR16 east side across the back",
       "art": "tee",
       "color": "#151110",
       "accent": "#FF5A1F",
-      "image": "assets/tee-area-code.webp"
+      "image": "assets/flannel-east-side.webp",
+      "id": "flannel-east-side"
     },
     {
       "brand": "4ever16",
