@@ -148,8 +148,16 @@
 
     window.addEventListener("scroll", kick, { passive: true });
     window.addEventListener("resize", kick);
-    peel.addEventListener("pointerenter", () => { hoverTarget = HOVER; peel.classList.add("is-hover"); kick(); });
-    peel.addEventListener("pointerleave", () => { hoverTarget = 0; peel.classList.remove("is-hover"); kick(); });
+    // Hover lift is for a mouse only. A finger scrolling across the portrait fires pointerenter and
+    // never a clean pointerleave, which left the corner lifted after scrolling back up on phones.
+    const lift = (e) => { if (e.pointerType !== "mouse") return; hoverTarget = HOVER; peel.classList.add("is-hover"); kick(); };
+    const drop = () => { hoverTarget = 0; peel.classList.remove("is-hover"); kick(); };
+    peel.addEventListener("pointerenter", lift);
+    peel.addEventListener("pointerleave", drop);
+    peel.addEventListener("pointercancel", drop);
+    window.addEventListener("touchend", () => { if (hoverTarget) drop(); }, { passive: true });
+    // After momentum scrolling settles, take one more measurement so the peel lands exactly where the page is.
+    if ("onscrollend" in window) window.addEventListener("scrollend", kick);
     kick();
 
     // The bubble cycles through his lines.
