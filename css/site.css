@@ -130,9 +130,9 @@ button { font: inherit; cursor: pointer; }
 .stk-match { width: 58%; left: -10%; bottom: 1%; z-index: 4; }
 .stk-mic { width: 15%; right: 0; top: -2%; }
 .stk-buzzer { width: 19%; left: -6%; top: 5%; }
-.stk-flag { width: 18%; right: -3%; top: 27%; }
+.stk-flag { width: 26%; right: -6%; top: 19%; filter: drop-shadow(0 12px 18px rgba(0,0,0,0.45)); }
 .stk-text { font-family: var(--display); font-weight: 800; font-size: clamp(11px, 1.3vw, 15px); letter-spacing: 0.02em; color: var(--bg); background: var(--cream); padding: 0.5em 0.8em; border-radius: 4px; white-space: nowrap; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.45)); }
-.stk-defjam { right: -5%; top: 36%; background: var(--ember); }
+.stk-defjam { right: -5%; top: 40%; background: var(--ember); }
 .stk-xmas { left: -6%; top: 58%; }
 .stk-tdot { right: 2%; bottom: -3%; background: var(--flame); }
 /* Monster can: typographic, in their green, no trademark artwork until it is cleared */
