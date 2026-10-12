@@ -437,7 +437,9 @@
     }
     const pod = links && links.podcast;
     if (pod) {
-      $("#pod-name").textContent = pod.name;
+      // The title is the lettering when the markup carries it; the data name only fills a text title.
+      const podName = $("#pod-name");
+      if (!podName.querySelector("img")) podName.textContent = pod.name;
       $("#pod-status").textContent = pod.status;
       $("#pod-body").textContent = pod.body;
     }
