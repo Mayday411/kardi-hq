@@ -40,7 +40,7 @@ COMPASS_CONTENT_URL=https://<compass>/api/public/sites/kardinal-offishall/conten
 
 Drop the flag to write the files and commit them when you want the repo to match what is published. `vercel.json` sets the build command and serves the project root as the output, so the deploy is still plain static files. The partners collection in Compass is not wired yet: the In Good Company cards are still in `index.html`.
 
-Wiring it up once: in Vercel, project Settings → Environment Variables → `COMPASS_CONTENT_URL` (Production and Preview), then Settings → Git → Deploy Hooks → create one for `main` and paste its URL into Compass under the site's Settings → Website builds.
+This is wired up: `COMPASS_CONTENT_URL` is set on the Vercel project (Production and Preview) and a deploy hook named `compass` on `main` is stored on the site's record in Compass, so a publish there rebuilds this site in about 15 seconds. To move it, change the variable in Vercel; to re-key the hook, create a new one under Settings → Git → Deploy Hooks and paste it into Compass under the site's Settings → Website builds.
 
 ## What lives where
 
