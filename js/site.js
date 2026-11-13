@@ -1,6 +1,6 @@
 /* Kardinal Offishall · homepage behaviour
    Reads data/*.json and renders: CTA, hero sticker, Now Playing, the Wha Gwaan feed,
-   the 25 Years timeline, On The Road and the footer. No framework, no build step. */
+   the 30 Years timeline, On The Road and the footer. No framework, no build step. */
 
 (function () {
   "use strict";
@@ -470,7 +470,7 @@
     years(data.releases);
   }
 
-  /* ---------- 25 Years: scroll drives the track sideways, the match burns down ---------- */
+  /* ---------- 30 Years: scroll drives the track sideways, the match burns down ---------- */
   function years(releases) {
     const section = $("#years"), stage = $(".years-stage", section), track = $("#years-track");
     const burnt = $("#fuse-burnt"), ember = $("#ember"), ticks = $("#fuse-ticks");
@@ -810,7 +810,7 @@
   /* ---------- match spine ---------- */
   function spine() {
     const stops = [
-      ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "25 Years"], ["#goods", "In His Own Name"],
+      ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "30 Years"], ["#goods", "In His Own Name"],
       ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
       ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#speaking", "At The Podium"], ["#awards", "The Wall"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
