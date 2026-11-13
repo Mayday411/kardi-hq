@@ -12,7 +12,6 @@
   "audiences": ["Corporate and leadership", "Conferences and summits", "Music and media industry", "Universities and colleges", "Youth and community programs"],
   "themes": ["Business growth", "Brand strategy and storytelling", "Innovation and creativity", "Alliances and partnerships", "Entrepreneurship", "Adaptability", "Influence and negotiation", "Peak performance"],
   "stages": [
-    { "title": "Red Bull Music Academy lecture", "detail": "A long-form conversation on the making of a Canadian hip-hop career.", "url": "https://www.redbullmusicacademy.com/lectures/kardinal-offishall-lecture/" },
     { "title": "Olympic torchbearer", "detail": "Carried the flame for Vancouver 2010.", "url": null },
     { "title": "Ambassador, Canada 150", "detail": "Official ambassador for the country's 150th.", "url": null }
   ],

@@ -113,7 +113,7 @@ DJ sets and bookings, from `data/dj.json`: the intro line, `formats` (DJ set, Ka
 
 ## At The Podium
 
-Speaking, from `data/speaking.json`: the five talks (titles from his Speakers Canada profile, blurbs written for the site), `formats`, `audiences` and `themes` chips, `stages` (the Red Bull Music Academy lecture, Olympic torch, Canada 150), `dates` for upcoming and past engagements, and the `bureau` link that the booking button uses. Not in the top menu (nine items is the limit); reachable from the footer, the match spine, the ticker and In The Building.
+Speaking, from `data/speaking.json`: the five talks (titles from his Speakers Canada profile, blurbs written for the site), `formats`, `audiences` and `themes` chips, `stages` (Olympic torch, Canada 150; the Red Bull Music Academy lecture was removed because it conflicts with the Monster partnership), `dates` for upcoming and past engagements, and the `bureau` link that the booking button uses. Not in the top menu (nine items is the limit); reachable from the footer, the match spine, the ticker and In The Building.
 
 ## The Wall
 
