@@ -199,6 +199,8 @@
     $("#foot-social").innerHTML = data.social.map((s) =>
       `<li><a ${ext(s.url)}>${esc(s.name)}</a><span class="handle">${esc(s.handle)}</span></li>`).join("");
 
+    // In The Building can be hidden from Compass; everything below lives inside it.
+    if (!$("#booking-email")) return;
     $("#booking-email").textContent = data.business.booking_email;
     $("#speaking-link").href = data.business.speaking.url;
     $("#cameo-link").href = data.business.cameo.url;
@@ -870,6 +872,8 @@
       // Each renderer runs on its own so one missing section never stops the rest.
       const safe = (fn) => { try { fn(); } catch (e) { console.warn("section skipped:", e.message); } };
       [() => links(l), () => reel(l), () => releases(r), () => feed(m), () => shows(s), () => goods(g), () => screen(y, l), () => store(st), () => party(pa), () => decks(dj, l), () => speaking(sp), () => awards(aw)].forEach(safe);
+      // If In The Building is hidden, booking links land on the next booking email still on the page.
+      if (!document.getElementById("booking-email")) { const alt = $(".js-booking-email"); if (alt) alt.id = "booking-email"; }
       // Links that point at a section no longer on the page (a hero sticker, a ticker item) go too.
       $$('a[href^="#"]').forEach((a) => { const id = a.getAttribute("href").slice(1); if (id && !document.getElementById(id)) a.remove(); });
       reveal();
