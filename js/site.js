@@ -161,7 +161,7 @@
     kick();
 
     // The bubble cycles through his lines.
-    const lines = ["Wha gwaan?", "Everyday, sometimes…", "Toronto, forever", "Still a kid in the booth", "Heavy is the head"];
+    const lines = ["Wha gwaan?", "Everyday, sometimes…", "Still a kid in the booth", "Heavy is the head"];
     const bubble = $("#bubble"), text = $("#bubble-text");
     if (bubble && text) {
       let i = 0;
