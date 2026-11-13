@@ -333,6 +333,144 @@
             <p class="reel-fine">1080p MP4, 66 seconds, with audio. Edited by Unchartered Creative.</p>
           </aside>
         </div>
+
+        <div class="book reveal" id="book">
+          <div class="blockhead-sm"><h3>What you can book</h3><span class="eyebrow">Pick one for the details</span></div>
+          <div class="book-cards" role="tablist" aria-label="What you can book">
+            <button class="book-card" type="button" role="tab" id="tab-performances" data-lane="performances" aria-controls="book-performances" aria-selected="true">
+              <span class="eyebrow">On stage</span><b>Performances</b><span class="book-blurb">Headline shows, festival sets and feature spots.</span>
+            </button>
+            <button class="book-card" type="button" role="tab" id="tab-dj" data-lane="dj" aria-controls="on-the-decks" aria-selected="false" tabindex="-1">
+              <span class="eyebrow">On the decks</span><b>DJ sets</b><span class="book-blurb">Open-format sets, Kardi Live, and the DJ pack.</span>
+            </button>
+            <button class="book-card" type="button" role="tab" id="tab-hosting" data-lane="hosting" aria-controls="book-hosting" aria-selected="false" tabindex="-1">
+              <span class="eyebrow">On the mic</span><b>Hosting</b><span class="book-blurb">Host, MC, appearances and the judges' chair.</span>
+            </button>
+          </div>
+          <div class="book-panels">
+            <div class="book-panel" id="book-performances" data-lane="performances" role="tabpanel" aria-labelledby="tab-performances">
+              <div class="dj-grid">
+                <article class="dj-card dj-formats">
+                  <h3>Formats</h3>
+                  <ul class="formats">
+                  <li><b>Headline show</b><span>The full set, from the first records to Firestarter Vol. 2.</span></li>
+                  <li><b>Festival set</b><span>A tighter set built for big stages and mixed crowds.</span></li>
+                  <li><b>Feature spot</b><span>A guest verse or a few songs inside someone else's show.</span></li>
+                  <li><b>Private + corporate</b><span>Closed-door shows for brands, galas and company events.</span></li>
+                  </ul>
+                  <p class="eyebrow" style="margin-top:8px">Where</p>
+                  <ul class="plays">
+                  <li>Festivals</li>
+                  <li>Concert halls</li>
+                  <li>Clubs</li>
+                  <li>Brand events</li>
+                  <li>Award shows</li>
+                  <li>Caribana weekend</li>
+                  </ul>
+                </article>
+                <article class="dj-card dj-book">
+                  <h3>Book a performance</h3>
+                  <p class="dj-lede">One email, five lines, and the team comes back with availability and a number.</p>
+                  <ol class="brief">
+                  <li>Date and city</li>
+                  <li>Venue and capacity</li>
+                  <li>Set length and format</li>
+                  <li>Budget range</li>
+                  <li>Who else is on the bill</li>
+                  </ol>
+                  <div class="party-cta">
+                    <a class="btn flame" href="mailto:teamkardi@hof-artists.com?subject=Performance%20booking%20inquiry%20for%20Kardinal%20Offishall">Email the booking team</a>
+                  </div>
+                  <div class="copy-row">
+                    <code class="js-booking-email">teamkardi@hof-artists.com</code>
+                    <button class="copy-btn js-copy-email" type="button">Copy</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="book-panel" id="on-the-decks" data-lane="dj" role="tabpanel" aria-labelledby="tab-dj" hidden>
+              <p class="dj-lede" id="dj-intro"></p>
+            <div class="dj-grid">
+              <article class="dj-card dj-formats">
+                <h3>Formats</h3>
+                <ul class="formats" id="dj-formats"></ul>
+                <p class="eyebrow" style="margin-top:8px">Where he plays</p>
+                <ul class="plays" id="dj-plays"></ul>
+              </article>
+
+              <article class="dj-card dj-book">
+                <h3>Book a set</h3>
+                <p class="dj-lede">One email, five lines, and the team comes back with availability and a number.</p>
+                <ol class="brief" id="dj-brief"></ol>
+                <div class="party-cta">
+                  <a class="btn flame" id="dj-mail" href="mailto:teamkardi@hof-artists.com?subject=DJ%20booking%20inquiry%20for%20Kardinal%20Offishall">Email the booking team</a>
+                  <a class="btn" href="#the-reel">Watch the reel</a>
+                </div>
+                <div class="copy-row">
+                  <code class="js-booking-email">teamkardi@hof-artists.com</code>
+                  <button class="copy-btn js-copy-email" type="button">Copy</button>
+                </div>
+              </article>
+            </div>
+
+            <div class="dj-grid dj-row2">
+              <article class="dj-card">
+                <div class="blockhead-sm"><h3>Next up</h3><span class="eyebrow">Set dates</span></div>
+                <div class="shows" id="dj-sets-up"></div>
+                <div id="dj-sets-past-wrap" hidden>
+                  <p class="eyebrow" style="margin:18px 0 8px">Recent sets</p>
+                  <div class="shows" id="dj-sets-past"></div>
+                </div>
+              </article>
+              <article class="dj-card">
+                <div class="blockhead-sm"><h3>Listen</h3><span class="eyebrow">Mixes</span></div>
+                <div id="dj-mixes"></div>
+                <div class="dj-pack" id="dj-pack"></div>
+              </article>
+            </div>
+            </div>
+            <div class="book-panel" id="book-hosting" data-lane="hosting" role="tabpanel" hidden aria-labelledby="tab-hosting">
+              <div class="dj-grid">
+                <article class="dj-card dj-formats">
+                  <h3>Formats</h3>
+                  <ul class="formats">
+                  <li><b>Host + MC</b><span>He runs the night from the mic. Award shows, galas, launches.</span></li>
+                  <li><b>Host + DJ</b><span>He holds the mic and the decks for the whole event.</span></li>
+                  <li><b>Appearances</b><span>Brand moments, openings, red carpets, meet and greets.</span></li>
+                  <li><b>Judge + panel</b><span>Competitions, showcases and panels, the way he does it on Canada's Got Talent.</span></li>
+                  </ul>
+                  <p class="eyebrow" style="margin-top:8px">Where</p>
+                  <ul class="plays">
+                  <li>Award shows</li>
+                  <li>Galas</li>
+                  <li>Brand launches</li>
+                  <li>Broadcast</li>
+                  <li>Charity events</li>
+                  <li>Corporate events</li>
+                  </ul>
+                </article>
+                <article class="dj-card dj-book">
+                  <h3>Book him to host</h3>
+                  <p class="dj-lede">One email, five lines, and the team comes back with availability and a number.</p>
+                  <ol class="brief">
+                  <li>Date and city</li>
+                  <li>The event and the audience</li>
+                  <li>What you need him to do, and for how long</li>
+                  <li>Budget range</li>
+                  <li>Who else is involved</li>
+                  </ol>
+                  <div class="party-cta">
+                    <a class="btn flame" href="mailto:teamkardi@hof-artists.com?subject=Hosting%20inquiry%20for%20Kardinal%20Offishall">Email the booking team</a>
+                  </div>
+                  <div class="copy-row">
+                    <code class="js-booking-email">teamkardi@hof-artists.com</code>
+                    <button class="copy-btn js-copy-email" type="button">Copy</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -404,57 +542,6 @@
       </div>
     </section>
 
-    <!-- ================= ON THE DECKS: DJ sets and bookings ================= -->
-    <section class="section" id="on-the-decks" aria-labelledby="decks-head">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">On The Decks</p>
-            <h2 id="decks-head">DJ sets</h2>
-          </div>
-          <p class="right" id="dj-intro"></p>
-        </div>
-
-        <div class="dj-grid reveal">
-          <article class="dj-card dj-formats">
-            <h3>Formats</h3>
-            <ul class="formats" id="dj-formats"></ul>
-            <p class="eyebrow" style="margin-top:8px">Where he plays</p>
-            <ul class="plays" id="dj-plays"></ul>
-          </article>
-
-          <article class="dj-card dj-book">
-            <h3>Book a set</h3>
-            <p class="dj-lede">One email, five lines, and the team comes back with availability and a number.</p>
-            <ol class="brief" id="dj-brief"></ol>
-            <div class="party-cta">
-              <a class="btn flame" id="dj-mail" href="mailto:teamkardi@hof-artists.com?subject=DJ%20booking%20inquiry%20for%20Kardinal%20Offishall">Email the booking team</a>
-              <a class="btn" href="#the-reel">Watch the reel</a>
-            </div>
-            <div class="copy-row">
-              <code class="js-booking-email">teamkardi@hof-artists.com</code>
-              <button class="copy-btn js-copy-email" type="button">Copy</button>
-            </div>
-          </article>
-        </div>
-
-        <div class="dj-grid dj-row2 reveal">
-          <article class="dj-card">
-            <div class="blockhead-sm"><h3>Next up</h3><span class="eyebrow">Set dates</span></div>
-            <div class="shows" id="dj-sets-up"></div>
-            <div id="dj-sets-past-wrap" hidden>
-              <p class="eyebrow" style="margin:18px 0 8px">Recent sets</p>
-              <div class="shows" id="dj-sets-past"></div>
-            </div>
-          </article>
-          <article class="dj-card">
-            <div class="blockhead-sm"><h3>Listen</h3><span class="eyebrow">Mixes</span></div>
-            <div id="dj-mixes"></div>
-            <div class="dj-pack" id="dj-pack"></div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <!-- ================= AT THE PODIUM: speaking ================= -->
     <section class="section" id="speaking" aria-labelledby="speaking-head">

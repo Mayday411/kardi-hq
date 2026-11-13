@@ -809,12 +809,41 @@
     });
   }
 
+  /* ---------- booking lanes: Performances, DJ sets, Hosting, inside The Reel ---------- */
+  function booking() {
+    const cards = $$(".book-card"), panels = $$(".book-panel");
+    if (!cards.length) return;
+    const open = (lane, scroll) => {
+      cards.forEach((c) => { const on = c.dataset.lane === lane; c.setAttribute("aria-selected", on ? "true" : "false"); c.tabIndex = on ? 0 : -1; });
+      panels.forEach((p) => { p.hidden = p.dataset.lane !== lane; });
+      if (scroll) $("#book").scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    cards.forEach((c, i) => {
+      c.addEventListener("click", () => open(c.dataset.lane));
+      c.addEventListener("keydown", (e) => {
+        const d = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        const n = cards[(i + d + cards.length) % cards.length];
+        open(n.dataset.lane); n.focus();
+      });
+    });
+    // Links elsewhere on the page (the menu's DJ Sets, the ticker) open the right lane.
+    const byHash = { "#on-the-decks": "dj", "#book-performances": "performances", "#book-hosting": "hosting" };
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest && e.target.closest('a[href^="#"]');
+      const lane = a && byHash[a.getAttribute("href")];
+      if (lane) { e.preventDefault(); open(lane, true); }
+    });
+    if (byHash[location.hash]) open(byHash[location.hash], true);
+  }
+
   /* ---------- match spine ---------- */
   function spine() {
     const stops = [
       ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "30 Years"], ["#goods", "In His Own Name"],
       ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Monster"],
-      ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#speaking", "At The Podium"], ["#awards", "The Wall"], ["#give-back", "Give Back"], ["#join", "Join"]
+      ["#on-the-road", "On The Road"], ["#speaking", "At The Podium"], ["#awards", "The Wall"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 
     const nav = document.createElement("nav");
@@ -871,7 +900,7 @@
       // A section can be hidden from Compass, which leaves it out of the page at build.
       // Each renderer runs on its own so one missing section never stops the rest.
       const safe = (fn) => { try { fn(); } catch (e) { console.warn("section skipped:", e.message); } };
-      [() => links(l), () => reel(l), () => releases(r), () => feed(m), () => shows(s), () => goods(g), () => screen(y, l), () => store(st), () => party(pa), () => decks(dj, l), () => speaking(sp), () => awards(aw)].forEach(safe);
+      [() => links(l), () => reel(l), () => releases(r), () => feed(m), () => shows(s), () => goods(g), () => screen(y, l), () => store(st), () => party(pa), () => decks(dj, l), () => speaking(sp), () => awards(aw), () => booking()].forEach(safe);
       // If In The Building is hidden, booking links land on the next booking email still on the page.
       if (!document.getElementById("booking-email")) { const alt = $(".js-booking-email"); if (alt) alt.id = "booking-email"; }
       // Links that point at a section no longer on the page (a hero sticker, a ticker item) go too.
