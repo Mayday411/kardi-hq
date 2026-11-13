@@ -108,6 +108,25 @@
       <div class="ticker" aria-label="Partners">
         <div class="ticker-track" id="ticker"></div>
       </div>
+      <!-- The sign-up, up top as well as at the foot of the page -->
+      <div class="wrap join-top-wrap">
+        <div class="join join-top">
+          <div>
+            <p class="eyebrow" style="color:#3B1A0E">Join the Colleagues</p>
+            <h2>First to know.</h2>
+            <p>Secret shows, special prices, 1st in line for new drops and announcements, discount codes and more!</p>
+          </div>
+          <form class="js-join-form" novalidate>
+            <div class="row">
+              <label for="join-email-top" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
+              <input id="join-email-top" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+              <button type="submit">Count me in</button>
+            </div>
+            <p class="fine">No spam, one tap to leave.</p>
+            <p class="msg" hidden></p>
+          </form>
+        </div>
+      </div>
     </section>
 
     <!-- ================= NOW PLAYING ================= -->
@@ -670,16 +689,16 @@
           <div>
             <p class="eyebrow" style="color:#3B1A0E">Join the Colleagues</p>
             <h2 id="join-head">First to know.</h2>
-            <p>Drops, dates, the Idris project and the Christmas party. Email or text, never noise.</p>
+            <p>Secret shows, special prices, 1st in line for new drops and announcements, discount codes and more!</p>
           </div>
-          <form id="join-form" novalidate>
+          <form id="join-form" class="js-join-form" novalidate>
             <div class="row">
               <label for="join-email" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
               <input id="join-email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
               <button type="submit" id="join-btn">Count me in</button>
             </div>
             <p class="fine">No spam, one tap to leave.</p>
-            <p class="msg" id="join-msg" hidden></p>
+            <p class="msg" hidden></p>
           </form>
         </div>
       </div>

@@ -749,15 +749,15 @@
 
   /* ---------- join ---------- */
   function join() {
-    const form = $("#join-form");
-    form.addEventListener("submit", (e) => {
+    // The sign-up appears twice: under the hero and at the foot of the page.
+    $$(".js-join-form").forEach((form) => form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const email = $("#join-email");
+      const email = $("input[type=email]", form), msg = $(".msg", form);
       if (!email.checkValidity()) { email.reportValidity(); return; }
-      $("#join-msg").hidden = false;
-      $("#join-msg").textContent = "The list opens with the official launch. Nothing was stored.";
+      msg.hidden = false;
+      msg.textContent = "The list opens with the official launch. Nothing was stored.";
       form.reset();
-    });
+    }));
   }
 
   /* ---------- reveal ---------- */
