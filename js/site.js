@@ -267,7 +267,7 @@
     $("#dj-pack").innerHTML = pk ? `<p class="eyebrow" style="margin-top:18px">For DJs</p><a class="pack" ${ext(pk.url)}><b>${esc(pk.name)}</b><span>${esc(pk.detail)}</span><span class="pack-go">Download →</span></a>` : "";
 
     // Second copy button for the booking email
-    const email = links && links.business ? links.business.booking_email : "teamkardi@hof-artists.com";
+    const email = links && links.business ? links.business.booking_email : "team@maraudersmgmt.com";
     $$(".js-booking-email").forEach((c) => { c.textContent = email; });
     const mail = $("#dj-mail"); if (mail) mail.href = `mailto:${email}?subject=${encodeURIComponent("DJ booking inquiry for Kardinal Offishall")}`;
     $$(".js-copy-email").forEach((btn) => btn.addEventListener("click", async () => {
