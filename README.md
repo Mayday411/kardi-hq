@@ -97,7 +97,7 @@ Sections are stacked sheets rather than blocks divided by rules. Script gives ev
 
 ## Partners
 
-Kardi's brand work has its own lane. Monster's official claw-and-wordmark sits on the hero pile as a die-cut sticker next to a dashed "Your logo here" sticker; a partner ticker runs under the hero (items in `data/links.json` under `ticker`, the last one flagged `open`); and In The Building ends with "In Good Company": a brief / play / result card for Monster and an open-slot card listing what a deal can include, with the booking email. The Monster card also carries the logo and their 9:16 bumper (`assets/monster-bumper.mp4`, muted, looping, 720p with the audio stripped), both supplied by Kardi's side. The Monster result line is a placeholder until campaign numbers exist.
+Kardi's brand work has its own lane. Monster's official claw-and-wordmark sits on the hero pile as a die-cut sticker next to a dashed "Your logo here" sticker; a partner ticker runs under the hero (items in `data/links.json` under `ticker`, the last one flagged `open`); and "In Good Company" is its own section after In The Building, dedicated to Monster: one brief / play / result card. The open-slot "Your brand" card was removed in November 2026; the "Your logo here" sticker and the Sponsor the party button now point at the booking email. The Monster card also carries the logo and their 9:16 bumper (`assets/monster-bumper.mp4`, muted, looping, 720p with the audio stripped), both supplied by Kardi's side. The Monster result line is a placeholder until campaign numbers exist.
 
 ## Logo
 
@@ -133,7 +133,7 @@ The order of the page's sections, and whether each one shows, is edited in Compa
 - A hidden section is left out of the page, and its links are dropped from the header, mobile and footer menus. Hero stickers and ticker items that point at it are removed in the browser.
 - The menus keep their own order. Reordering sections does not shuffle them.
 - A section Compass does not list stays where the source has it, shown. Unpublishing a Sections entry therefore does not hide a section; tick Hide instead.
-- Partners (In Good Company) lives inside In The Building, so hiding that hides both.
+- In Good Company (the Monster section, id `partners`) is its own section and moves or hides on its own.
 
 `index.html` in the repo stays in its default order. The rewrite happens only on Vercel, or locally with `node tools/pull-content.mjs --layout` if you want to see it (do not commit the result).
 

@@ -337,7 +337,7 @@
     if (t.donate_url) ctas.push(`<a class="btn flame" ${ext(t.donate_url)}>Donate to ${esc(t.beneficiary || "this year's charity")}</a>`);
     if (t.tickets_url) ctas.push(`<a class="btn primary" ${ext(t.tickets_url)}>Tickets</a>`);
     if (!ctas.length) ctas.push(`<a class="btn primary" href="#join">Tell me when it's announced</a>`);
-    ctas.push(`<a class="btn" href="#partners">Sponsor the party</a>`);
+    ctas.push(`<a class="btn" href="#booking-email">Sponsor the party</a>`);
     $("#party-cta").innerHTML = ctas.join("");
 
     $("#party-ways").innerHTML = (data.ways || []).map((w) => `<li><div><b>${esc(w.title)}</b><span>${esc(w.body)}</span></div></li>`).join("");
@@ -811,7 +811,7 @@
   function spine() {
     const stops = [
       ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "30 Years"], ["#goods", "In His Own Name"],
-      ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Partners"],
+      ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Monster"],
       ["#on-the-road", "On The Road"], ["#on-the-decks", "On The Decks"], ["#speaking", "At The Podium"], ["#awards", "The Wall"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 
