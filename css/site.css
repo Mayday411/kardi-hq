@@ -25,7 +25,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; } /* keeps a section's first line clear of the fixed header after a menu jump */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
