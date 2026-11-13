@@ -133,7 +133,6 @@ button { font: inherit; cursor: pointer; }
 .stk-flag { width: 24%; right: -7%; top: 22%; filter: drop-shadow(0 12px 18px rgba(0,0,0,0.45)); }
 .stk-text { font-family: var(--display); font-weight: 800; font-size: clamp(11px, 1.3vw, 15px); letter-spacing: 0.02em; color: var(--bg); background: var(--cream); padding: 0.5em 0.8em; border-radius: 4px; white-space: nowrap; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.45)); }
 .stk-xmas { left: -8%; top: 60%; }
-.stk-tdot { right: 0; bottom: -4%; background: var(--flame); }
 /* Monster: the official mark, a die-cut sticker like the rest */
 .stk-can { width: 30%; right: -6%; top: 47%; z-index: 5; }
 /* The empty slot: a die-cut sticker nobody has claimed yet */
@@ -760,7 +759,6 @@ button { font: inherit; cursor: pointer; }
 .sticker { background: var(--blk-orange); color: #000; }
 .stk-text { color: #000; }
 .stk-xmas { background: var(--blk-green); line-height: 1.25; text-align: center; }
-.stk-tdot { background: var(--blk-cyan); }
 .stk-frames { background: var(--blk-magenta); color: #000; }
 .stk-416 { background: var(--blk-heart); }
 .bubble { background: var(--blk-gold); color: #000; }
