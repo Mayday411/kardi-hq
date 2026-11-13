@@ -134,7 +134,7 @@ The order of the page's sections, and whether each one shows, is edited in Compa
 - The menus keep their own order. Reordering sections does not shuffle them.
 - A section Compass does not list stays where the source has it, shown. Unpublishing a Sections entry therefore does not hide a section; tick Hide instead.
 - In Good Company (the Monster section, id `partners`) is its own section and moves or hides on its own.
-- DJ Sets is no longer a section. It is one of three booking lanes inside The Reel (Performances, DJ sets, Hosting): cards that swap a details panel, handled by `booking()` in `js/site.js`. The DJ panel keeps the id `on-the-decks`, so old links and the menu's DJ Sets link open that lane. Performances and Hosting copy is static in `index.html`; DJ formats still come from `data/dj.json`.
+- DJ Sets and Speaking are no longer sections. They are two of four booking lanes inside The Reel (Performances, DJ sets, Hosting, Speaking). The whole booking area (id book) stays closed until the red Booking button is pressed, or until a link that points inside it is followed (the Speaking panel keeps the id speaking). The lanes are cards that swap a details panel, handled by `booking()` in `js/site.js`. The DJ panel keeps the id `on-the-decks`, so old links and the menu's DJ Sets link open that lane. Performances and Hosting copy is static in `index.html`; DJ formats still come from `data/dj.json`.
 
 `index.html` in the repo stays in its default order. The rewrite happens only on Vercel, or locally with `node tools/pull-content.mjs --layout` if you want to see it (do not commit the result).
 

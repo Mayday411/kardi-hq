@@ -809,15 +809,21 @@
     });
   }
 
-  /* ---------- booking lanes: Performances, DJ sets, Hosting, inside The Reel ---------- */
+  /* ---------- booking: closed until the Booking button is pressed; four lanes inside The Reel ---------- */
   function booking() {
+    const book = $("#book"), toggle = $("#book-toggle");
     const cards = $$(".book-card"), panels = $$(".book-panel");
-    if (!cards.length) return;
-    const open = (lane, scroll) => {
+    if (!book || !cards.length) return;
+    const show = (on, scroll) => {
+      book.hidden = !on;
+      if (toggle) { toggle.setAttribute("aria-expanded", on ? "true" : "false"); toggle.textContent = on ? "Close booking" : "Booking"; }
+      if (on && scroll) book.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    const open = (lane) => {
       cards.forEach((c) => { const on = c.dataset.lane === lane; c.setAttribute("aria-selected", on ? "true" : "false"); c.tabIndex = on ? 0 : -1; });
       panels.forEach((p) => { p.hidden = p.dataset.lane !== lane; });
-      if (scroll) $("#book").scrollIntoView({ behavior: "smooth", block: "start" });
     };
+    if (toggle) toggle.addEventListener("click", () => show(book.hidden, true));
     cards.forEach((c, i) => {
       c.addEventListener("click", () => open(c.dataset.lane));
       c.addEventListener("keydown", (e) => {
@@ -828,14 +834,22 @@
         open(n.dataset.lane); n.focus();
       });
     });
-    // Links elsewhere on the page (the menu's DJ Sets, the ticker) open the right lane.
-    const byHash = { "#on-the-decks": "dj", "#book-performances": "performances", "#book-hosting": "hosting" };
+    // Any in-page link that points inside the booking area (the menu's DJ Sets, Speaking in the
+    // footer, a ticker item, a booking-email button) opens the area on the right lane first.
+    const reveal = (hash) => {
+      let t = null;
+      try { t = hash && hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; } catch (e) { t = null; }
+      if (!t || !book.contains(t) || t === book) return false;
+      const panel = t.closest(".book-panel");
+      if (panel) open(panel.dataset.lane);
+      show(true, true);
+      return true;
+    };
     document.addEventListener("click", (e) => {
       const a = e.target.closest && e.target.closest('a[href^="#"]');
-      const lane = a && byHash[a.getAttribute("href")];
-      if (lane) { e.preventDefault(); open(lane, true); }
+      if (a && !book.contains(a) && reveal(a.getAttribute("href"))) e.preventDefault();
     });
-    if (byHash[location.hash]) open(byHash[location.hash], true);
+    reveal(location.hash);
   }
 
   /* ---------- match spine ---------- */
@@ -843,7 +857,7 @@
     const stops = [
       ["#on-the-mic", "On The Mic"], ["#wha-gwaan", "Wha Gwaan"], ["#years", "30 Years"], ["#goods", "In His Own Name"],
       ["#store", "Store"], ["#on-the-screen", "On The Screen"], ["#the-reel", "The Reel"], ["#in-the-building", "In The Building"], ["#partners", "Monster"],
-      ["#on-the-road", "On The Road"], ["#speaking", "At The Podium"], ["#awards", "The Wall"], ["#give-back", "Give Back"], ["#join", "Join"]
+      ["#on-the-road", "On The Road"], ["#awards", "The Wall"], ["#give-back", "Give Back"], ["#join", "Join"]
     ].map(([sel, label]) => ({ el: $(sel), label })).filter((s) => s.el);
 
     const nav = document.createElement("nav");

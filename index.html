@@ -319,13 +319,14 @@
               <li>Brand content and campaigns</li>
             </ul>
             <div class="reel-actions">
+              <button class="btn flame" type="button" id="book-toggle" aria-expanded="false" aria-controls="book">Booking</button>
               <a class="btn" id="reel-download" href="assets/sizzle-2026.mp4" download="Kardi-Sizzle-Reel-2026.mp4">Download the reel</a>
             </div>
             <p class="reel-fine">1080p MP4, 66 seconds, with audio. Edited by Unchartered Creative.</p>
           </aside>
         </div>
 
-        <div class="book reveal" id="book">
+        <div class="book" id="book" hidden>
           <div class="blockhead-sm"><h3>What you can book</h3><span class="eyebrow">Pick one for the details</span></div>
           <div class="book-cards" role="tablist" aria-label="What you can book">
             <button class="book-card" type="button" role="tab" id="tab-performances" data-lane="performances" aria-controls="book-performances" aria-selected="true">
@@ -336,6 +337,9 @@
             </button>
             <button class="book-card" type="button" role="tab" id="tab-hosting" data-lane="hosting" aria-controls="book-hosting" aria-selected="false" tabindex="-1">
               <span class="eyebrow">On the mic</span><b>Hosting</b><span class="book-blurb">Host, MC, appearances and the judges' chair.</span>
+            </button>
+            <button class="book-card" type="button" role="tab" id="tab-speaking" data-lane="speaking" aria-controls="speaking" aria-selected="false" tabindex="-1">
+              <span class="eyebrow">At the podium</span><b>Speaking</b><span class="book-blurb">Keynotes, fireside chats, panels and campus talks.</span>
             </button>
           </div>
           <div class="book-panels">
@@ -460,6 +464,44 @@
                 </article>
               </div>
             </div>
+            <div class="book-panel" id="speaking" data-lane="speaking" role="tabpanel" aria-labelledby="tab-speaking" hidden>
+              <p class="dj-lede" id="sp-intro"></p>
+              <div class="talks" id="sp-talks"></div>
+
+              <div class="sp-grid">
+                <article class="dj-card">
+                  <h3>Formats</h3>
+                  <ul class="plays" id="sp-formats"></ul>
+                  <p class="eyebrow" style="margin-top:10px">Rooms</p>
+                  <ul class="plays" id="sp-audiences"></ul>
+                  <p class="eyebrow" style="margin-top:10px">Themes</p>
+                  <ul class="plays muted" id="sp-themes"></ul>
+                </article>
+                <article class="dj-card dj-book">
+                  <h3>Book a talk</h3>
+                  <p class="dj-lede">Keynotes and corporate bookings go through his bureau. Everything else, the team.</p>
+                  <div class="party-cta">
+                    <a class="btn flame" id="sp-bureau" href="https://speakerscanada.com/keynote-speaker/kardinal-offishall/" target="_blank" rel="noopener">Book through Speakers Canada</a>
+                    <a class="btn" href="mailto:teamkardi@hof-artists.com?subject=Speaking%20inquiry%20for%20Kardinal%20Offishall">Or email the team</a>
+                  </div>
+                  <div class="copy-row">
+                    <code class="js-booking-email">teamkardi@hof-artists.com</code>
+                    <button class="copy-btn js-copy-email" type="button">Copy</button>
+                  </div>
+                  <p class="eyebrow" style="margin-top:14px">Stages</p>
+                  <ul class="stages" id="sp-stages"></ul>
+                </article>
+              </div>
+
+              <div class="dj-card">
+                <div class="blockhead-sm"><h3>Upcoming</h3><span class="eyebrow">Talks and panels</span></div>
+                <div class="shows" id="sp-dates-up"></div>
+                <div id="sp-dates-past-wrap" hidden>
+                  <p class="eyebrow" style="margin:18px 0 8px">Recent</p>
+                  <div class="shows" id="sp-dates-past"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -534,50 +576,6 @@
     </section>
 
 
-    <!-- ================= AT THE PODIUM: speaking ================= -->
-    <section class="section" id="speaking" aria-labelledby="speaking-head">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">At The Podium</p>
-            <h2 id="speaking-head">Speaking</h2>
-          </div>
-          <p class="right" id="sp-intro"></p>
-        </div>
-
-        <div class="talks reveal" id="sp-talks"></div>
-
-        <div class="sp-grid reveal">
-          <article class="dj-card">
-            <h3>Formats</h3>
-            <ul class="plays" id="sp-formats"></ul>
-            <p class="eyebrow" style="margin-top:10px">Rooms</p>
-            <ul class="plays" id="sp-audiences"></ul>
-            <p class="eyebrow" style="margin-top:10px">Themes</p>
-            <ul class="plays muted" id="sp-themes"></ul>
-          </article>
-          <article class="dj-card dj-book">
-            <h3>Book a talk</h3>
-            <p class="dj-lede">Keynotes and corporate bookings go through his bureau. Everything else, the team.</p>
-            <div class="party-cta">
-              <a class="btn flame" id="sp-bureau" href="https://speakerscanada.com/keynote-speaker/kardinal-offishall/" target="_blank" rel="noopener">Book through Speakers Canada</a>
-              <a class="btn" href="#booking-email">Or email the team</a>
-            </div>
-            <p class="eyebrow" style="margin-top:14px">Stages</p>
-            <ul class="stages" id="sp-stages"></ul>
-          </article>
-        </div>
-
-        <div class="dj-card reveal" style="margin-top:18px">
-          <div class="blockhead-sm"><h3>Upcoming</h3><span class="eyebrow">Talks and panels</span></div>
-          <div class="shows" id="sp-dates-up"></div>
-          <div id="sp-dates-past-wrap" hidden>
-            <p class="eyebrow" style="margin:18px 0 8px">Recent</p>
-            <div class="shows" id="sp-dates-past"></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ================= THE WALL: awards and honours ================= -->
     <section class="section" id="awards" aria-labelledby="awards-head">
