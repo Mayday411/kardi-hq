@@ -17,6 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { applyLayout } from "./layout.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(root, "data");
@@ -24,8 +25,24 @@ const strict = process.argv.includes("--strict");
 const dryRun = process.argv.includes("--dry-run");
 const url = process.env.COMPASS_CONTENT_URL;
 
+// Section order and visibility come from data/sections.json (refreshed from
+// Compass below when it can be reached). The page itself is rewritten only
+// on Vercel or with --layout, so a local pull never reorders the tracked
+// index.html by accident.
+const doLayout = !!process.env.VERCEL || process.argv.includes("--layout");
+function layout() {
+  const file = path.join(dataDir, "sections.json");
+  if (!fs.existsSync(file)) return;
+  const { sections } = JSON.parse(fs.readFileSync(file, "utf8"));
+  const page = path.join(root, "index.html");
+  const { html, report } = applyLayout(fs.readFileSync(page, "utf8"), sections);
+  console.log(`layout: ${report}${doLayout && !dryRun ? "" : " (not applied: needs Vercel or --layout)"}`);
+  if (doLayout && !dryRun) fs.writeFileSync(page, html);
+}
+
 if (!url) {
   console.log("pull-content: COMPASS_CONTENT_URL not set, keeping the committed data files.");
+  layout();
   process.exit(0);
 }
 
@@ -102,6 +119,21 @@ async function main() {
     console.log("  party: nothing published, left alone");
   }
 
+  // Section order and visibility: {id, label, hidden} per section, in the order Compass holds them.
+  if (Array.isArray(cols.sections)) {
+    const next = {
+      _note: "Section order and visibility, edited in Compass (Sections). The build applies it to index.html; see tools/layout.mjs.",
+      sections: cols.sections.map((s) => ({ id: s.id, label: s.label ?? s.id, hidden: s.hidden === true })),
+    };
+    const file = path.join(dataDir, "sections.json");
+    const before = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+    if (!same(before?.sections, next.sections)) {
+      changed.push("sections.json");
+      if (!dryRun) fs.writeFileSync(file, JSON.stringify(next, null, 2) + "\n");
+      console.log(`  sections: ${next.sections.length} → sections.json`);
+    } else console.log(`  sections: unchanged (${next.sections.length})`);
+  }
+
   for (const [file, obj] of touched) if (changed.some((c) => c.startsWith(file))) write(file, obj);
 
   if (!changed.length) console.log("pull-content: everything already matched.");
@@ -112,4 +144,4 @@ main().catch((err) => {
   console.error(`pull-content: ${err.message}`);
   if (strict) process.exit(1);
   console.warn("pull-content: keeping the committed data files.");
-});
+}).finally(layout);

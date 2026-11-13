@@ -865,7 +865,15 @@
   $("#year").textContent = new Date().getFullYear();
 
   Promise.all([load("links"), load("releases"), load("moments"), load("shows"), load("goods"), load("youtube").catch(() => null), load("store").catch(() => null), load("party").catch(() => null), load("dj").catch(() => null), load("speaking").catch(() => null), load("awards").catch(() => null)])
-    .then(([l, r, m, s, g, y, st, pa, dj, sp, aw]) => { links(l); reel(l); releases(r); feed(m); shows(s); goods(g); screen(y, l); store(st); party(pa); decks(dj, l); speaking(sp); awards(aw); reveal(); })
+    .then(([l, r, m, s, g, y, st, pa, dj, sp, aw]) => {
+      // A section can be hidden from Compass, which leaves it out of the page at build.
+      // Each renderer runs on its own so one missing section never stops the rest.
+      const safe = (fn) => { try { fn(); } catch (e) { console.warn("section skipped:", e.message); } };
+      [() => links(l), () => reel(l), () => releases(r), () => feed(m), () => shows(s), () => goods(g), () => screen(y, l), () => store(st), () => party(pa), () => decks(dj, l), () => speaking(sp), () => awards(aw)].forEach(safe);
+      // Links that point at a section no longer on the page (a hero sticker, a ticker item) go too.
+      $$('a[href^="#"]').forEach((a) => { const id = a.getAttribute("href").slice(1); if (id && !document.getElementById(id)) a.remove(); });
+      reveal();
+    })
     .catch((err) => {
       console.error(err);
       $("#feed").innerHTML = `<p class="empty">The feed could not load. If you opened this file directly, serve it over http (see README).</p>`;

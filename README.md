@@ -125,6 +125,18 @@ Give Back is now the party section, driven by `data/party.json`. `this_year` hol
 
 ## The Store
 
+### Section order and visibility
+
+The order of the page's sections, and whether each one shows, is edited in Compass under **Sections**: move entries with the arrows and press Save order, or open one and tick **Hide this section**. The build writes that list to `data/sections.json` and `tools/layout.mjs` rewrites `index.html` to match before the site is served, so there is no jump on load.
+
+- The hero is always first and the sign-up band always last.
+- A hidden section is left out of the page, and its links are dropped from the header, mobile and footer menus. Hero stickers and ticker items that point at it are removed in the browser.
+- The menus keep their own order. Reordering sections does not shuffle them.
+- A section Compass does not list stays where the source has it, shown. Unpublishing a Sections entry therefore does not hide a section; tick Hide instead.
+- Partners (In Good Company) lives inside In The Building, so hiding that hides both.
+
+`index.html` in the repo stays in its default order. The rewrite happens only on Vercel, or locally with `node tools/pull-content.mjs --layout` if you want to see it (do not commit the result).
+
 ### Mixtapes on the timeline
 
 A release with `"kind": "mixtape"` sits on the 25 Years timeline like an album, wears a Mixtape tag on its sleeve, and opens a player instead of a streaming link when tapped. Give it `tracks`, one object per song, and optionally a `download` zip of the whole tape:

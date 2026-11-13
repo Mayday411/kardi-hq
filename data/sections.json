@@ -1,0 +1,75 @@
+{
+  "_note": "Section order and visibility, edited in Compass (Sections). The build applies it to index.html; see tools/layout.mjs.",
+  "sections": [
+    {
+      "id": "on-the-mic",
+      "label": "On The Mic",
+      "hidden": false
+    },
+    {
+      "id": "wha-gwaan",
+      "label": "Wha Gwaan",
+      "hidden": false
+    },
+    {
+      "id": "years",
+      "label": "25 Years",
+      "hidden": false
+    },
+    {
+      "id": "goods",
+      "label": "Things He Makes",
+      "hidden": false
+    },
+    {
+      "id": "store",
+      "label": "The Store",
+      "hidden": false
+    },
+    {
+      "id": "more",
+      "label": "More from Kardi",
+      "hidden": false
+    },
+    {
+      "id": "on-the-screen",
+      "label": "On The Screen",
+      "hidden": false
+    },
+    {
+      "id": "the-reel",
+      "label": "The Reel",
+      "hidden": false
+    },
+    {
+      "id": "in-the-building",
+      "label": "In The Building",
+      "hidden": false
+    },
+    {
+      "id": "on-the-road",
+      "label": "On The Road",
+      "hidden": false
+    },
+    {
+      "id": "on-the-decks",
+      "label": "DJ Sets",
+      "hidden": false
+    },
+    {
+      "id": "speaking",
+      "label": "At The Podium",
+      "hidden": false
+    },
+    {
+      "id": "awards",
+      "label": "The Wall",
+      "hidden": false
+    },
+    {
+      "id": "give-back",
+      "label": "Give Back",
+      "hidden": false
+    }
+  ]
+}
