@@ -132,11 +132,10 @@ button { font: inherit; cursor: pointer; }
 .stk-buzzer { width: 18%; left: -6%; top: 3%; }
 .stk-flag { width: 24%; right: -7%; top: 22%; filter: drop-shadow(0 12px 18px rgba(0,0,0,0.45)); }
 .stk-text { font-family: var(--display); font-weight: 800; font-size: clamp(11px, 1.3vw, 15px); letter-spacing: 0.02em; color: var(--bg); background: var(--cream); padding: 0.5em 0.8em; border-radius: 4px; white-space: nowrap; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.45)); }
-.stk-defjam { right: -6%; top: 43%; background: var(--ember); }
 .stk-xmas { left: -8%; top: 60%; }
 .stk-tdot { right: 0; bottom: -4%; background: var(--flame); }
 /* Monster: the official mark, a die-cut sticker like the rest */
-.stk-can { width: 30%; right: -6%; top: 56%; z-index: 5; }
+.stk-can { width: 30%; right: -6%; top: 47%; z-index: 5; }
 /* The empty slot: a die-cut sticker nobody has claimed yet */
 .stk-slot { left: -8%; top: 43%; z-index: 4; font-family: var(--display); font-weight: 700; font-size: clamp(11px, 1.2vw, 14px); color: var(--cream); background: transparent; border: 2px dashed var(--cream); border-radius: 4px; padding: 0.55em 0.9em; white-space: nowrap; opacity: 0.85; filter: drop-shadow(0 8px 14px rgba(0,0,0,0.45)); }
 .stk-slot:hover, .stk-slot:focus-visible { opacity: 1; background: rgba(246,238,226,0.08); }
@@ -202,7 +201,7 @@ button { font: inherit; cursor: pointer; }
 .good-eyewear .frames-art svg { width: 100%; height: auto; display: block; }
 .good-416 .code { position: absolute; right: 18px; top: 10px; font-family: var(--display); font-weight: 800; font-size: 120px; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px color-mix(in srgb, var(--accent) 55%, transparent); line-height: 1; pointer-events: none; user-select: none; }
 @media (max-width: 820px) { .goods-grid { grid-template-columns: 1fr; } .good { min-height: 0; } .good-416 .code { font-size: 84px; } .good-eyewear .frames-art { width: 110px; } }
-@media (max-width: 860px) { .stk-416 { bottom: 10%; left: 48%; width: 30%; } .stk-frames { top: 24%; left: -6%; font-size: 11px; } .stk-slot, .stk-xmas { left: -6%; } .stk-buzzer { left: -4%; } .stk-match { left: -8%; } .stk-defjam, .stk-flag { right: -6%; } .stk-can { right: -4%; width: 34%; } .stk-mic { right: -2%; } }
+@media (max-width: 860px) { .stk-416 { bottom: 10%; left: 48%; width: 30%; } .stk-frames { top: 24%; left: -6%; font-size: 11px; } .stk-slot, .stk-xmas { left: -6%; } .stk-buzzer { left: -4%; } .stk-match { left: -8%; } .stk-flag { right: -6%; } .stk-can { right: -4%; width: 34%; } .stk-mic { right: -2%; } }
 
 /* ---------- on the decks ---------- */
 .dj-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
@@ -760,7 +759,6 @@ button { font: inherit; cursor: pointer; }
 .hero-actions .btn:not(.flame):hover { background: var(--blk-cyan); color: #000; }
 .sticker { background: var(--blk-orange); color: #000; }
 .stk-text { color: #000; }
-.stk-defjam { background: var(--blk-gold); }
 .stk-xmas { background: var(--blk-green); }
 .stk-tdot { background: var(--blk-cyan); }
 .stk-frames { background: var(--blk-magenta); color: #000; }
