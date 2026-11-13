@@ -839,7 +839,7 @@
     const reveal = (hash) => {
       let t = null;
       try { t = hash && hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; } catch (e) { t = null; }
-      if (!t || !book.contains(t) || t === book) return false;
+      if (!t || !book.contains(t)) return false;
       const panel = t.closest(".book-panel");
       if (panel) open(panel.dataset.lane);
       show(true, true);

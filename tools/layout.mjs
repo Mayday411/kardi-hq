@@ -3,7 +3,7 @@
 // Compass holds a hand-ordered "sections" collection: one entry per section
 // of the page ({id, label, hidden}). The build rewrites the page so the
 // sections appear in that order and hidden ones are left out, along with
-// their links in the header, mobile and footer menus (the menus keep their own order). Doing it here rather
+// their links in the header and mobile menus (those keep their own order). The footer's Site list is rebuilt to mirror the page. Doing it here rather
 // than in the browser means no jump on load, and the HTML that ships is the
 // HTML people and search engines see.
 //
@@ -68,9 +68,30 @@ export function applyLayout(html, sections) {
   let out = html.slice(0, start) + newMain + html.slice(mainClose);
   out = dropLinks(out, /<nav class="nav"[^>]*>[\s\S]*?<\/nav>/, hidden);
   out = dropLinks(out, /<nav class="mobile-nav[^"]*"[^>]*>[\s\S]*?<\/nav>/, hidden);
-  out = dropLinks(out, /<footer\b[\s\S]*?<\/footer>/, hidden);
+  out = footSite(out, [first, ...shown, last].filter(Boolean).map((x) => x.id));
   const order = shown.map((s) => s.id ?? "(unnamed)").join(", ");
   return { html: out, report: `order: ${order}${hidden.size ? ` | hidden: ${[...hidden].join(", ")}` : ""}` };
+}
+
+// The footer's Site list is the sitemap, so it mirrors the page: one link per
+// section that is on the page, in page order, plus Booking (which opens inside
+// The Reel). Names are the short ones a visitor would look for.
+const FOOT_NAMES = {
+  "on-the-mic": "On The Mic", "the-reel": "The Reel", store: "The 4EVR16 Store", partners: "Monster",
+  years: "30 Years of Fire", "wha-gwaan": "Wha Gwaan", goods: "Things He Makes", "on-the-screen": "On The Screen",
+  "in-the-building": "In The Building", "on-the-road": "On The Road", awards: "Awards", "give-back": "Give Back",
+};
+function footSite(html, ids) {
+  const m = html.match(/(<ul id="foot-site">\n)([\s\S]*?)(\n\s*<\/ul>)/);
+  if (!m) return html;
+  const indent = (m[2].match(/^\s*/) || ["            "])[0];
+  const items = [];
+  for (const id of ids) {
+    if (!FOOT_NAMES[id]) continue;
+    items.push(`${indent}<li><a href="#${id}">${FOOT_NAMES[id]}</a></li>`);
+    if (id === "the-reel") items.push(`${indent}<li><a href="#book">Booking</a></li>`);
+  }
+  return html.replace(m[0], () => m[1] + items.join("\n") + m[3]);
 }
 
 // Inside one block, drop the lines that are plain in-page links to hidden
