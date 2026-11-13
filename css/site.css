@@ -759,7 +759,7 @@ button { font: inherit; cursor: pointer; }
 .hero-actions .btn:not(.flame):hover { background: var(--blk-cyan); color: #000; }
 .sticker { background: var(--blk-orange); color: #000; }
 .stk-text { color: #000; }
-.stk-xmas { background: var(--blk-green); }
+.stk-xmas { background: var(--blk-green); line-height: 1.25; text-align: center; }
 .stk-tdot { background: var(--blk-cyan); }
 .stk-frames { background: var(--blk-magenta); color: #000; }
 .stk-416 { background: var(--blk-heart); }
