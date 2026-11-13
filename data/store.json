@@ -7,57 +7,55 @@
       "brand": "4ever16",
       "name": "East Side Flannel",
       "detail": "Orange and blue plaid, 4EVR16 east side across the back",
+      "image": "assets/flannel-east-side.webp",
       "art": "tee",
       "color": "#151110",
-      "accent": "#FF5A1F",
-      "image": "assets/flannel-east-side.webp",
-      "id": "flannel-east-side"
+      "accent": "#FF5A1F"
     },
     {
       "brand": "4ever16",
       "name": "Forever Hoodie",
       "detail": "Forest green zip hoodie, chest print, matching sweats",
+      "image": "assets/hoodie-forever.webp",
       "art": "hoodie",
       "color": "#F6EEE2",
-      "accent": "#151110",
-      "image": "assets/hoodie-forever.webp"
+      "accent": "#151110"
     },
     {
       "brand": "4ever16",
       "name": "Varsity Jacket",
       "detail": "Navy wool body, cream sleeves, chest print",
+      "image": "assets/jacket-varsity.webp",
       "art": "hoodie",
       "color": "#1E1715",
-      "accent": "#F2B33D",
-      "id": "jacket-416",
-      "image": "assets/jacket-varsity.webp"
+      "accent": "#F2B33D"
     },
     {
       "brand": "eyewear",
       "name": "The Hero",
-      "detail": "Look Again \u00d7 Kardinal Offishall 002. Acid yellow brow, the pair on this page",
+      "detail": "Look Again × Kardinal Offishall 002. Acid yellow brow, the pair on this page",
+      "image": "assets/frames-hero.jpg",
       "art": "frames",
       "color": "#1a1a1a",
-      "accent": "#C8E230",
-      "image": "assets/frames-hero.jpg"
+      "accent": "#C8E230"
     },
     {
       "brand": "eyewear",
       "name": "Blackout",
-      "detail": "Look Again \u00d7 Kardinal Offishall 002. Black, tortoise temples",
+      "detail": "Look Again × Kardinal Offishall 002. Black, tortoise temples",
+      "image": "assets/frames-blackout.jpg",
       "art": "frames",
       "color": "#111111",
-      "accent": "#2a2a2a",
-      "image": "assets/frames-blackout.jpg"
+      "accent": "#2a2a2a"
     },
     {
       "brand": "eyewear",
       "name": "Ember",
       "detail": "Square, tortoise with amber lens. Next in the series",
+      "image": "assets/frames-blueprint.jpg",
       "art": "frames",
       "color": "#5A2E14",
-      "accent": "#F2B33D",
-      "image": "assets/frames-blueprint.jpg"
+      "accent": "#F2B33D"
     }
   ]
 }
