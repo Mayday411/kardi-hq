@@ -3,7 +3,7 @@
 // Compass holds a hand-ordered "sections" collection: one entry per section
 // of the page ({id, label, hidden}). The build rewrites the page so the
 // sections appear in that order and hidden ones are left out, along with
-// their links in the header and mobile menus (those keep their own order). The footer's Site list is rebuilt to mirror the page. Doing it here rather
+// their links. The top menu, the phone menu and the footer's Site list are all rebuilt to follow the page. Doing it here rather
 // than in the browser means no jump on load, and the HTML that ships is the
 // HTML people and search engines see.
 //
@@ -66,11 +66,34 @@ export function applyLayout(html, sections) {
   const newMain = [first, ...shown, last].filter(Boolean).map((s) => s.text).join("") + tail;
 
   let out = html.slice(0, start) + newMain + html.slice(mainClose);
-  out = dropLinks(out, /<nav class="nav"[^>]*>[\s\S]*?<\/nav>/, hidden);
-  out = dropLinks(out, /<nav class="mobile-nav[^"]*"[^>]*>[\s\S]*?<\/nav>/, hidden);
-  out = footSite(out, [first, ...shown, last].filter(Boolean).map((x) => x.id));
+  const onPage = [first, ...shown, last].filter(Boolean).map((x) => x.id);
+  out = navMenu(out, /(<nav class="nav"[^>]*>\n)([\s\S]*?)(\n\s*<\/nav>)/, onPage);
+  out = navMenu(out, /(<nav class="mobile-nav[^"]*"[^>]*>\n)([\s\S]*?)(\n\s*<\/nav>)/, onPage);
+  out = footSite(out, onPage);
   const order = shown.map((s) => s.id ?? "(unnamed)").join(", ");
   return { html: out, report: `order: ${order}${hidden.size ? ` | hidden: ${[...hidden].join(", ")}` : ""}` };
+}
+
+// The top menu (and the phone menu) is a table of contents, so it follows the
+// page: the main stops that are on the page, in page order, with Booking after
+// The Reel. It is shorter than the footer list on purpose, so it fits one line
+// on a laptop; Monster and Awards are reachable from the footer.
+const NAV_NAMES = {
+  "on-the-mic": "On The Mic", "the-reel": "The Reel", store: "Store", years: "30 Years",
+  "wha-gwaan": "Wha Gwaan", "on-the-screen": "On The Screen", "in-the-building": "In The Building",
+  "on-the-road": "On The Road", "give-back": "Give Back",
+};
+function navMenu(html, re, ids) {
+  const m = html.match(re);
+  if (!m) return html;
+  const indent = (m[2].match(/^\s*/) || ["      "])[0];
+  const items = [];
+  for (const id of ids) {
+    if (!NAV_NAMES[id]) continue;
+    items.push(`${indent}<a href="#${id}">${NAV_NAMES[id]}</a>`);
+    if (id === "the-reel") items.push(`${indent}<a href="#book">Booking</a>`);
+  }
+  return html.replace(m[0], () => m[1] + items.join("\n") + m[3]);
 }
 
 // The footer's Site list is the sitemap, so it mirrors the page: one link per
@@ -94,13 +117,3 @@ function footSite(html, ids) {
   return html.replace(m[0], () => m[1] + items.join("\n") + m[3]);
 }
 
-// Inside one block, drop the lines that are plain in-page links to hidden
-// sections. The menus keep their own order: that is an editorial choice
-// (Store sits last as the call to action), not a mirror of the page.
-function dropLinks(html, blockRe, hidden) {
-  const m = html.match(blockRe);
-  if (!m || !hidden.size) return html;
-  const linkRe = /^\s*(?:<li>)?<a href="#([\w-]+)">[^<]*<\/a>(?:<\/li>)?\s*$/;
-  const kept = m[0].split("\n").filter((line) => { const k = line.match(linkRe); return !(k && hidden.has(k[1])); });
-  return html.replace(m[0], () => kept.join("\n"));
-}

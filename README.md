@@ -131,7 +131,7 @@ The order of the page's sections, and whether each one shows, is edited in Compa
 
 - The hero is always first and the sign-up band always last.
 - A hidden section is left out of the page, and its links are dropped from the header, mobile and footer menus. Hero stickers and ticker items that point at it are removed in the browser.
-- The header and mobile menus keep their own order. Reordering sections does not shuffle them.
+- The top menu and the phone menu follow the page. The build rewrites them to list the main sections on the page, in page order, with Booking after The Reel. Names come from `NAV_NAMES` in `tools/layout.mjs`; a section left out of that map (Monster, Awards) is not in the top menu.
 - The footer's Site list is the sitemap. The build rewrites it to list the sections on the page, in page order, with Booking after The Reel. Names come from `FOOT_NAMES` in `tools/layout.mjs`.
 - A section Compass does not list stays where the source has it, shown. Unpublishing a Sections entry therefore does not hide a section; tick Hide instead.
 - In Good Company (the Monster section, id `partners`) is its own section and moves or hides on its own.
