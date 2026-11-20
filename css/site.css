@@ -330,7 +330,9 @@ button { font: inherit; cursor: pointer; }
 .store-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } /* four across: two rows of four once the two eyewear cards are in */
 .store-grid .product { padding: 14px 14px 16px; }
 .store-grid .product-meta h3 { font-size: clamp(17px, 1.5vw, 20px); }
-.store-grid .soon-card { top: 10px; left: 10px; font-size: 11px; padding: 7px 9px; }
+.store-grid .soon-card { top: 10px; left: 10px; font-size: 9.5px; padding: 6px 8px; }
+/* the eyewear is a collaboration: its mark sits in the corner of the photo */
+.product-art img.collab-badge { position: absolute; z-index: 2; right: 10px; bottom: 10px; width: 36%; height: auto; object-fit: contain; border-radius: 5px; transform: rotate(3deg); box-shadow: 0 8px 18px rgba(0,0,0,0.5), 0 0 0 1.5px rgba(255,255,255,0.14); }
 .product { display: grid; grid-template-rows: auto 1fr auto; gap: 14px; border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); padding: 16px 18px 18px; }
 .product-art { position: relative; aspect-ratio: 1; border-radius: 6px; background: radial-gradient(120% 90% at 50% 100%, #2A201C, #1A1412 70%); display: grid; place-items: center; overflow: hidden; }
 .product-art svg { width: 78%; height: auto; display: block; filter: drop-shadow(0 18px 24px rgba(0,0,0,0.45)); }
