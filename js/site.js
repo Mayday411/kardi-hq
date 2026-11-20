@@ -381,9 +381,9 @@
   function store(data) {
     const grid = $("#store-grid");
     if (!grid || !data) return;
-    const notice = $("#store-notice");
-    notice.textContent = data.open ? "" : (data.notice || "");
-    notice.hidden = !!data.open;
+    // Until the store opens: the Coming soon tags and the sign-up band show, and cards carry no button.
+    $$(".js-soon").forEach((el) => { el.hidden = !!data.open; });
+    const band = $("#store-list"); if (band) band.hidden = !!data.open;
 
     const art = (p) => {
       const c = esc(p.color), a = esc(p.accent);
@@ -397,13 +397,13 @@
     const money = (p) => p.price == null ? `<span class="price tbd">Price at launch</span>` : `<span class="price">${esc(p.price)}</span>`;
     const cta = (p) => p.url && data.open
       ? `<a class="btn primary" ${ext(p.url)}>Buy</a>`
-      : `<a class="btn" href="#store-list">Notify me</a>`;
+      : "";
 
     function render(brand) {
       const list = data.products.filter((p) => brand === "all" || p.brand === brand);
       grid.innerHTML = list.map((p) => `
         <article class="product product-${esc(p.brand)}">
-          <div class="product-art">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : art(p)}</div>
+          <div class="product-art">${p.url && data.open ? "" : `<span class="soon-tag soon-card">Coming soon</span>`}${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : art(p)}</div>
           <div class="product-meta">
             <span class="product-brand">${p.brand === "4ever16" ? "4EVR16" : "Look Again × Kardinal Offishall"}</span>
             <h3>${esc(p.name)}</h3>
