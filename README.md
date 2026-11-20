@@ -179,3 +179,7 @@ Each row plays in place (one track at a time, auto-advancing) and the arrow down
 ## Sources for the content
 
 Exclaim! interview and release notes, SHIFTER review, Billboard Canada, Wikipedia, setlist.fm, Speakers Canada, and Kardi's own Linktree. Checked 7 October 2026.
+
+### The Xmas Party sticker
+
+The hero's Kardi Xmas Party sticker reads its date and its link from the Christmas Party record in Compass: **Date** and **Hero sticker link**. With no link it goes to the sign-up band. A link that starts with http opens in a new tab. The sticker shows whether or not the Give Back section is published.

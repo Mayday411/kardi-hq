@@ -100,7 +100,7 @@ async function main() {
     const ty = { ...(obj.this_year ?? {}) };
     ty.edition = Number(or(party.edition, ty.edition));
     ty.year = Number(or(party.year, ty.year));
-    for (const k of ["date", "venue", "city", "beneficiary", "beneficiary_url", "donate_url", "tickets_url"]) ty[k] = or(party[k]);
+    for (const k of ["date", "venue", "city", "beneficiary", "beneficiary_url", "donate_url", "tickets_url", "sticker_url"]) ty[k] = or(party[k]);
     ty.bring = Array.isArray(party.bring) ? party.bring : ty.bring ?? [];
     const tk = { ...(obj.tickets ?? {}) };
     tk.on_sale = party.tickets_on_sale === true;

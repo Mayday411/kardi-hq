@@ -326,6 +326,14 @@
 
   /* ---------- the christmas party ---------- */
   function party(data) {
+    // The hero's Xmas Party sticker: its date and link come from the party record in Compass
+    // (Hero sticker link). With no link set it goes to the sign-up. It does not depend on the
+    // Give Back section being on the page.
+    const stk = $("#xmas-sticker"), ty = (data && data.this_year) || {};
+    if (stk) {
+      if (ty.date) stk.innerHTML = `Kardi Xmas Party<br>${esc(ty.date)}`;
+      if (/^https?:\/\//i.test(ty.sticker_url || "")) { stk.href = ty.sticker_url; stk.target = "_blank"; stk.rel = "noopener"; }
+    }
     if (!data || !$("#party-ways")) return;
     const t = data.this_year || {};
     const tba = (v, fallback) => v ? esc(v) : fallback;
