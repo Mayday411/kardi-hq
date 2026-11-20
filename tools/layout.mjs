@@ -123,3 +123,46 @@ function footSite(html, ids) {
   return html.replace(m[0], () => m[1] + items.join("\n") + m[3]);
 }
 
+
+// The hero's words and its announcement sticker, from the Compass "Hero"
+// record ({roles, blurb, sticker_show, sticker_line1, sticker_line2,
+// sticker_url}). Applied at build so the page never flashes old wording. With
+// no record (unpublished, or Compass unreachable) the page keeps what is in
+// the source.
+const escHtml = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+export function applyHero(html, hero) {
+  if (!hero || typeof hero !== "object") return { html, report: "no hero record, source wording kept" };
+  let out = html;
+  const done = [];
+  const text = (v) => (typeof v === "string" ? v.trim() : "");
+
+  // Roles line: the last two roles stay together so one never sits alone on a line.
+  const roles = text(hero.roles).split(/\s*[·•|]\s*/).map((r) => r.trim()).filter(Boolean);
+  if (roles.length) {
+    const head = roles.slice(0, -2).map(escHtml), tail = roles.slice(-2).map(escHtml);
+    const inner = roles.length > 2 ? `${head.join(" · ")} · <span class="keep">${tail.join(" · ")}</span>` : tail.join(" · ");
+    const re = /(<p class="eyebrow" id="hero-roles">)[\s\S]*?(<\/p>)/;
+    if (re.test(out)) { out = out.replace(re, (_, a, b) => a + inner + b); done.push("roles"); }
+  }
+
+  if (text(hero.blurb)) {
+    const re = /(<p class="sub" id="hero-blurb">)[\s\S]*?(<\/p>)/;
+    if (re.test(out)) { out = out.replace(re, (_, a, b) => a + escHtml(text(hero.blurb)) + b); done.push("blurb"); }
+  }
+
+  // The sticker: one line of markup in the source, replaced or removed.
+  const re = /^([ \t]*)<a class="stk stk-text stk-xmas" id="xmas-sticker"[^>]*>[\s\S]*?<\/a>[ \t]*\n/m;
+  const m = out.match(re);
+  if (m) {
+    const lines = [text(hero.sticker_line1), text(hero.sticker_line2)].filter(Boolean).map(escHtml);
+    if (hero.sticker_show === false || !lines.length) {
+      out = out.replace(re, ""); done.push("sticker off");
+    } else {
+      const url = text(hero.sticker_url);
+      const link = /^https?:\/\//i.test(url) ? `href="${escHtml(url)}" target="_blank" rel="noopener"` : `href="#join"`;
+      out = out.replace(re, () => `${m[1]}<a class="stk stk-text stk-xmas" id="xmas-sticker" ${link} style="--r:6deg;--depth:0.7">${lines.join("<br>")}</a>\n`);
+      done.push(/^https?:/i.test(url) ? "sticker with link" : "sticker to sign-up");
+    }
+  }
+  return { html: out, report: done.join(", ") || "nothing to change" };
+}

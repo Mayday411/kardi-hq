@@ -180,6 +180,11 @@ Each row plays in place (one track at a time, auto-advancing) and the arrow down
 
 Exclaim! interview and release notes, SHIFTER review, Billboard Canada, Wikipedia, setlist.fm, Speakers Canada, and Kardi's own Linktree. Checked 7 October 2026.
 
-### The Xmas Party sticker
+### The hero's words and sticker
 
-The hero's Kardi Xmas Party sticker reads its date and its link from the Christmas Party record in Compass: **Date** and **Hero sticker link**. With no link it goes to the sign-up band. A link that starts with http opens in a new tab. The sticker shows whether or not the Give Back section is published.
+The roles line above the headline, the blurb under it, and the green announcement sticker come from the **Hero** record in Compass (one record, kept published). The build saves it to `data/hero.json` and `applyHero` in `tools/layout.mjs` writes it into `index.html`, so there is no flash of old wording.
+
+- Roles are separated with a middle dot. The last two are kept together on one line.
+- The sticker has two lines of text, a link and a show switch. With no link it goes to the sign-up band; a link that starts with http opens in a new tab.
+- If the Hero record is unpublished, the page keeps the wording in the source `index.html`.
+- None of this depends on the Christmas Party record or on the Give Back section being published.

@@ -1,0 +1,11 @@
+{
+  "_note": "The hero's roles line, blurb and announcement sticker, edited in Compass (Hero). The build applies it to index.html; see applyHero in tools/layout.mjs.",
+  "hero": {
+    "roles": "Rapper · Producer · DJ · Executive · Actor · Designer · Philanthropist",
+    "blurb": "Firestarter Vol. 1 is celebrating its 25th anniversary! Kardinal returns with Firestarter Vol. 2: Everyday Sometimes which features Idris Elba, Buju Banton, Black Thought, T-Pain and more!",
+    "sticker_show": true,
+    "sticker_line1": "Kardi Xmas Party",
+    "sticker_line2": "Friday December 18, 2026",
+    "sticker_url": ""
+  }
+}

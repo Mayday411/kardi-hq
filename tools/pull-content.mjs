@@ -17,7 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { applyLayout } from "./layout.mjs";
+import { applyLayout, applyHero } from "./layout.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(root, "data");
@@ -35,8 +35,13 @@ function layout() {
   if (!fs.existsSync(file)) return;
   const { sections } = JSON.parse(fs.readFileSync(file, "utf8"));
   const page = path.join(root, "index.html");
-  const { html, report } = applyLayout(fs.readFileSync(page, "utf8"), sections);
-  console.log(`layout: ${report}${doLayout && !dryRun ? "" : " (not applied: needs Vercel or --layout)"}`);
+  const laid = applyLayout(fs.readFileSync(page, "utf8"), sections);
+  console.log(`layout: ${laid.report}${doLayout && !dryRun ? "" : " (not applied: needs Vercel or --layout)"}`);
+  // The hero's words and sticker, from data/hero.json (the Compass Hero record).
+  const heroFile = path.join(dataDir, "hero.json");
+  const hero = fs.existsSync(heroFile) ? JSON.parse(fs.readFileSync(heroFile, "utf8")).hero : null;
+  const { html, report } = applyHero(laid.html, hero);
+  console.log(`hero: ${report}`);
   if (doLayout && !dryRun) fs.writeFileSync(page, html);
 }
 
@@ -100,7 +105,7 @@ async function main() {
     const ty = { ...(obj.this_year ?? {}) };
     ty.edition = Number(or(party.edition, ty.edition));
     ty.year = Number(or(party.year, ty.year));
-    for (const k of ["date", "venue", "city", "beneficiary", "beneficiary_url", "donate_url", "tickets_url", "sticker_url"]) ty[k] = or(party[k]);
+    for (const k of ["date", "venue", "city", "beneficiary", "beneficiary_url", "donate_url", "tickets_url"]) ty[k] = or(party[k]);
     ty.bring = Array.isArray(party.bring) ? party.bring : ty.bring ?? [];
     const tk = { ...(obj.tickets ?? {}) };
     tk.on_sale = party.tickets_on_sale === true;
@@ -117,6 +122,22 @@ async function main() {
     else console.log("  party: unchanged");
   } else if (party === null) {
     console.log("  party: nothing published, left alone");
+  }
+
+  // The hero record: roles line, blurb and the announcement sticker. Unpublished means "keep the source wording".
+  {
+    const h = cols.hero && typeof cols.hero === "object" ? cols.hero : null;
+    const next = {
+      _note: "The hero's roles line, blurb and announcement sticker, edited in Compass (Hero). The build applies it to index.html; see applyHero in tools/layout.mjs.",
+      hero: h ? { roles: h.roles ?? "", blurb: h.blurb ?? "", sticker_show: h.sticker_show !== false, sticker_line1: h.sticker_line1 ?? "", sticker_line2: h.sticker_line2 ?? "", sticker_url: h.sticker_url ?? "" } : null,
+    };
+    const file = path.join(dataDir, "hero.json");
+    const before = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+    if (!same(before?.hero, next.hero)) {
+      changed.push("hero.json");
+      if (!dryRun) fs.writeFileSync(file, JSON.stringify(next, null, 2) + "\n");
+      console.log(`  hero: ${next.hero ? "updated" : "not published, source wording kept"} → hero.json`);
+    } else console.log("  hero: unchanged");
   }
 
   // Section order and visibility: {id, label, hidden} per section, in the order Compass holds them.
