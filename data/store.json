@@ -55,6 +55,24 @@
       "art": "hoodie",
       "color": "#1E1715",
       "accent": "#F2B33D"
+    },
+    {
+      "brand": "eyewear",
+      "name": "Model 002, Acid Yellow",
+      "detail": "Bold square acetate, acid yellow on black, tortoise temples",
+      "image": "https://kardi-hq.vercel.app/assets/frames-hero.jpg",
+      "art": "frames",
+      "color": "#D8F04A",
+      "accent": "#151110"
+    },
+    {
+      "brand": "eyewear",
+      "name": "Model 002, Blackout",
+      "detail": "Bold square acetate in black, tortoise temples",
+      "image": "https://kardi-hq.vercel.app/assets/frames-blackout.jpg",
+      "art": "frames",
+      "color": "#151110",
+      "accent": "#C8E230"
     }
   ]
 }

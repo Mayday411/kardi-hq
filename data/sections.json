@@ -7,11 +7,6 @@
       "hidden": false
     },
     {
-      "id": "the-reel",
-      "label": "The Reel: video and booking (performances, DJ sets, hosting, speaking)",
-      "hidden": false
-    },
-    {
       "id": "store",
       "label": "The 4EVR16 Store",
       "hidden": false
@@ -19,6 +14,11 @@
     {
       "id": "partners",
       "label": "In Good Company: Monster",
+      "hidden": false
+    },
+    {
+      "id": "the-reel",
+      "label": "The Reel: video and booking (performances, DJ sets, hosting, speaking)",
       "hidden": false
     },
     {

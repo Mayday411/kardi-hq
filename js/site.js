@@ -405,7 +405,7 @@
         <article class="product product-${esc(p.brand)}">
           <div class="product-art">${p.url && data.open ? "" : `<span class="soon-tag soon-card">Coming soon</span>`}${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : art(p)}</div>
           <div class="product-meta">
-            <span class="product-brand">${p.brand === "4ever16" ? "4EVR16" : "Look Again × Kardinal Offishall"}</span>
+            <span class="product-brand">4EVR16</span>
             <h3>${esc(p.name)}</h3>
             <p>${esc(p.detail)}</p>
           </div>
