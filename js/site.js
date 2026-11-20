@@ -397,7 +397,7 @@
     const money = (p) => p.price == null ? `<span class="price tbd">Price at launch</span>` : `<span class="price">${esc(p.price)}</span>`;
     const cta = (p) => p.url && data.open
       ? `<a class="btn primary" ${ext(p.url)}>Buy</a>`
-      : `<a class="btn" href="#join">Notify me</a>`;
+      : `<a class="btn" href="#store-list">Notify me</a>`;
 
     function render(brand) {
       const list = data.products.filter((p) => brand === "all" || p.brand === brand);
@@ -755,7 +755,9 @@
       const email = $("input[type=email]", form), msg = $(".msg", form);
       if (!email.checkValidity()) { email.reportValidity(); return; }
       msg.hidden = false;
-      msg.textContent = "The list opens with the official launch. Nothing was stored.";
+      msg.textContent = form.dataset.list === "store"
+        ? "The 4EVR16 list opens with the store launch. Nothing was stored."
+        : "The list opens with the official launch. Nothing was stored.";
       form.reset();
     }));
   }

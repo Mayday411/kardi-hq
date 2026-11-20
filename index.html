@@ -258,7 +258,23 @@
         </div>
         <p class="store-notice reveal" id="store-notice"></p>
         <div class="store-grid reveal" id="store-grid"></div>
-        <p class="store-fine reveal">Prefer a heads-up? <a href="#join">Join the Colleagues</a> and the drop lands in your inbox first.</p>
+        <!-- Store-only sign-up: its own list, separate from Join the Colleagues -->
+        <div class="join join-store reveal" id="store-list">
+          <div>
+            <p class="eyebrow" style="color:#3B1A0E">The 4EVR16 list</p>
+            <h2>First in line.</h2>
+            <p>Launch dates, prices and new pieces, sent to this list before anywhere else. Store news only.</p>
+          </div>
+          <form class="js-join-form" data-list="store" novalidate>
+            <div class="row">
+              <label for="store-email" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
+              <input id="store-email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+              <button type="submit">Tell me first</button>
+            </div>
+            <p class="fine">Store news only, one tap to leave.</p>
+            <p class="msg" hidden></p>
+          </form>
+        </div>
       </div>
     </section>
 
