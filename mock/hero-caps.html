@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mock-up · Kardinal Offishall</title>
+  <!-- Where the sign-up forms send addresses (Compass). Empty means the forms only show a holding message and store nothing. -->
+  <meta name="signup-endpoint" content="">
   <meta name="description" content="Everyday, Sometimes… Rapper, producer, executive, TV judge. New album Firestarter Vol. 2 out now. Everything Kardi, in one place.">
   <meta name="theme-color" content="#151110">
   <meta property="og:title" content="Kardinal Offishall">
@@ -131,6 +133,7 @@
               <label for="join-email-top" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
               <input id="join-email-top" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
               <button type="submit">Count me in</button>
+              <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
             </div>
             <p class="fine">No spam, one tap to leave.</p>
             <p class="msg" hidden></p>
@@ -276,6 +279,7 @@
               <label for="store-email" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
               <input id="store-email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
               <button type="submit">Tell me first</button>
+              <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
             </div>
             <p class="fine">Store news only, one tap to leave.</p>
             <p class="msg" hidden></p>
@@ -724,6 +728,7 @@
               <label for="join-email" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
               <input id="join-email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
               <button type="submit" id="join-btn">Count me in</button>
+              <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
             </div>
             <p class="fine">No spam, one tap to leave.</p>
             <p class="msg" hidden></p>

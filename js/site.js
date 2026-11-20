@@ -749,16 +749,38 @@
 
   /* ---------- join ---------- */
   function join() {
-    // The sign-up appears twice: under the hero and at the foot of the page.
-    $$(".js-join-form").forEach((form) => form.addEventListener("submit", (e) => {
+    // Three sign-up forms: under the hero, in the store (its own list) and at the foot of the page.
+    // They post to Compass when <meta name="signup-endpoint"> holds its address. With no address
+    // they show a holding message and store nothing.
+    const endpoint = (document.querySelector('meta[name="signup-endpoint"]') || {}).content || "";
+    $$(".js-join-form").forEach((form) => form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const email = $("input[type=email]", form), msg = $(".msg", form);
+      const email = $("input[type=email]", form), msg = $(".msg", form), btn = $("button[type=submit]", form);
       if (!email.checkValidity()) { email.reportValidity(); return; }
-      msg.hidden = false;
-      msg.textContent = form.dataset.list === "store"
-        ? "The 4EVR16 list opens with the store launch. Nothing was stored."
-        : "The list opens with the official launch. Nothing was stored.";
-      form.reset();
+      const store = form.dataset.list === "store";
+      const say = (text) => { msg.hidden = false; msg.textContent = text; };
+      if (!endpoint) {
+        say(store ? "The 4EVR16 list opens with the store launch. Nothing was stored." : "The list opens with the official launch. Nothing was stored.");
+        form.reset();
+        return;
+      }
+      const label = btn.textContent;
+      btn.disabled = true; btn.textContent = "Sending…";
+      try {
+        const hp = $(".hp", form), sec = form.closest("section");
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email.value.trim(), list: form.dataset.list || "general", page: location.pathname + (sec && sec.id ? "#" + sec.id : ""), website: hp ? hp.value : "" }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) { say(store ? "You're on the 4EVR16 list. Store news will come to that address." : "You're in. Watch your inbox."); form.reset(); }
+        else say(data.error || "That did not go through. Please try again.");
+      } catch (err) {
+        say("That did not go through. Check your connection and try again.");
+      } finally {
+        btn.disabled = false; btn.textContent = label;
+      }
     }));
   }
 

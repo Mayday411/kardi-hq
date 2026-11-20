@@ -188,3 +188,7 @@ The roles line above the headline, the blurb under it, and the green announcemen
 - The sticker has two lines of text, a link and a show switch. With no link it goes to the sign-up band; a link that starts with http opens in a new tab.
 - If the Hero record is unpublished, the page keeps the wording in the source `index.html`.
 - None of this depends on the Christmas Party record or on the Give Back section being published.
+
+### Sign-up forms
+
+There are three: under the hero and at the foot of the page (list `general`), and in the store (list `store`). They post to Compass when `<meta name="signup-endpoint">` in `index.html` holds the address `https://claude-cms-ebon.vercel.app/api/public/sites/kardinal-offishall/subscribe`. With the meta empty they show a holding message and store nothing. Compass keeps the addresses under **Sign-ups**, where the site's Owner can download them as a CSV for Mailchimp, Beehiiv or similar. Compass only accepts posts from this site's own address, so a new domain must be set as the site's URL in Compass first.
