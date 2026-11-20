@@ -8,8 +8,8 @@
 // HTML people and search engines see.
 //
 // Rules: the hero (#top) is always first and the join band (#join) always
-// last. A section Compass doesn't mention keeps its place after the listed
-// ones, in source order, and is shown. Unknown ids are ignored.
+// last. A section Compass doesn't list (unpublished or deleted there) is left
+// off the page, the same as one with Hide ticked. Unknown ids are ignored.
 
 const LOCKED_FIRST = "top";
 const LOCKED_LAST = "join";
@@ -59,7 +59,13 @@ export function applyLayout(html, sections) {
       seen.add(s.id);
     }
   }
-  for (const seg of movable) if (!seg.id || !seen.has(seg.id)) wanted.push(seg);
+  // A section Compass does not list is unpublished there, so it comes off the
+  // page. Only when Compass sends no list at all (never set up, or unreachable
+  // with no saved copy) does everything show, in source order.
+  for (const seg of movable) {
+    if (!seg.id) wanted.push(seg);
+    else if (!seen.has(seg.id)) { if (list.length) hidden.add(seg.id); else wanted.push(seg); }
+  }
   const shown = wanted.filter((seg) => !seg.id || !hidden.has(seg.id));
   const first = byId.get(LOCKED_FIRST);
   const last = byId.get(LOCKED_LAST);

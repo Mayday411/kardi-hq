@@ -5,56 +5,55 @@
   "products": [
     {
       "brand": "4ever16",
-      "name": "East Side Flannel",
-      "detail": "Orange and blue plaid, 4EVR16 east side across the back",
-      "image": "assets/flannel-east-side.webp",
-      "art": "tee",
-      "color": "#151110",
-      "accent": "#FF5A1F"
-    },
-    {
-      "brand": "4ever16",
-      "name": "Forever Hoodie",
-      "detail": "Forest green zip hoodie, chest print, matching sweats",
-      "image": "assets/hoodie-forever.webp",
+      "name": "Flagship Forever Hoodie",
+      "detail": "White pullover hoodie, chest print, matching sweats",
+      "price": "$70 (USD)",
+      "image": "https://ntnrdrlzbdghqech.public.blob.vercel-storage.com/sites/6aca834799e940bef9f0de55/a156a290-cb89-4f5f-893a-aba1234f7f2d.jpg",
       "art": "hoodie",
       "color": "#F6EEE2",
       "accent": "#151110"
     },
     {
       "brand": "4ever16",
-      "name": "Varsity Jacket",
-      "detail": "Navy wool body, cream sleeves, chest print",
-      "image": "assets/jacket-varsity.webp",
-      "art": "hoodie",
-      "color": "#1E1715",
+      "name": "Grey Tree Camo Barrel Pants",
+      "detail": "Grey Tree Camo Barrel Pants",
+      "image": "https://ntnrdrlzbdghqech.public.blob.vercel-storage.com/sites/6aca834799e940bef9f0de55/9f81bf23-ba43-477e-abfe-afbbf38e8c9f.jpg",
+      "art": "tee",
+      "color": "#151110",
+      "accent": "#FF5A1F"
+    },
+    {
+      "brand": "4ever16",
+      "name": "Denim Trucker Jacket",
+      "detail": "Japanese denim jacket",
+      "image": "https://ntnrdrlzbdghqech.public.blob.vercel-storage.com/sites/6aca834799e940bef9f0de55/4a9d55eb-e730-4351-bf12-ccce16ad5b33.jpg",
+      "color": "#5A2E14",
       "accent": "#F2B33D"
     },
     {
-      "brand": "eyewear",
-      "name": "The Hero",
-      "detail": "Look Again × Kardinal Offishall 002. Acid yellow brow, the pair on this page",
-      "image": "assets/frames-hero.jpg",
-      "art": "frames",
+      "brand": "4ever16",
+      "name": "Bakardi Slang Anniversary Tee",
+      "detail": "Oversized Streetwear cut",
+      "image": "https://ntnrdrlzbdghqech.public.blob.vercel-storage.com/sites/6aca834799e940bef9f0de55/0a480859-08ac-4f2a-a603-12a589976098.jpg",
+      "art": "tee",
       "color": "#1a1a1a",
       "accent": "#C8E230"
     },
     {
-      "brand": "eyewear",
-      "name": "Blackout",
-      "detail": "Look Again × Kardinal Offishall 002. Black, tortoise temples",
-      "image": "assets/frames-blackout.jpg",
-      "art": "frames",
+      "brand": "4ever16",
+      "name": "Eastside Flannel",
+      "detail": "Patchwork cotton flannel",
+      "image": "https://ntnrdrlzbdghqech.public.blob.vercel-storage.com/sites/6aca834799e940bef9f0de55/030ab2d7-4c77-4dfc-9f75-40173dc7523b.jpg",
       "color": "#111111",
       "accent": "#2a2a2a"
     },
     {
-      "brand": "eyewear",
-      "name": "Ember",
-      "detail": "Square, tortoise with amber lens. Next in the series",
-      "image": "assets/frames-blueprint.jpg",
-      "art": "frames",
-      "color": "#5A2E14",
+      "brand": "4ever16",
+      "name": "Gyal Farm Pullover Hoodie",
+      "detail": "Rich Black with outline chest print",
+      "image": "https://ntnrdrlzbdghqech.public.blob.vercel-storage.com/sites/6aca834799e940bef9f0de55/11b3e7e5-a6de-45ef-ad10-0cc2829a66a1.jpg",
+      "art": "hoodie",
+      "color": "#1E1715",
       "accent": "#F2B33D"
     }
   ]
